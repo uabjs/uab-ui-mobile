@@ -1,0 +1,9 @@
+# basics
+/node_modules/
+.DS_Store
+
+# build
+/dist/
+
+# platform IDE settings
+/.vscode/
