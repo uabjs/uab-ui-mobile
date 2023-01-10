@@ -2,7 +2,6 @@
   "name": "uab-ui-mobile",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
     "build": "gulp",
     "prepare": "husky install"
@@ -11,10 +10,17 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@babel/core": "^7.20.12",
+    "@babel/preset-env": "^7.20.2",
     "@commitlint/cli": "^17.4.1",
     "@commitlint/config-conventional": "^17.4.0",
     "@types/lodash": "^4.14.191",
     "@types/react": "^18.0.26",
+    "del": "^6.1.1",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-typescript": "6.0.0-alpha.1",
     "husky": "^8.0.3",
     "prettier": "^2.8.2",
     "react": "^18.2.0",
@@ -22,6 +28,7 @@
   },
   "dependencies": {
     "classnames": "^2.3.2",
-    "lodash": "^4.17.21"
+    "lodash": "^4.17.21",
+    "tslib": "^2.4.1"
   }
 }
