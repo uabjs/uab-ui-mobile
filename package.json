@@ -5,6 +5,7 @@
   "scripts": {
     "prepare": "husky install",
     "start": "dumi dev",
+    "build-docs": "dumi build",
     "build": "gulp"
   },
   "keywords": [],
