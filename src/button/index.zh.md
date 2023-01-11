@@ -11,6 +11,7 @@
 
 ### 属性
 | 属性 | 说明 | 类型 | 默认值 |
+| --- | --- | --- | --- |
 | block | 是否是块级元素 | `boolean` | `false` |
 | disabled | 是否禁用 | `boolean` | `false` |
 | fill | 填充模式 | `'solid' \| 'outline' \| 'none'` | `'solid'` |

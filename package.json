@@ -19,6 +19,7 @@
     "@types/react": "^18.0.26",
     "del": "^6.1.1",
     "dumi": "^2.1.2",
+    "dumi-theme-mobile": "^2.0.2",
     "gulp": "^4.0.2",
     "gulp-babel": "^8.0.0",
     "gulp-rename": "^2.0.0",

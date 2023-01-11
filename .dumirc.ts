@@ -1,29 +1,13 @@
 import { defineConfig } from 'dumi'
+import { nav } from "./config/nav";
+import { sidebar } from "./config/sidebar";
 
 exports.default = defineConfig({
   themeConfig: {
     name: 'uab ui Mobile',
     logo: 'https://avatars.githubusercontent.com/u/73016681?s=200&v=4',
-    nav: {
-      'zh': [
-        { title: '指南', link: '/guide', order: 1 },
-        { title: '组件', link: '/components', order: 2 }
-      ],
-      'en': [
-        { title: '指南', link: '/guide', order: 1 },
-        { title: '组件', link: '/en/components', order: 2 }
-      ],
-    },
-    sidebar: {
-      '/guide': [
-        {
-          title: '指南',
-          children: [
-            { title: '快速上手', link: '/guide/quick-start', order: 1, frontmatter: { title: '11111' } }
-          ]
-        }
-      ]
-    },
+    nav,
+    sidebar,
     hd: {
       rules: [],
     },
