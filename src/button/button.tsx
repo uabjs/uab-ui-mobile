@@ -1,7 +1,7 @@
 import React, { forwardRef, useState, useRef, useImperativeHandle } from 'react'
-import { isPromise } from '../../utils/validate'
-import { mergeProps } from '../../utils/with-default-props'
-import { NativeProps, withNativeProps } from '../../utils/native-props'
+import { isPromise } from '../utils/validate'
+import { mergeProps } from '../utils/with-default-props'
+import { NativeProps, withNativeProps } from '../utils/native-props'
 
 const classPrefix = `uabm-button`
 

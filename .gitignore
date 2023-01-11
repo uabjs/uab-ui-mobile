@@ -2,6 +2,11 @@
 /node_modules/
 .DS_Store
 
+# dumi
+.dumi/tmp
+.dumi/tmp-test
+.dumi/tmp-production
+
 # build
 /dist/
 /lib/

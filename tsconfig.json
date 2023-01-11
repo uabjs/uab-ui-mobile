@@ -16,7 +16,11 @@
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "noImplicitAny": true,
-    "importHelpers": true
+    "importHelpers": true,
+    "paths": {
+      "uab-ui-mobile": ["src/index.ts"],
+      "@@/*": [".dumi/tmp/*"]
+    }
   },
   "include": ["src"],
   "exclude": ["node_modules", "dist", "lib"]
