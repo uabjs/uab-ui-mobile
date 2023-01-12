@@ -11,6 +11,3 @@ website
 # build
 /dist/
 /lib/
-
-# platform IDE settings
-/.vscode/
