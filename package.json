@@ -52,7 +52,7 @@
   "typings": "./esm/index.d.ts",
   "unpkg": "./umd/antd-mobile.min.js",
   "files": [
-    "./dist"
+    "dist"
   ],
   "publishConfig": {
     "registry": "https://registry.npmjs.org"

@@ -1,5 +1,6 @@
 import { defineConfig } from 'father'
-const path = require('path')
+import path from 'path'
+// const path = require('path')
 
 export default defineConfig({
   esm: {},
@@ -9,4 +10,5 @@ export default defineConfig({
     '@': path.resolve(__dirname, './src'),
   },
   platform: 'browser',
+  plugins: ['./scripts/publish-father-plugin'],
 })

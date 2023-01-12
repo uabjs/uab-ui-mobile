@@ -18,4 +18,5 @@ module.exports = {
   rules: {
     'no-empty': ['error', { allowEmptyCatch: true }],
   },
+  ignorePatterns: ['/*', '!/src', '/src/**/*.js'],
 }
