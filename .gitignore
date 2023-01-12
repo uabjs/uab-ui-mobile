@@ -6,6 +6,7 @@
 .dumi/tmp
 .dumi/tmp-test
 .dumi/tmp-production
+website
 
 # build
 /dist/

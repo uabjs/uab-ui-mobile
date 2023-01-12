@@ -1,13 +1,13 @@
 import { defineConfig } from 'dumi'
-import { nav } from "./config/nav";
-import { sidebar } from "./config/sidebar";
+import { nav } from './config/nav'
+import { sidebar } from './config/sidebar'
 
 exports.default = defineConfig({
   themeConfig: {
     name: 'uab ui Mobile',
     logo: 'https://avatars.githubusercontent.com/u/73016681?s=200&v=4',
-    nav,
-    sidebar,
+    nav: nav,
+    sidebar: sidebar,
     hd: {
       rules: [],
     },
@@ -23,5 +23,6 @@ exports.default = defineConfig({
     codeBlockMode: 'passive',
   },
   favicons: ['https://avatars.githubusercontent.com/u/73016681?s=88&v=4'],
-  metas: []
+  metas: [],
+  outputPath: 'website',
 })
