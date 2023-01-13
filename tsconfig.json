@@ -9,7 +9,7 @@
     "resolveJsonModule": true,
     "allowJs": true,
     "declaration": false,
-    "outDir": "./lib",
+    "outDir": "./dist",
     "lib": ["ES2016", "DOM"],
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
@@ -23,5 +23,5 @@
     }
   },
   "include": ["src"],
-  "exclude": ["node_modules", "dist", "lib"]
+  "exclude": ["node_modules", "dist", "website"]
 }
