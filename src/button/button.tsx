@@ -87,8 +87,9 @@ export const Button = forwardRef<ButtonRef, ButtonProps>((p, ref) => {
         [`${classPrefix}-block`]: props.block,
         [`${classPrefix}-disabled`]: disabled,
         [`${classPrefix}-loading`]: loading,
-        [`${classPrefix}-${props.size}`]: !!props.size,
-        [`${classPrefix}-fill-${props.fill}`]: !!props.fill,
+        [`${classPrefix}-${props.size}`]: props.size && props.size !== 'middle',
+        [`${classPrefix}-fill-${props.fill}`]:
+          props.fill && props.fill !== 'solid',
       })}
       onClick={handleClick}
     >
