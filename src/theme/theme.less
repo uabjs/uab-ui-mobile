@@ -1,0 +1,21 @@
+@import './theme-default.less';
+@import './theme-dark.less';
+
+body {
+  color: var(--uabm-color-text);
+  font-size: var(--uabm-font-size-main);
+  font-family: var(--uabm-font-family);
+}
+
+a,
+button {
+  cursor: pointer;
+}
+
+a {
+  color: var(--uabm-color-primary);
+  transform: opacity ease-in-out 0.2s;
+  &:active {
+    opacity: 0.8;
+  }
+}

@@ -10,8 +10,7 @@
     "publish": "npm publish ./dist",
     "prepublishOnly": "father doctor && npm run build"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [ "react", "react component", "mobile" ],
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.20.12",

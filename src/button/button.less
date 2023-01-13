@@ -1,0 +1,31 @@
+@class-prefix-button: ~'uabm-button';
+
+.@{class-prefix-button} {
+  --color: var(--uabm-color-white);
+  --text-color: var(--uabm-button-text-color, var(--uabm-color-text));
+  --background-color: var(
+    --uabm-button-background-color,
+    var(--uabm-color-background)
+  );
+
+  --border-radius: var(--uabm-button-border-radius, 4px);
+  --border-width: var(--uabm-button-border-width, 1px);
+  --border-style: var(--uabm-button-border-style, solid);
+  --border-color: var(--uabm-button-border-color, var(--uabm-color-border));
+
+  color: var(--text-color);
+  background-color: var(--background-color);
+
+  &-primary {
+    --color: var(--uabm-color-primary);
+  }
+  &-success {
+    --color: var(--uabm-color-success);
+  }
+  &-danger {
+    --color: var(--uabm-color-danger);
+  }
+  &-warning {
+    --color: var(--uabm-color-warning);
+  }
+}
