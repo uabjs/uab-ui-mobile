@@ -27,6 +27,9 @@
   transition: opacity ease 0.15s;
   user-select: none;
 
+  &:focus {
+    outline: none;
+  }
   &::before {
     position: absolute;
     top: 0;
@@ -114,5 +117,18 @@
   }
   &-shape-rectangular {
     --border-radius: 0;
+  }
+
+  &-loading {
+    vertical-align: bottom;
+  }
+  &-loading-wrapper {
+    display: flex;
+    height: 1.4em;
+    align-items: center;
+    justify-content: center;
+    > .uabm-loading {
+      opacity: 0.6;
+    }
   }
 }

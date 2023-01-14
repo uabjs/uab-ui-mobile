@@ -73,17 +73,18 @@ export default () => {
 
       <div>
         <h3>加载状态</h3>
-        <Button loading color='primary' loadingText='正在加载'>
+        <Button loading>Loading</Button>
+        <Button loading color='primary' loadingText='loading'>
           Loading
         </Button>
-        <Button loading>Loading</Button>
         <Button
           loading='auto'
+          loadingText='loading'
           onClick={async () => {
             await sleep(1000)
           }}
         >
-          Auto Loading
+          Click Loading
         </Button>
       </div>
     </>
