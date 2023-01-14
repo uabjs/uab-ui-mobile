@@ -9,5 +9,8 @@
   "typescript.tsdk": "node_modules/typescript/lib",
   "[less]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[tsx]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   }
 }

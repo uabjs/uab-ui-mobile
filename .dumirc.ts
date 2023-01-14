@@ -22,6 +22,9 @@ exports.default = defineConfig({
     atomDirs: [{ type: 'component', dir: 'src' }],
     codeBlockMode: 'passive',
   },
+  alias: {
+    'uab-ui-mobile-utils': process.cwd() + '/src/utils/index.ts',
+  },
   favicons: ['https://avatars.githubusercontent.com/u/73016681?s=88&v=4'],
   metas: [],
   outputPath: 'website',

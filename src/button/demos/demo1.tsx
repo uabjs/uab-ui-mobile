@@ -1,5 +1,6 @@
 import React from 'react'
 import { Button } from 'uab-ui-mobile'
+import { sleep } from 'uab-ui-mobile-utils'
 
 export default () => {
   return (
@@ -39,6 +40,50 @@ export default () => {
         </Button>
         <Button color='primary' size='large'>
           Large
+        </Button>
+      </div>
+
+      <div>
+        <h3>块级按钮</h3>
+        <Button color='primary' block>
+          Black Button
+        </Button>
+      </div>
+
+      <div>
+        <h3>按钮形状</h3>
+        <Button color='primary' shape='default'>
+          Default Button
+        </Button>
+        <Button color='primary' shape='rounded'>
+          Rounded Button
+        </Button>
+        <Button color='primary' shape='rectangular'>
+          Rectangular Button
+        </Button>
+      </div>
+
+      <div>
+        <h3>禁用状态</h3>
+        <Button disabled>Disabled</Button>
+        <Button color='primary' disabled>
+          Disabled
+        </Button>
+      </div>
+
+      <div>
+        <h3>加载状态</h3>
+        <Button loading color='primary' loadingText='正在加载'>
+          Loading
+        </Button>
+        <Button loading>Loading</Button>
+        <Button
+          loading='auto'
+          onClick={async () => {
+            await sleep(1000)
+          }}
+        >
+          Auto Loading
         </Button>
       </div>
     </>

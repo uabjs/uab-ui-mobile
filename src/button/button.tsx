@@ -6,6 +6,8 @@ import { NativeProps, withNativeProps } from '../utils/native-props'
 
 const classPrefix = `uabm-button`
 
+type NativeButtonProps = React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>
+
 export type ButtonProps = {
   block?: boolean
   fill?: 'solid' | 'outline' | 'none'
@@ -18,17 +20,11 @@ export type ButtonProps = {
   loadingIcon?: React.ReactNode
   disabled?: boolean
   children?: React.ReactNode
-  onClick?: (
-    event: React.MouseEvent<HTMLButtonElement | MouseEvent>
-  ) => void | Promise<void> | unknown
-} & NativeProps<
-  | '--text-color'
-  | '--background-color'
-  | '--border-radius'
-  | '--border-width'
-  | '--border-style'
-  | '--border-color'
->
+  onClick?: (event: React.MouseEvent<HTMLButtonElement | MouseEvent>) => void | Promise<void> | unknown
+} & Pick<NativeButtonProps, 'onMouseDown' | 'onMouseUp' | 'onTouchStart' | 'onTouchEnd'> &
+  NativeProps<
+    '--text-color' | '--background-color' | '--border-radius' | '--border-width' | '--border-style' | '--border-color'
+  >
 
 export type ButtonRef = {
   nativeElement: HTMLButtonElement | null
@@ -88,10 +84,14 @@ export const Button = forwardRef<ButtonRef, ButtonProps>((p, ref) => {
         [`${classPrefix}-disabled`]: disabled,
         [`${classPrefix}-loading`]: loading,
         [`${classPrefix}-${props.size}`]: props.size && props.size !== 'middle',
-        [`${classPrefix}-fill-${props.fill}`]:
-          props.fill && props.fill !== 'solid',
+        [`${classPrefix}-fill-${props.fill}`]: props.fill && props.fill !== 'solid',
+        [`${classPrefix}-shape-${props.shape}`]: props.shape && props.shape !== 'default',
       })}
       onClick={handleClick}
+      onMouseDown={props.onMouseDown}
+      onMouseUp={props.onMouseUp}
+      onTouchStart={props.onTouchStart}
+      onTouchEnd={props.onTouchEnd}
     >
       {loading ? (
         <div className={`${classPrefix}-loading-wrapper`}>

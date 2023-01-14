@@ -3,10 +3,7 @@
 .@{class-prefix-button} {
   --color: var(--uabm-color-white);
   --text-color: var(--uabm-button-text-color, var(--uabm-color-text));
-  --background-color: var(
-    --uabm-button-background-color,
-    var(--uabm-color-background)
-  );
+  --background-color: var(--uabm-button-background-color, var(--uabm-color-background));
 
   --border-radius: var(--uabm-button-border-radius, 6px);
   --border-width: var(--uabm-button-border-width, 1px);
@@ -110,5 +107,12 @@
   &&-large {
     padding: 11px 16px;
     font-size: var(--uabm-font-size-10);
+  }
+
+  &-shape-rounded {
+    --border-radius: 1000px;
+  }
+  &-shape-rectangular {
+    --border-radius: 0;
   }
 }

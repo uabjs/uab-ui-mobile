@@ -18,6 +18,7 @@
     "noImplicitAny": true,
     "importHelpers": true,
     "paths": {
+      "uab-ui-mobile-utils": ["src/utils/index.ts"],
       "uab-ui-mobile": ["src/index.ts"],
       "@@/*": [".dumi/tmp/*"]
     }
