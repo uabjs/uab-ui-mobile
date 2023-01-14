@@ -25,6 +25,22 @@ export default () => {
           none
         </Button>
       </div>
+
+      <div>
+        <h3>按钮大小</h3>
+        <Button color='primary' size='mini'>
+          Mini
+        </Button>
+        <Button color='primary' size='small'>
+          Small
+        </Button>
+        <Button color='primary' size='middle'>
+          Middle
+        </Button>
+        <Button color='primary' size='large'>
+          Large
+        </Button>
+      </div>
     </>
   )
 }

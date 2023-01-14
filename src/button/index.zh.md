@@ -2,14 +2,18 @@
 
 按钮用于触发一个即时操作，如提交表单。
 
-## 示例
+## 普通示例
 
 <code src="./demos/demo1.tsx"></code>
 
+## 特征示例
+
+<code src="./demos/demo1.tsx"></code>
 
 ## Button
 
 ### 属性
+
 | 属性 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
 | block | 是否是块级元素 | `boolean` | `false` |
