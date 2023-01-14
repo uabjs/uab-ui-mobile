@@ -23,3 +23,22 @@ Used to start an immediate operation.
 | onClick | The click event. | `(event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void \| Promise<void>` | - |
 | shape | The shape of the button. | `'default' \| 'rounded' \| 'rectangular'` | `'default'` |
 | type | The `type` prop of native `button` element. | `'submit' \| 'reset' \| 'button'` | `'button'` |
+
+In addition, the following properties of the native `button` element are supported: `onMouseDown` `onMouseUp` `onTouchStart` `onTouchEnd`.
+
+### CSS Variables
+
+| Name               | Description                     | Default                   | Global                          |
+| ------------------ | ------------------------------- | ------------------------- | ------------------------------- |
+| --background-color | Background color of the button. | `var(--adm-color-white)`  | `--adm-button-background-color` |
+| --border-color     | Border color of the button.     | `var(--adm-border-color)` | `--adm-button-border-color`     |
+| --border-radius    | Border radius of the button.    | `4px`                     | `--adm-button-border-radius`    |
+| --border-style     | Border style of the button.     | `solid`                   | `--adm-button-border-style`     |
+| --border-width     | Border width of the button.     | `1px`                     | `--adm-button-border-width`     |
+| --text-color       | Text color of the button.       | `var(--adm-color-text)`   | `--adm-button-text-color`       |
+
+### Ref
+
+| Name          | Description           | Type                          |
+| ------------- | --------------------- | ----------------------------- |
+| nativeElement | Native button element | `HtmlButtonElement` \| `null` |

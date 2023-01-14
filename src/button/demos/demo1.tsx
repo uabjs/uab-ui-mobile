@@ -1,5 +1,6 @@
 import React from 'react'
 import { Button } from 'uab-ui-mobile'
+import { SearchOutline } from 'antd-mobile-icons'
 import { sleep } from 'uab-ui-mobile-utils'
 
 export default () => {
@@ -60,6 +61,14 @@ export default () => {
         </Button>
         <Button color='primary' shape='rectangular'>
           Rectangular Button
+        </Button>
+      </div>
+
+      <div>
+        <h3>自定义图标</h3>
+        <Button>
+          <SearchOutline />
+          <span>搜索</span>
         </Button>
       </div>
 

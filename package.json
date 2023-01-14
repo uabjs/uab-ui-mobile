@@ -10,9 +10,14 @@
     "publish": "npm publish ./dist",
     "prepublishOnly": "father doctor && npm run build"
   },
-  "keywords": [ "react", "react component", "mobile" ],
+  "keywords": [
+    "react",
+    "react component",
+    "mobile"
+  ],
   "license": "ISC",
   "devDependencies": {
+    "@ant-design/icons": "^5.0.0",
     "@babel/core": "^7.20.12",
     "@babel/preset-env": "^7.20.2",
     "@commitlint/cli": "^17.4.1",
@@ -38,6 +43,7 @@
     "typescript": "~4.9.4"
   },
   "dependencies": {
+    "antd-mobile-icons": "^0.3.0",
     "classnames": "^2.3.2",
     "lodash": "^4.17.21",
     "tslib": "^2.4.1"
