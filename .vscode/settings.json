@@ -1,16 +1,11 @@
 {
   "editor.formatOnSave": true,
-  "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "prettier.requireConfig": true,
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
   },
   "eslint.enable": true,
   "eslint.format.enable": true,
-  "typescript.tsdk": "node_modules/typescript/lib",
-  "[less]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[tsx]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  "typescript.tsdk": "node_modules/typescript/lib"
 }

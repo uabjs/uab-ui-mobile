@@ -6,8 +6,10 @@ module.exports = {
   },
   extends: [
     'eslint:recommended',
+    'plugin:react/recommended',
+    'plugin:@typescript-eslint/eslint-recommended',
     'plugin:@typescript-eslint/recommended',
-    'prettier',
+    'plugin:prettier/recommended',
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -17,6 +19,14 @@ module.exports = {
   plugins: ['@typescript-eslint'],
   rules: {
     'no-empty': ['error', { allowEmptyCatch: true }],
+    '@typescript-eslint/no-explicit-any': 'off',
+    'no-prototype-builtins': 'off',
+    'react/display-name': 'off',
+  },
+  settings: {
+    react: {
+      version: 'detect',
+    },
   },
   ignorePatterns: ['/*', '!/src', '/src/**/*.js'],
 }
