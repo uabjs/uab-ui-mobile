@@ -9,4 +9,14 @@ export const sidebar = {
       children: [{ title: '快速上手', link: '/guide/quick-start' }],
     },
   ],
+  '/components': [
+    {
+      title: '通用',
+      children: [{ title: 'Button 按钮', link: '/components/button' }],
+    },
+    {
+      title: '布局',
+      children: [{ title: 'AutoCenter 自动居中', link: '/components/auto-center' }],
+    },
+  ],
 }

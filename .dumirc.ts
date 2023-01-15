@@ -23,6 +23,7 @@ exports.default = defineConfig({
     codeBlockMode: 'passive',
   },
   alias: {
+    'uab-ui-mobile-demos': process.cwd() + '/src/demos/index.ts',
     'uab-ui-mobile-utils': process.cwd() + '/src/utils/index.ts',
   },
   favicons: ['https://avatars.githubusercontent.com/u/73016681?s=88&v=4'],
