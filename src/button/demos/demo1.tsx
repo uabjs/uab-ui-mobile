@@ -1,22 +1,21 @@
 import React from 'react'
 import { Button } from 'uab-ui-mobile'
 import { SearchOutline } from 'antd-mobile-icons'
+import { DemoBlock } from 'uab-ui-mobile-demos'
 import { sleep } from 'uab-ui-mobile-utils'
 
 export default () => {
   return (
     <>
-      <div>
-        <h3>按钮颜色</h3>
+      <DemoBlock title='按钮颜色'>
         <Button>Default</Button>
         <Button color='primary'>Primary</Button>
         <Button color='success'>Success</Button>
         <Button color='danger'>Danger</Button>
         <Button color='warning'>Warning</Button>
-      </div>
+      </DemoBlock>
 
-      <div>
-        <h3>填充模式</h3>
+      <DemoBlock title='填充模式'>
         <Button color='primary' fill='solid'>
           solid
         </Button>
@@ -26,10 +25,9 @@ export default () => {
         <Button color='primary' fill='none'>
           none
         </Button>
-      </div>
+      </DemoBlock>
 
-      <div>
-        <h3>按钮大小</h3>
+      <DemoBlock title='按钮大小'>
         <Button color='primary' size='mini'>
           Mini
         </Button>
@@ -42,17 +40,15 @@ export default () => {
         <Button color='primary' size='large'>
           Large
         </Button>
-      </div>
+      </DemoBlock>
 
-      <div>
-        <h3>块级按钮</h3>
+      <DemoBlock title='块级按钮'>
         <Button color='primary' block>
           Black Button
         </Button>
-      </div>
+      </DemoBlock>
 
-      <div>
-        <h3>按钮形状</h3>
+      <DemoBlock title='按钮形状'>
         <Button color='primary' shape='default'>
           Default Button
         </Button>
@@ -62,26 +58,23 @@ export default () => {
         <Button color='primary' shape='rectangular'>
           Rectangular Button
         </Button>
-      </div>
+      </DemoBlock>
 
-      <div>
-        <h3>自定义图标</h3>
+      <DemoBlock title='自定义图标'>
         <Button>
           <SearchOutline />
           <span>搜索</span>
         </Button>
-      </div>
+      </DemoBlock>
 
-      <div>
-        <h3>禁用状态</h3>
+      <DemoBlock title='禁用状态'>
         <Button disabled>Disabled</Button>
         <Button color='primary' disabled>
           Disabled
         </Button>
-      </div>
+      </DemoBlock>
 
-      <div>
-        <h3>加载状态</h3>
+      <DemoBlock title='加载状态'>
         <Button loading>Loading</Button>
         <Button loading color='primary' loadingText='loading'>
           Loading
@@ -95,7 +88,7 @@ export default () => {
         >
           Click Loading
         </Button>
-      </div>
+      </DemoBlock>
     </>
   )
 }

@@ -28,14 +28,14 @@ In addition, the following properties of the native `button` element are support
 
 ### CSS Variables
 
-| Name               | Description                     | Default                   | Global                          |
-| ------------------ | ------------------------------- | ------------------------- | ------------------------------- |
-| --background-color | Background color of the button. | `var(--adm-color-white)`  | `--adm-button-background-color` |
-| --border-color     | Border color of the button.     | `var(--adm-border-color)` | `--adm-button-border-color`     |
-| --border-radius    | Border radius of the button.    | `4px`                     | `--adm-button-border-radius`    |
-| --border-style     | Border style of the button.     | `solid`                   | `--adm-button-border-style`     |
-| --border-width     | Border width of the button.     | `1px`                     | `--adm-button-border-width`     |
-| --text-color       | Text color of the button.       | `var(--adm-color-text)`   | `--adm-button-text-color`       |
+| Name               | Description                     | Default                    | Global                           |
+| ------------------ | ------------------------------- | -------------------------- | -------------------------------- |
+| --background-color | Background color of the button. | `var(--uabm-color-white)`  | `--uabm-button-background-color` |
+| --border-color     | Border color of the button.     | `var(--uabm-border-color)` | `--uabm-button-border-color`     |
+| --border-radius    | Border radius of the button.    | `4px`                      | `--uabm-button-border-radius`    |
+| --border-style     | Border style of the button.     | `solid`                    | `--uabm-button-border-style`     |
+| --border-width     | Border width of the button.     | `1px`                      | `--uabm-button-border-width`     |
+| --text-color       | Text color of the button.       | `var(--uabm-color-text)`   | `--uabm-button-text-color`       |
 
 ### Ref
 

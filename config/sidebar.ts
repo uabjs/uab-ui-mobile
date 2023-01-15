@@ -16,7 +16,10 @@ export const sidebar = {
     },
     {
       title: '布局',
-      children: [{ title: 'AutoCenter 自动居中', link: '/components/auto-center' }],
+      children: [
+        { title: 'AutoCenter 自动居中', link: '/components/auto-center' },
+        { title: 'Divider 分割线', link: '/components/divider' },
+      ],
     },
   ],
 }
