@@ -19,6 +19,7 @@ export const sidebar = {
       children: [
         { title: 'AutoCenter 自动居中', link: '/components/auto-center' },
         { title: 'Divider 分割线', link: '/components/divider' },
+        { title: 'Grid 栅格', link: '/components/grid' },
       ],
     },
   ],
