@@ -27,6 +27,12 @@ exports.default = defineConfig({
     'uab-ui-mobile-utils': process.cwd() + '/src/utils/index.ts',
   },
   favicons: ['https://avatars.githubusercontent.com/u/73016681?s=88&v=4'],
-  metas: [],
+  metas: [
+    {
+      name: 'viewport',
+      content:
+        'width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover',
+    },
+  ],
   outputPath: 'website',
 })

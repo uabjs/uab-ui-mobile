@@ -10,4 +10,7 @@ export { default as Divider } from './divider'
 export type { DividerProps } from './divider'
 
 export { default as Grid } from './grid'
-export type { DividerProps } from './divider'
+export type { GridProps, GridItemProps } from './grid'
+
+export { default as SafeArea } from './safe-area'
+export type { SafeAreaProps } from './safe-area'
