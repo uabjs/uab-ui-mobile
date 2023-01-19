@@ -21,6 +21,7 @@ export const sidebar = {
         { title: 'Divider 分割线', link: '/components/divider' },
         { title: 'Grid 栅格', link: '/components/grid' },
         { title: 'SafeArea 安全区', link: '/components/safe-area' },
+        { title: 'Space 间距', link: '/components/space' },
       ],
     },
   ],

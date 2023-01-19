@@ -14,3 +14,6 @@ export type { GridProps, GridItemProps } from './grid'
 
 export { default as SafeArea } from './safe-area'
 export type { SafeAreaProps } from './safe-area'
+
+export { default as Space } from './space'
+export type { SpaceProps } from './space'
