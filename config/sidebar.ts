@@ -24,5 +24,9 @@ export const sidebar = {
         { title: 'Space 间距', link: '/components/space' },
       ],
     },
+    {
+      title: '导航',
+      children: [{ title: 'CapsuleTabs 胶囊选项卡', link: 'components/capsule-tabs' }],
+    },
   ],
 }
