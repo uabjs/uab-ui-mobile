@@ -1,0 +1,39 @@
+@class-prefix-capsule-tabs: ~'uabm-capsule-tabs';
+
+.@{class-prefix-capsule-tabs} {
+  position: relative;
+  // 当父元素是灵活布局时，自动滚动的失败
+  max-width: 0;
+
+  &-header {
+    position: relative;
+    padding: 12px 6px;
+    border-bottom: solid 1px var(--uabm-color-border);
+  }
+
+  &-tab-list {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+    overflow-x: scroll;
+    scrollbar-width: none;
+  }
+
+  &-tab-wrapper {
+    flex: auto;
+    padding: 0 6px;
+  }
+  &-tab {
+    position: relative;
+    padding: 8px 20px;
+    margin: 0 auto;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: var(--uabm-font-size-7);
+    text-align: center;
+    white-space: center;
+    background-color: var(--uabm-color-box);
+  }
+}
