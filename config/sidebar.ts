@@ -6,7 +6,7 @@ export const sidebar = {
   ],
   '/en/guide': [
     {
-      children: [{ title: '快速上手', link: '/guide/quick-start' }],
+      children: [{ title: 'Quick Start', link: '/en/guide/quick-start' }],
     },
   ],
   '/components': [

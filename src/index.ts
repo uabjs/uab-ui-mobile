@@ -17,3 +17,6 @@ export type { SafeAreaProps } from './safe-area'
 
 export { default as Space } from './space'
 export type { SpaceProps } from './space'
+
+export { default as CapsuleTabs } from './capsule-tabs'
+export type { CapsuleTabsProps, CapsuleTabProps } from './capsule-tabs'
