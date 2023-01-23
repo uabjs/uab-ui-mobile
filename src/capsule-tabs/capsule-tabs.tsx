@@ -58,13 +58,14 @@ export const CapsuleTabs: React.FC<CapsuleTabsProps> = props => {
     },
   })
 
-  // const { scrollLeft, animate } = useTabListScroll(tabListContainerRef, keyToIndexRecord[activeKey as string])
+  // 点击切换tab时触发自动居中滚动
+  const { scrollLeft, animate } = useTabListScroll(tabListContainerRef, keyToIndexRecord[activeKey as string])
 
   return withNativeProps(
     props,
     <div className={classPrefix} ref={rootRef}>
       <div className={`${classPrefix}-header`}>
-        <animated.div className={`${classPrefix}-tab-list`} ref={tabListContainerRef}>
+        <animated.div className={`${classPrefix}-tab-list`} ref={tabListContainerRef} scrollLeft={scrollLeft}>
           {panes.map(pane =>
             withNativeProps(
               pane.props,

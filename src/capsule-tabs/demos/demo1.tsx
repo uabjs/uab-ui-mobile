@@ -6,7 +6,11 @@ export default () => {
   return (
     <>
       <DemoBlock title='基础用法' padding='0'>
-        <CapsuleTabs>
+        <CapsuleTabs
+          onChange={value => {
+            console.log(value)
+          }}
+        >
           <CapsuleTabs.Tab title='水果' key='fruits'>
             菠萝
           </CapsuleTabs.Tab>
@@ -20,7 +24,7 @@ export default () => {
       </DemoBlock>
 
       <DemoBlock title='超长自动滑动' padding='0'>
-        <CapsuleTabs defaultActiveKey='1'>
+        <CapsuleTabs defaultActiveKey='3'>
           <CapsuleTabs.Tab title='Espresso' key='1'>
             1
           </CapsuleTabs.Tab>
