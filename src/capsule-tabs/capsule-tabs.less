@@ -2,8 +2,8 @@
 
 .@{class-prefix-capsule-tabs} {
   position: relative;
-  // 当父元素是灵活布局时，自动滚动的失败
-  max-width: 0;
+  // 当父元素是 flex 布局时，自动滚动失败漏洞
+  min-width: 0;
 
   &-header {
     position: relative;
@@ -18,6 +18,10 @@
     justify-content: flex-start;
     position: relative;
     overflow-x: scroll;
+    // 滚动条不显示
+    &::-webkit-scrollbar {
+      display: none;
+    }
     scrollbar-width: none;
   }
 
@@ -33,7 +37,15 @@
     cursor: pointer;
     font-size: var(--uabm-font-size-7);
     text-align: center;
-    white-space: center;
+    white-space: nowrap;
     background-color: var(--uabm-color-box);
+  }
+  &-tab-active {
+    color: var(--uabm-color-white);
+    background-color: var(--uabm-color-primary);
+  }
+  &-tab-disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
   }
 }

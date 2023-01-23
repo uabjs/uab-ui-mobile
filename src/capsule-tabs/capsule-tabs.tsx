@@ -58,7 +58,7 @@ export const CapsuleTabs: React.FC<CapsuleTabsProps> = props => {
     },
   })
 
-  const { scrollLeft, animate } = useTabListScroll(tabListContainerRef, keyToIndexRecord[activeKey as string])
+  // const { scrollLeft, animate } = useTabListScroll(tabListContainerRef, keyToIndexRecord[activeKey as string])
 
   return withNativeProps(
     props,
@@ -92,6 +92,17 @@ export const CapsuleTabs: React.FC<CapsuleTabsProps> = props => {
           )}
         </animated.div>
       </div>
+      {panes.map(pane => {
+        if (pane.props.children === undefined) {
+          return null
+        }
+        const active = pane.key === activeKey
+        return (
+          <div key={pane.key} className={`${classPrefix}-content`} style={{ display: active ? 'block' : 'none' }}>
+            {pane.props.children}
+          </div>
+        )
+      })}
     </div>
   )
 }
