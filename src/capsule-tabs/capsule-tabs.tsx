@@ -1,6 +1,7 @@
 import React, { useRef } from 'react'
 import classNames from 'classnames'
 import { animated } from '@react-spring/web'
+import ScrollMask from '../scroll-mask'
 import { NativeProps, withNativeProps } from '../utils/native-props'
 import { traverseReactNode } from '../utils/traverse-react-node'
 import { usePropsValue } from '../utils/use-props-value'
@@ -74,6 +75,7 @@ export const CapsuleTabs: React.FC<CapsuleTabsProps> = props => {
     props,
     <div className={classPrefix} ref={rootRef}>
       <div className={`${classPrefix}-header`}>
+        <ScrollMask scrollTrackRef={tabListContainerRef} />
         <animated.div
           className={`${classPrefix}-tab-list`}
           ref={tabListContainerRef}

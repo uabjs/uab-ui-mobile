@@ -20,3 +20,6 @@ export type { SpaceProps } from './space'
 
 export { default as CapsuleTabs } from './capsule-tabs'
 export type { CapsuleTabsProps, CapsuleTabProps } from './capsule-tabs'
+
+export { default as ScrollMask } from './scroll-mask'
+export type { ScrollMaskProps } from './scroll-mask'
