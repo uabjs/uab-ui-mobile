@@ -5,6 +5,7 @@ import { NativeProps, withNativeProps } from '../utils/native-props'
 import { traverseReactNode } from '../utils/traverse-react-node'
 import { usePropsValue } from '../utils/use-props-value'
 import { useTabListScroll } from '../utils/use-tab-list-scroll'
+import { useResizeEffect } from '../utils/use-resize-effect'
 
 const classPrefix = `uabm-capsule-tabs`
 
@@ -59,13 +60,25 @@ export const CapsuleTabs: React.FC<CapsuleTabsProps> = props => {
   })
 
   // 点击切换tab时触发自动居中滚动
-  const { scrollLeft, animate } = useTabListScroll(tabListContainerRef, keyToIndexRecord[activeKey as string])
+  const { scrollLeft, animate } = useTabListScroll(
+    tabListContainerRef,
+    keyToIndexRecord[activeKey as string]
+  )
+
+  // rootRef尺寸改变触发重新居中定位活动tab
+  useResizeEffect(() => {
+    animate(true)
+  }, rootRef)
 
   return withNativeProps(
     props,
     <div className={classPrefix} ref={rootRef}>
       <div className={`${classPrefix}-header`}>
-        <animated.div className={`${classPrefix}-tab-list`} ref={tabListContainerRef} scrollLeft={scrollLeft}>
+        <animated.div
+          className={`${classPrefix}-tab-list`}
+          ref={tabListContainerRef}
+          scrollLeft={scrollLeft}
+        >
           {panes.map(pane =>
             withNativeProps(
               pane.props,
@@ -99,7 +112,11 @@ export const CapsuleTabs: React.FC<CapsuleTabsProps> = props => {
         }
         const active = pane.key === activeKey
         return (
-          <div key={pane.key} className={`${classPrefix}-content`} style={{ display: active ? 'block' : 'none' }}>
+          <div
+            key={pane.key}
+            className={`${classPrefix}-content`}
+            style={{ display: active ? 'block' : 'none' }}
+          >
             {pane.props.children}
           </div>
         )
