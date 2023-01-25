@@ -1,4 +1,4 @@
-import { useRef, SetStateAction } from 'React'
+import { useRef, SetStateAction } from 'react'
 import { useUpdate, useMemoizedFn } from 'ahooks'
 
 type Options<T> = {
