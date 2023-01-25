@@ -7,6 +7,7 @@ import { traverseReactNode } from '../utils/traverse-react-node'
 import { usePropsValue } from '../utils/use-props-value'
 import { useTabListScroll } from '../utils/use-tab-list-scroll'
 import { useResizeEffect } from '../utils/use-resize-effect'
+import { ShouldRender } from '../utils/should-render'
 
 const classPrefix = `uabm-capsule-tabs`
 
@@ -114,13 +115,19 @@ export const CapsuleTabs: React.FC<CapsuleTabsProps> = props => {
         }
         const active = pane.key === activeKey
         return (
-          <div
+          <ShouldRender
             key={pane.key}
-            className={`${classPrefix}-content`}
-            style={{ display: active ? 'block' : 'none' }}
+            active={active}
+            destroyOnClose={pane.props.destroyOnClose} // 被隐藏时是否渲染 DOM 结构
+            forceRender={pane.props.forceRender} // 不可见时卸载内容
           >
-            {pane.props.children}
-          </div>
+            <div
+              className={`${classPrefix}-content`}
+              style={{ display: active ? 'block' : 'none' }}
+            >
+              {pane.props.children}
+            </div>
+          </ShouldRender>
         )
       })}
     </div>
