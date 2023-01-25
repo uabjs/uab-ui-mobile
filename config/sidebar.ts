@@ -28,5 +28,9 @@ export const sidebar = {
       title: '导航',
       children: [{ title: 'CapsuleTabs 胶囊选项卡', link: 'components/capsule-tabs' }],
     },
+    {
+      title: '试验性',
+      children: [{ title: 'ScrollMask 滚动两侧遮罩', link: '/components/scroll-mask' }],
+    },
   ],
 }
