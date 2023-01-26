@@ -10,6 +10,8 @@ Carry text, lists, pictures, paragraphs, etc. cleanly and efficiently in the for
 
 <code src="./demos/demo1.tsx"></code>
 
+<code src="./demos/demo2.tsx"></code>
+
 ## List
 
 ### Props
