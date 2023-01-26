@@ -29,6 +29,10 @@ export const sidebar = {
       children: [{ title: 'CapsuleTabs 胶囊选项卡', link: 'components/capsule-tabs' }],
     },
     {
+      title: '信息展示',
+      children: [{ title: 'List 列表', link: '/components/list' }],
+    },
+    {
       title: '试验性',
       children: [{ title: 'ScrollMask 滚动两侧遮罩', link: '/components/scroll-mask' }],
     },

@@ -7,10 +7,7 @@ export type NativeProps<S extends string = never> = {
   tabIndex?: number
 } & AriaAttributes
 
-export function withNativeProps<P extends NativeProps>(
-  props: P,
-  element: ReactElement
-) {
+export function withNativeProps<P extends NativeProps>(props: P, element: ReactElement) {
   const _props = {
     ...element.props,
   }

@@ -23,3 +23,6 @@ export type { CapsuleTabsProps, CapsuleTabProps } from './capsule-tabs'
 
 export { default as ScrollMask } from './scroll-mask'
 export type { ScrollMaskProps } from './scroll-mask'
+
+export { default as List } from './list'
+export type { ListProps, ListItemProps, ListRef } from './list'

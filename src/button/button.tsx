@@ -6,7 +6,10 @@ import { NativeProps, withNativeProps } from '../utils/native-props'
 
 const classPrefix = `uabm-button`
 
-type NativeButtonProps = React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>
+type NativeButtonProps = React.DetailedHTMLProps<
+  React.ButtonHTMLAttributes<HTMLButtonElement>,
+  HTMLButtonElement
+>
 
 export type ButtonProps = {
   block?: boolean
@@ -20,10 +23,17 @@ export type ButtonProps = {
   loadingIcon?: React.ReactNode
   disabled?: boolean
   children?: React.ReactNode
-  onClick?: (event: React.MouseEvent<HTMLButtonElement | MouseEvent>) => void | Promise<void> | unknown
+  onClick?: (
+    event: React.MouseEvent<HTMLButtonElement | MouseEvent>
+  ) => void | Promise<void> | unknown
 } & Pick<NativeButtonProps, 'onMouseDown' | 'onMouseUp' | 'onTouchStart' | 'onTouchEnd'> &
   NativeProps<
-    '--text-color' | '--background-color' | '--border-radius' | '--border-width' | '--border-style' | '--border-color'
+    | '--text-color'
+    | '--background-color'
+    | '--border-radius'
+    | '--border-width'
+    | '--border-style'
+    | '--border-color'
   >
 
 export type ButtonRef = {
