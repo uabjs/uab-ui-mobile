@@ -17,7 +17,6 @@ const groups = Array(26)
   }))
 
 export default () => {
-  console.log('groups===', groups)
   return (
     <div style={{ height: window.innerHeight }}>
       <IndexBar>
