@@ -1,0 +1,71 @@
+@class-prefix-index-bar: ~'uabm-index-bar';
+
+.@{class-prefix-index-bar} {
+  --color: var(--uabm-color-text);
+  --sticky-offset-top: 0;
+
+  position: relative;
+  height: 100%;
+  background-color: var(--uabm-color-white);
+  overflow: hidden;
+
+  &-sidebar {
+    width: 100%;
+
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    z-index: 910;
+    color: var(--uabm-color-weak);
+    font-size: var(--uabm-font-size-4);
+    user-select: none;
+    touch-action: none;
+
+    &-row {
+      cursor: pointer;
+      width: auto;
+      text-align: right;
+      position: relative;
+      padding: 0 12px;
+      > * {
+        pointer-events: none;
+      }
+    }
+
+    &-bubble {
+      position: absolute;
+      top: 50%;
+      right: 60px;
+      transform: translateY(-50%);
+      width: 47px;
+      height: 47px;
+      line-height: 47px;
+      border-radius: 50%;
+      background: var(--uabm-color-light);
+      color: var(--uabm-color-white);
+      font-size: 25px;
+      text-align: center;
+    }
+
+    &-item {
+      display: inline-block;
+      align-items: center;
+      justify-content: center;
+      width: 16px;
+      height: 16px;
+      line-height: 16px;
+      text-align: center;
+    }
+
+    &-item-active {
+      color: var(--uabm-color-white);
+      background-color: var(--uabm-color-primary);
+      border-radius: 50%;
+    }
+
+    &-interacting {
+      width: 100%;
+    }
+  }
+}

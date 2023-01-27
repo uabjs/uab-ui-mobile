@@ -26,3 +26,6 @@ export type { ScrollMaskProps } from './scroll-mask'
 
 export { default as List } from './list'
 export type { ListProps, ListItemProps, ListRef } from './list'
+
+export { default as IndexBar } from './index-bar'
+export type { IndexBarProps, IndexBarPanelProps, IndexBarRef } from './index-bar'

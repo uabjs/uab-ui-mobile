@@ -26,7 +26,10 @@ export const sidebar = {
     },
     {
       title: '导航',
-      children: [{ title: 'CapsuleTabs 胶囊选项卡', link: 'components/capsule-tabs' }],
+      children: [
+        { title: 'CapsuleTabs 胶囊选项卡', link: 'components/capsule-tabs' },
+        { title: 'IndexBar 序列', link: 'components/index-bar' },
+      ],
     },
     {
       title: '信息展示',

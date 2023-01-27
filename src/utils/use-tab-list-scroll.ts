@@ -30,7 +30,7 @@ export const useTabListScroll = (
     const activeTab = activeTabWrapper.children.item(0) as HTMLDivElement
     const activeTabLeft = activeTab.offsetLeft
     const activeTabWidth = activeTab.offsetWidth
-    // 旧容器
+    // 滚动的容器
     const containerWidth = container.offsetWidth
     const containerScrollWidth = container.scrollWidth
     const containerScrollLeft = container.scrollLeft
@@ -64,7 +64,6 @@ export const useTabListScroll = (
 
   // 作用：监听点击tab改变时滚动居中该tab
   useIsomorphicUpdateLayoutEffect(() => {
-    console.log('111111====')
     animate()
   }, [activeIndex])
 
