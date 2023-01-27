@@ -1,0 +1,29 @@
+@class-prefix-iocn: ~'uabm-icon-doc';
+
+.@{class-prefix-iocn} {
+  padding: 4px;
+
+  &-item {
+    text-align: center;
+    padding: 12px 12px;
+    border-radius: 4px;
+    transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    &:hover {
+      background-color: fade(#1a74f2, 80%);
+      color: #fff;
+      cursor: pointer;
+    }
+  }
+
+  &-icon {
+    font-size: 32px;
+    transition: transform 0.3s ease-in-out;
+    will-change: transform;
+  }
+
+  &-label {
+    font-size: 12px;
+    word-wrap: break-word;
+    padding-top: 6px;
+  }
+}

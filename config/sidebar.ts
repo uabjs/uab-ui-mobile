@@ -12,7 +12,10 @@ export const sidebar = {
   '/components': [
     {
       title: '通用',
-      children: [{ title: 'Button 按钮', link: '/components/button' }],
+      children: [
+        { title: 'Button 按钮', link: '/components/button' },
+        { title: 'icon 按钮', link: '/components/icon' },
+      ],
     },
     {
       title: '布局',
