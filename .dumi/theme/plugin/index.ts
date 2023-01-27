@@ -20,4 +20,19 @@ export default (api: IApi) => {
     key: 'set-data-prefers-color-scheme',
   })
   api.addHTMLHeadScripts(async () => [{ content: COLOR_HEAD_SCP }])
+  // TUDO：layouts DemoLayout
+  api.addHTMLStyles(() => [
+    {
+      content: `
+    [data-prefers-color=dark] body {
+      color: #e6e6e6;
+      background-color: #141414;
+    }
+    #root > .dumi-mobile-demo-layout {
+      padding: 0;
+      min-height: 100vh;
+      box-sizing: border-box;
+    }`,
+    },
+  ])
 }
