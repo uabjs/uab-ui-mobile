@@ -26,7 +26,7 @@ export default (api: IApi) => {
       content: `
     [data-prefers-color=dark] body {
       color: #e6e6e6;
-      background-color: #141414;
+      background-color: #0b0e13;
     }
     #root > .dumi-mobile-demo-layout {
       padding: 0;

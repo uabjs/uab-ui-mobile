@@ -21,7 +21,7 @@ export type IndexBarRef = {
 }
 
 const defaultProps = {
-  sticky: false,
+  sticky: true,
 }
 
 export const IndexBar = forwardRef<IndexBarRef, IndexBarProps>((p, ref) => {
