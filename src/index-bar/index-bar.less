@@ -9,6 +9,29 @@
   background-color: var(--uabm-color-white);
   overflow: hidden;
 
+  &-sticky {
+    .@{class-prefix-index-bar}-anchor-title {
+      position: sticky;
+      top: var(--sticky-offset-top);
+      left: 0;
+      z-index: 900;
+    }
+  }
+
+  &-anchor {
+    &-title {
+      display: flex;
+      // 垂直居中排列
+      flex-direction: column;
+      justify-content: center;
+      height: 35px;
+      padding: 0 12px;
+      color: var(--uabm-color-weak);
+      font-size: var(--uabm-font-size-main);
+      background-color: var(--uabm-color-box);
+    }
+  }
+
   &-body {
     width: 100%;
     height: 100%;
