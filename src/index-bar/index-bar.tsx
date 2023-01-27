@@ -1,5 +1,5 @@
 import classNames from 'classnames'
-import React, { forwardRef, ReactElement, ReactNode, useState } from 'react'
+import React, { forwardRef, ReactElement, ReactNode, useRef, useState } from 'react'
 import { NativeProps, withNativeProps } from '../utils/native-props'
 import { traverseReactNode } from '../utils/traverse-react-node'
 import { mergeProps } from '../utils/with-default-props'
@@ -25,6 +25,7 @@ const defaultProps = {
 export const IndexBar = forwardRef<IndexBarRef, IndexBarProps>((p, ref) => {
   const props = mergeProps(defaultProps, p)
   // const titleHeight = convertPx(35)
+  const bodyRef = useRef<HTMLDivElement>(null)
 
   const indexItems: {
     index: string
@@ -73,11 +74,29 @@ export const IndexBar = forwardRef<IndexBarRef, IndexBarProps>((p, ref) => {
     return firstItem ? firstItem.index : null
   })
 
+  /** 点击侧边栏字母，遍历右侧列表获取该字母对应的标题 offsetTop 距离，赋值给滚动条 scrollTop */
   const scrollTo = (index: string) => {
-    console.log('scrollTo=> ', index)
-  }
+    const body = bodyRef.current
+    if (!body) {
+      return
+    }
 
-  console.log('indexItems====', activeIndex, indexItems)
+    const children = body.children
+    for (let i = 0; i < children.length; i++) {
+      const panel = children.item(i) as HTMLElement
+      if (!panel) {
+        continue
+      }
+      // 获取标题 data-index 属性
+      const panelIndex = panel.dataset['index']
+      if (panelIndex === index) {
+        body.scrollTop = panel.offsetTop
+        setActiveIndex(index)
+        activeIndex !== index && props.onIndexChange?.(index)
+        return
+      }
+    }
+  }
 
   return withNativeProps(
     props,
@@ -95,6 +114,11 @@ export const IndexBar = forwardRef<IndexBarRef, IndexBarProps>((p, ref) => {
           scrollTo(index)
         }}
       />
+
+      {/* 列表 */}
+      <div className={`${classPrefix}-body`} ref={bodyRef}>
+        {panels}
+      </div>
     </div>
   )
 })

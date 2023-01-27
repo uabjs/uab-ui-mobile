@@ -9,9 +9,17 @@
   background-color: var(--uabm-color-white);
   overflow: hidden;
 
-  &-sidebar {
+  &-body {
     width: 100%;
+    height: 100%;
+    overflow: scroll;
+    // 不显示滚动条
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
 
+  &-sidebar {
     position: absolute;
     top: 50%;
     right: 0;
@@ -64,6 +72,7 @@
       border-radius: 50%;
     }
 
+    // 字母滑动蒙版覆盖列表，增大可滑动范围
     &-interacting {
       width: 100%;
     }

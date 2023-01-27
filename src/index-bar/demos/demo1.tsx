@@ -13,10 +13,11 @@ const groups = Array(26)
   .map((_, i) => ({
     title: String.fromCharCode(charCodeOfA + i), // A B C D ...
     // 生成长度为 3 ~ 10 的字符串段落数组
-    items: getRandomList(3, 10).map(() => lorem.generateParagraphs(2)),
+    items: getRandomList(3, 10).map(() => lorem.generateWords(2)),
   }))
 
 export default () => {
+  console.log('groups===', groups)
   return (
     <div style={{ height: window.innerHeight }}>
       <IndexBar>
