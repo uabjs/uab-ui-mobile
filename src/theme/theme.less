@@ -28,3 +28,14 @@ a {
     opacity: unset;
   }
 }
+
+div.uabm-px-tester {
+  --size: 1;
+  height: calc(var(--size) / 2 * 2px);
+  width: 0;
+  position: fixed;
+  right: -100vw;
+  bottom: -100vh;
+  user-select: none;
+  pointer-events: none;
+}
