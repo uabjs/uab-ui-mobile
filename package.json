@@ -31,7 +31,7 @@
     "@typescript-eslint/parser": "^5.48.1",
     "@umijs/types": "^3.5.36",
     "del": "^6.1.1",
-    "dumi": "^2.1.4",
+    "dumi": "^2.1.5",
     "dumi-theme-mobile": "^2.0.2",
     "eslint": "^8.31.0",
     "eslint-config-prettier": "^8.6.0",

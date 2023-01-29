@@ -18,7 +18,7 @@ specifiers:
   antd-mobile-icons: ^0.3.0
   classnames: ^2.3.2
   del: ^6.1.1
-  dumi: ^2.1.4
+  dumi: ^2.1.5
   dumi-theme-mobile: ^2.0.2
   eslint: ^8.31.0
   eslint-config-prettier: ^8.6.0
@@ -62,8 +62,8 @@ devDependencies:
   '@typescript-eslint/parser': 5.48.1_iukboom6ndih5an6iafl45j2fe
   '@umijs/types': 3.5.36_react@18.2.0
   del: 6.1.1
-  dumi: 2.1.4_vauaypyoptvkh2c7mwh4kjvozm
-  dumi-theme-mobile: 2.0.2_dumi@2.1.4+react@18.2.0
+  dumi: 2.1.5_vauaypyoptvkh2c7mwh4kjvozm
+  dumi-theme-mobile: 2.0.2_dumi@2.1.5+react@18.2.0
   eslint: 8.31.0
   eslint-config-prettier: 8.6.0_eslint@8.31.0
   eslint-plugin-prettier: 4.2.1_iu5s7nk6dw7o3tajefwfiqfmge
@@ -5833,21 +5833,21 @@ packages:
     resolution: {integrity: sha512-a/Y5lf0G6gwsEQ9hop/n03CcjmHsGBk384Cz/AEX6mRYrfSpUx/lQvP9HLoXkCzScl9PL1sSmLPnMkgaXDCZLA==}
     dev: true
 
-  /dumi-theme-mobile/2.0.2_dumi@2.1.4+react@18.2.0:
+  /dumi-theme-mobile/2.0.2_dumi@2.1.5+react@18.2.0:
     resolution: {integrity: sha512-XaRRQHepoBtdCKxGvgRKu4LM7prZbI5b780zQBezTl0Hf6OI/K8WLAmm5kjxH7vYsSYSKGKBGHTO2YfU9NJx5A==}
     peerDependencies:
       dumi: ^2.0.0
       react: '>=16.8'
       react-dom: '>=16.8'
     dependencies:
-      dumi: 2.1.4_vauaypyoptvkh2c7mwh4kjvozm
+      dumi: 2.1.5_vauaypyoptvkh2c7mwh4kjvozm
       f2-touchemulator: 0.0.1
       react: 18.2.0
       umi-hd: 5.0.1
     dev: true
 
-  /dumi/2.1.4_vauaypyoptvkh2c7mwh4kjvozm:
-    resolution: {integrity: sha512-SJMfixD/3tcjpG/51pDsg/tZva+DUCo8EAHGi6kad+m1L65pmVyyp/tgGhTX2tA7f3crmQ2cwRVNrOrRNqHI2w==}
+  /dumi/2.1.5_vauaypyoptvkh2c7mwh4kjvozm:
+    resolution: {integrity: sha512-y513nYZqUONlLez+LU5ikU6YzFYf8wxyqxbs764vCP4Q75ioLk8M8okt6FN7EX8sxbJihnyuRkLtXqMx1hjK3Q==}
     hasBin: true
     peerDependencies:
       react: '>=16.8'
