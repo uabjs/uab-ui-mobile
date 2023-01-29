@@ -30,7 +30,7 @@ export default (api: IApi) => {
     }
     #root > .dumi-mobile-demo-layout {
       padding: 0;
-      min-height: 100vh;
+      min-height: auto;
       box-sizing: border-box;
     }`,
     },
