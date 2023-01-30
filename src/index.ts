@@ -29,3 +29,6 @@ export type { ListProps, ListItemProps, ListRef } from './list'
 
 export { default as IndexBar } from './index-bar'
 export type { IndexBarProps, IndexBarPanelProps, IndexBarRef } from './index-bar'
+
+export { default as NavBar } from './nav-bar'
+export type { NavBarProps } from './nav-bar'
