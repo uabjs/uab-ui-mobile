@@ -4,7 +4,7 @@ import { sidebar } from './config/sidebar'
 
 exports.default = defineConfig({
   themeConfig: {
-    name: 'uab ui Mobile',
+    name: 'Uab Ui Mobile',
     logo: 'https://avatars.githubusercontent.com/u/73016681?s=200&v=4',
     nav: nav,
     sidebar: sidebar,
