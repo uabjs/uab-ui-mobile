@@ -24,9 +24,12 @@ export default (api: IApi) => {
   api.addHTMLStyles(() => [
     {
       content: `
+    body {
+      background: #fafbfc;
+    }
     [data-prefers-color=dark] body {
       color: #e6e6e6;
-      background-color: #0b0e13;
+      background-color: #1a1e25;
     }
     #root > .dumi-mobile-demo-layout {
       padding: 0;
