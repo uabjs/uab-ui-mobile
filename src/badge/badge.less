@@ -1,0 +1,41 @@
+@class-prefix-badge: ~'uabm-badge';
+
+.@{class-prefix-badge}-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.@{class-prefix-badge} {
+  --color: var(--uabm-badge-color, #ff411c);
+  --right: 0px;
+  --top: 0px;
+
+  display: inline-flex;
+  vertical-align: middle;
+  box-sizing: content-box;
+  background-color: var(--color);
+  color: #fff;
+  border-radius: 100px;
+
+  &-content {
+    padding: 1px 4px;
+    // position: absolute;
+  }
+
+  &-fixed {
+    position: absolute;
+    top: var(--top);
+    right: var(--right);
+    transform: translate(50%, -50%);
+  }
+
+  &-bordered {
+    border: 1px solid var(--uabm-color-white);
+  }
+
+  &-dot {
+    min-width: 10px;
+    width: 10px;
+    height: 10px;
+  }
+}
