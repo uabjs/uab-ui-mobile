@@ -40,6 +40,10 @@ export const sidebar = {
       children: [{ title: 'List 列表', link: '/components/list' }],
     },
     {
+      title: '引导提示',
+      children: [{ title: 'Badge 徽标', link: '/components/badge' }],
+    },
+    {
       title: '试验性',
       children: [{ title: 'ScrollMask 滚动两侧遮罩', link: '/components/scroll-mask' }],
     },

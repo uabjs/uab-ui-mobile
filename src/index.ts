@@ -32,3 +32,6 @@ export type { IndexBarProps, IndexBarPanelProps, IndexBarRef } from './index-bar
 
 export { default as NavBar } from './nav-bar'
 export type { NavBarProps } from './nav-bar'
+
+export { default as Badge } from './badge'
+export type { BadgeProps } from './badge'
