@@ -1,25 +1,31 @@
 @class-prefix-badge: ~'uabm-badge';
 
 .@{class-prefix-badge}-wrapper {
-  position: relative;
   display: inline-block;
+  position: relative;
 }
 
 .@{class-prefix-badge} {
+  --right: 0;
+  --top: 0;
   --color: var(--uabm-badge-color, #ff411c);
-  --right: 0px;
-  --top: 0px;
 
   display: inline-flex;
   vertical-align: middle;
   box-sizing: content-box;
   background-color: var(--color);
-  color: #fff;
   border-radius: 100px;
 
   &-content {
+    color: var(--uabm-color-white);
+    box-sizing: border-box;
+    min-width: 8px;
     padding: 1px 4px;
-    // position: absolute;
+    line-height: 12px;
+    font-size: var(--uabm-font-size-1);
+    white-space: nowrap;
+    font-weight: normal;
+    text-align: center;
   }
 
   &-fixed {
@@ -37,5 +43,6 @@
     min-width: 10px;
     width: 10px;
     height: 10px;
+    border-radius: 5px;
   }
 }
