@@ -35,3 +35,6 @@ export type { NavBarProps } from './nav-bar'
 
 export { default as Badge } from './badge'
 export type { BadgeProps } from './badge'
+
+export { default as SideBar } from './side-bar'
+export type { SideBarProps, SideBarItemProps } from './side-bar'
