@@ -1,0 +1,24 @@
+.container {
+  display: flex;
+  height: 100vh;
+  background-color: #fff;
+  [data-prefers-color='dark'] & {
+    background-color: unset;
+  }
+  .side {
+    flex: none;
+  }
+  .main {
+    flex: auto;
+    .content {
+      height: 100%;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+    }
+    .active {
+      display: flex;
+    }
+  }
+}

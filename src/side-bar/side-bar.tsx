@@ -21,7 +21,7 @@ export type SideBarProps = {
   defaultActiveKey?: string | null
   onChange?: (key: string) => void
   children?: ReactNode
-} & NativeProps<'--width' | '--height' | '--item-border-redius' | '--backgrund-color'>
+} & NativeProps<'--width' | '--height' | '--item-border-radius' | '--backgrund-color'>
 
 export const SideBar: FC<SideBarProps> = props => {
   let firstActiveKey: string | null = null

@@ -1,3 +1,5 @@
+import './demo2.less'
+
 import React from 'react'
 import { SideBar } from 'uab-ui-mobile'
 import { DemoBlock } from 'uab-ui-mobile-demos'
@@ -26,6 +28,22 @@ export default () => {
               </div>
             }
           />
+        </SideBar>
+      </DemoBlock>
+
+      <DemoBlock title='自定义列宽' padding='0'>
+        <SideBar style={{ '--width': '120px' }}>
+          {tabs.map(item => (
+            <SideBar.Item key={item.key} title={item.title} />
+          ))}
+        </SideBar>
+      </DemoBlock>
+
+      <DemoBlock title='自定义选中项圆角' padding='0'>
+        <SideBar style={{ '--item-border-radius': '30px' }}>
+          {tabs.map(item => (
+            <SideBar.Item key={item.key} title={item.title} />
+          ))}
         </SideBar>
       </DemoBlock>
     </>
