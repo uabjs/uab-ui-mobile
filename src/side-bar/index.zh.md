@@ -12,6 +12,10 @@
 
 <code src="./demos/demo2.tsx"></code>
 
+<code src="./demos/demo3.tsx"></code>
+
+<code src="./demos/demo4.tsx"></code>
+
 ## SideBar
 
 ### 属性
@@ -29,7 +33,7 @@
 | --background-color   | 背景颜色             | `#f5f5f5` |
 | --height             | 侧边导航高度         | `100%`    |
 | --item-border-radius | 当前激活`item`的圆角 | `8px`     |
-| --width              | 侧边导航宽度         | `96px`    |
+| --width              | 侧边导航宽度         | `105px`   |
 
 ## SideBar.Item
 

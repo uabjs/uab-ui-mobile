@@ -12,6 +12,10 @@ Users are required to quickly navigate to a collection of content and switch bac
 
 <code src="./demos/demo2.tsx"></code>
 
+<code src="./demos/demo3.tsx"></code>
+
+<code src="./demos/demo4.tsx"></code>
+
 ## SideBar
 
 ### Props
@@ -29,7 +33,7 @@ Users are required to quickly navigate to a collection of content and switch bac
 | --background-color   | Color of background                              | `#f5f5f5` |
 | --height             | the height of the SideBar                        | `100%`    |
 | --item-border-radius | the border-radius of the currently active `item` | `8px`     |
-| --width              | the width of the SideBar                         | `96px`    |
+| --width              | the width of the SideBar                         | `105px`   |
 
 ### SideBar.Item
 
