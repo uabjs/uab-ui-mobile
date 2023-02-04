@@ -51,7 +51,7 @@ import { Button } from 'uab-ui-mobile'
 
 - [x] CapsuleTabs 胶囊选项卡
 - [x] IndexBar 序列
-- [ ] JumboTabs 复杂选项卡
+- [x] JumboTabs 复杂选项卡
 - [x] NavBar 导航栏
 - [x] SideBar 侧边导航
 - [ ] TabBar 标签栏
