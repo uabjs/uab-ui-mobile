@@ -53,7 +53,7 @@ import { Button } from 'uab-ui-mobile'
 - [x] IndexBar 序列
 - [ ] JumboTabs 复杂选项卡
 - [x] NavBar 导航栏
-- [ ] SideBar 侧边导航
+- [x] SideBar 侧边导航
 - [ ] TabBar 标签栏
 - [ ] Tabs 标签页
 
@@ -115,7 +115,7 @@ import { Button } from 'uab-ui-mobile'
 
 ### 引导提示
 
-- [ ] Badge 徽标
+- [x] Badge 徽标
 - [ ] NoticeBar 通告栏
 
 ### 其他
