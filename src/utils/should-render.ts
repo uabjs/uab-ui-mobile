@@ -8,6 +8,7 @@ interface ShouldRenderProps {
   children: ReactElement
 }
 
+/** 公用渲染函数：通过参数判断子元素显示与否 */
 export const ShouldRender: React.FC<ShouldRenderProps> = props => {
   const ShouldRender = useShouldRender(props.active, props.forceRender, props.destroyOnClose)
   // props.children：表示渲染内容, null：表示卸载内容
