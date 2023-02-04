@@ -7,7 +7,7 @@ type Options<T> = {
   onChange?: (v: T) => void
 }
 
-/** 设置一个值的改变，返回 ref current 和 set 方法，set触发传入的 onChange 回调 */
+/** 设置一个ref值的改变，返回 [ref.current, set方法]，set会触发强制更新并触发传入的 onChange 方法 */
 export function usePropsValue<T>(options: Options<T>) {
   const { value, defaultValue, onChange } = options
 

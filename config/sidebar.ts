@@ -32,6 +32,7 @@ export const sidebar = {
       children: [
         { title: 'CapsuleTabs 胶囊选项卡', link: 'components/capsule-tabs' },
         { title: 'IndexBar 序列', link: 'components/index-bar' },
+        { title: 'JumboTabs 复杂选项卡', link: 'components/jumbo-tabs' },
         { title: 'NavBar 导航栏', link: 'components/nav-bar' },
         { title: 'SideBar 侧边导航', link: 'components/side-bar' },
       ],

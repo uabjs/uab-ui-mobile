@@ -4,6 +4,7 @@ import { useIsomorphicLayoutEffect } from 'ahooks'
 import { bound } from './bound'
 import { useIsomorphicUpdateLayoutEffect } from './use-isomorphic-update-layout-effect'
 
+/** 给定dom元素和子元素下标，返回滚动到该子元素的 animate 方法和计算出的滚动位置 scrollLeft */
 export const useTabListScroll = (
   targetRef: RefObject<HTMLElement>,
   activeIndex: number | undefined
