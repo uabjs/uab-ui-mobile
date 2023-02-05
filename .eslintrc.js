@@ -20,6 +20,16 @@ module.exports = {
   rules: {
     'no-empty': ['error', { allowEmptyCatch: true }],
     '@typescript-eslint/no-explicit-any': 'off',
+    '@typescript-eslint/ban-types': [
+      'error',
+      {
+        extendDefaults: true,
+        types: {
+          '{}': false,
+        },
+      },
+    ],
+    'react/prop-types': 'off',
     'no-prototype-builtins': 'off',
     'react/display-name': 'off',
   },
