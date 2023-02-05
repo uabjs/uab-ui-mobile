@@ -42,6 +42,10 @@ export const sidebar = {
       children: [{ title: 'List 列表', link: '/components/list' }],
     },
     {
+      title: '反馈',
+      children: [{ title: 'Loading 加载中', link: '/components/loading' }],
+    },
+    {
       title: '引导提示',
       children: [{ title: 'Badge 徽标', link: '/components/badge' }],
     },

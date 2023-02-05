@@ -41,3 +41,9 @@ export type { BadgeProps } from './badge'
 
 export { default as SideBar } from './side-bar'
 export type { SideBarProps, SideBarItemProps } from './side-bar'
+
+export { default as DotLoading } from './dot-loading'
+export type { DotLoadingProps } from './dot-loading'
+
+export { default as Loading } from './loading'
+export type { LoadingProps } from './loading'

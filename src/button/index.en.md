@@ -4,7 +4,7 @@ Used to start an immediate operation.
 
 ## Demos
 
-<code src="./demos/demo1.tsx"></code>abc<code src="./demos/demo1.tsx"></code>
+<code src="./demos/demo1.tsx"></code>
 
 ## Button
 
