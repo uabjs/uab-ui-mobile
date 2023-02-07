@@ -25,11 +25,11 @@
 
 | 属性 | 说明 | 默认值 |
 | --- | --- | --- |
-| --active-background-color | 点击时的背景颜色 | `var(--adm-color-border)` |
+| --active-background-color | 点击时的背景颜色 | `var(--uabm-color-border)` |
 | --align-items | 列表项的 [align-item](https://developer.mozilla.org/en-US/docs/Web/CSS/align-items) | `center` |
-| --border-bottom | 列表容器底部的边框样式 | `solid 1px var(--adm-color-border)` |
-| --border-inner | 列表项底部的边框样式 | `solid 1px var(--adm-color-border)` |
-| --border-top | 列表容器顶部的边框样式 | `solid 1px var(--adm-color-border)` |
+| --border-bottom | 列表容器底部的边框样式 | `solid 1px var(--uabm-color-border)` |
+| --border-inner | 列表项底部的边框样式 | `solid 1px var(--uabm-color-border)` |
+| --border-top | 列表容器顶部的边框样式 | `solid 1px var(--uabm-color-border)` |
 | --extra-max-width | extra 部分的最大宽度 | `70%` |
 | --font-size | Body 内容的字体大小 | `17px` |
 | --header-font-size | 头部的字体大小 | `15px` |

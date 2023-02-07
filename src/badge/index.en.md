@@ -24,8 +24,8 @@ It is suitable for reminders of productized new news, new functions, new service
 
 ### CSS Variables
 
-| Name    | Description                                         | Default   | Global              |
-| ------- | --------------------------------------------------- | --------- | ------------------- |
-| --color | The background color of the Badge                   | `#ff411c` | `--adm-badge-color` |
-| --right | The offset to the left, relative to the far right   | `0`       |                     |
-| --top   | The downward offset, relative to the uppermost edge | `0`       |                     |
+| Name    | Description                                         | Default   | Global               |
+| ------- | --------------------------------------------------- | --------- | -------------------- |
+| --color | The background color of the Badge                   | `#ff411c` | `--uabm-badge-color` |
+| --right | The offset to the left, relative to the far right   | `0`       |                      |
+| --top   | The downward offset, relative to the uppermost edge | `0`       |                      |

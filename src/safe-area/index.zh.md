@@ -32,12 +32,12 @@ SafeArea 组件是用来在全面屏下提供自适应的边距调整，它的�
 
 ### CSS 变量
 
-| 属性       | 说明       | 默认值 | 全局变量                   |
-| ---------- | ---------- | ------ | -------------------------- |
-| --multiple | 显示的倍数 | `1`    | `--adm-safe-area-multiple` |
+| 属性       | 说明       | 默认值 | 全局变量                    |
+| ---------- | ---------- | ------ | --------------------------- |
+| --multiple | 显示的倍数 | `1`    | `--uabm-safe-area-multiple` |
 
 ## FAQ
 
 ### 在 rem 布局下，SafeArea 高度很小怎么办？
 
-一些 rem 方案会通过 viewport meta 设置网页的整体缩放，这种情况下，SafeArea 也会被对应的缩放，从而很可能高度异常。这时你可以通过全局的 `--adm-safe-area-multiple` CSS 变量来调整 SafeArea 的显示倍数，例如，如果你的项目框架将页面整体缩放为了 0.5 倍，那么你可以设置 `--adm-safe-area-multiple: 2` 来做对应的补偿调整。
+一些 rem 方案会通过 viewport meta 设置网页的整体缩放，这种情况下，SafeArea 也会被对应的缩放，从而很可能高度异常。这时你可以通过全局的 `--uabm-safe-area-multiple` CSS 变量来调整 SafeArea 的显示倍数，例如，如果你的项目框架将页面整体缩放为了 0.5 倍，那么你可以设置 `--uabm-safe-area-multiple: 2` 来做对应的补偿调整。

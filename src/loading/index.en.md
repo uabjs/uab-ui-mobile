@@ -30,10 +30,10 @@ The size of `DotLoading` would automatically be adjusted according to the curren
 
 ### CSS Variables
 
-| Name    | Description          | Default                 |
-| ------- | -------------------- | ----------------------- |
-| --color | Color of line.       | `var(--adm-color-weak)` |
-| --size  | Size of the element. | `32px`                  |
+| Name    | Description          | Default                  |
+| ------- | -------------------- | ------------------------ |
+| --color | Color of line.       | `var(--uabm-color-weak)` |
+| --size  | Size of the element. | `32px`                   |
 
 ## Loading
 

@@ -7,9 +7,9 @@ import { useMotionReduced } from '../utils/reduce-and-restore-motion'
 const classPrefix = 'uabm-spin-loading'
 
 const colorRecord: Record<string, string> = {
-  default: 'var(--adm-color-weak)',
-  primary: 'var(--adm-color-primary)',
-  white: 'var(--adm-color-white)',
+  default: 'var(--uabm-color-weak)',
+  primary: 'var(--uabm-color-primary)',
+  white: 'var(--uabm-color-white)',
 }
 
 export type SpinLoadingProps = {

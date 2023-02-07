@@ -20,7 +20,7 @@
 
 ## SpinLoading 转圈加载中
 
-<!-- <code src="../spin-loading/demos/demo1.tsx"></code> -->
+<code src="../spin-loading/demos/demo2.tsx"></code>
 
 ### 属性
 
@@ -30,10 +30,10 @@
 
 ### CSS 变量
 
-| 属性    | 说明     | 默认值                  |
-| ------- | -------- | ----------------------- |
-| --color | 线条颜色 | `var(--adm-color-weak)` |
-| --size  | 大小     | `32px`                  |
+| 属性    | 说明     | 默认值                   |
+| ------- | -------- | ------------------------ |
+| --color | 线条颜色 | `var(--uabm-color-weak)` |
+| --size  | 大小     | `32px`                   |
 
 ## Loading
 
