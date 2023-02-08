@@ -35,6 +35,7 @@ export const sidebar = {
         { title: 'JumboTabs 复杂选项卡', link: 'components/jumbo-tabs' },
         { title: 'NavBar 导航栏', link: 'components/nav-bar' },
         { title: 'SideBar 侧边导航', link: 'components/side-bar' },
+        { title: 'TabBar 标签栏', link: 'components/tab-bar' },
       ],
     },
     {

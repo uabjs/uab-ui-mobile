@@ -48,3 +48,6 @@ export { default as SpinLoading } from './spin-loading'
 export type { SpinLoadingProps } from './spin-loading'
 export { default as Loading } from './loading'
 export type { LoadingProps } from './loading'
+
+export { default as TabBar } from './tab-bar'
+export type { TabBarProps, TabBarItemProps } from './tab-bar'

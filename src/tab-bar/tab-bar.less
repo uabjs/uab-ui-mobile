@@ -1,0 +1,53 @@
+@class-prefix-tab-bar: ~'uabm-tab-bar';
+
+.@{class-prefix-tab-bar} {
+  &-wrap {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    overflow: hidden;
+    min-height: 48px;
+  }
+
+  &-item {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    width: min-content;
+    padding: 4px 8px;
+    color: var(--uabm-color-text-secondary);
+    white-space: nowrap;
+    cursor: pointer;
+
+    &-icon {
+      font-size: 24px;
+      height: 24px;
+      line-height: 1;
+    }
+
+    &-title {
+      font-size: var(--uabm-font-size-2);
+      line-height: 15px;
+      &-with-icon {
+        margin-top: 2px;
+      }
+    }
+
+    &-active {
+      color: var(--uabm-color-primary);
+    }
+  }
+  &-icon-badge {
+    --top: 7px;
+    --right: -5px;
+  }
+
+  &-title-badge {
+    --top: -3px;
+    --right: -3px;
+  }
+}
