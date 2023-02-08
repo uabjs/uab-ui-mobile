@@ -51,3 +51,6 @@ export type { LoadingProps } from './loading'
 
 export { default as TabBar } from './tab-bar'
 export type { TabBarProps, TabBarItemProps } from './tab-bar'
+
+export { default as Tabs } from './tabs'
+export type { TabsProps, TabProps } from './tabs'

@@ -1,6 +1,7 @@
 import { useIsomorphicLayoutEffect, useMemoizedFn } from 'ahooks'
 import { RefObject } from 'react'
 
+/** 监听窗口大小出发effect */
 export function useResizeEffect<T extends HTMLElement>(
   effect: (target: T) => void,
   targetRef: RefObject<T>
