@@ -19,7 +19,7 @@ export default () => {
           src={imageSrc}
           placeholder={<DotLoading color='primary' />}
           fallback={
-            <PictureWrongOutline style={{ fontSize: 96, color: 'var(--adm-color-weak)' }} />
+            <PictureWrongOutline style={{ fontSize: 96, color: 'var(--uabm-color-weak)' }} />
           }
         />
       </div>

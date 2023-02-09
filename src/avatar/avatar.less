@@ -1,0 +1,19 @@
+@class-prefix-avatar: ~'uabm-avatar';
+
+.@{class-prefix-avatar} {
+  --size: var(--uabm-avatar-size, 44px);
+  --border-radius: var(--uabm-avatar-border-radius, 4px);
+
+  border-radius: var(--border-radius);
+
+  &.uabm-image {
+    --width: var(--size);
+    --height: var(--size);
+  }
+
+  &-fallback {
+    height: 100%;
+    width: 100%;
+    display: block;
+  }
+}

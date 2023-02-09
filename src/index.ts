@@ -57,3 +57,6 @@ export type { TabsProps, TabProps } from './tabs'
 
 export { default as Image } from './image'
 export type { ImageProps } from './image'
+
+export { default as Avatar } from './avatar'
+export type { AvatarProps } from './avatar'
