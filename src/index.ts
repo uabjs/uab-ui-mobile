@@ -54,3 +54,6 @@ export type { TabBarProps, TabBarItemProps } from './tab-bar'
 
 export { default as Tabs } from './tabs'
 export type { TabsProps, TabProps } from './tabs'
+
+export { default as Image } from './image'
+export type { ImageProps } from './image'

@@ -225,6 +225,7 @@ export const Tabs: FC<TabsProps> = p => {
           }}
         />
 
+        {/* 选项卡滚动栏 */}
         <animated.div
           className={`${classPrefix}-tab-list`}
           ref={tabListContainerRef}

@@ -41,7 +41,10 @@ export const sidebar = {
     },
     {
       title: '信息展示',
-      children: [{ title: 'List 列表', link: '/components/list' }],
+      children: [
+        { title: 'List 列表', link: '/components/list' },
+        { title: 'Image 图片', link: '/components/image' },
+      ],
     },
     {
       title: '反馈',
