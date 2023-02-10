@@ -45,11 +45,15 @@ export const sidebar = {
         { title: 'Avatar 头像', link: '/components/avatar' },
         { title: 'List 列表', link: '/components/list' },
         { title: 'Image 图片', link: '/components/image' },
+        { title: 'ImageViewer 图片查看器', link: '/components/image-viewer' },
       ],
     },
     {
       title: '反馈',
-      children: [{ title: 'Loading 加载中', link: '/components/loading' }],
+      children: [
+        { title: 'Loading 加载中', link: '/components/loading' },
+        { title: 'Mask 背景蒙层', link: '/components/mask' }
+      ],
     },
     {
       title: '引导提示',

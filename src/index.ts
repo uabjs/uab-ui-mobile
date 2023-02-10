@@ -60,3 +60,6 @@ export type { ImageProps } from './image'
 
 export { default as Avatar } from './avatar'
 export type { AvatarProps } from './avatar'
+
+export { default as Mask } from './mask'
+export type { MaskProps } from './mask'
