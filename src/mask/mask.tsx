@@ -6,6 +6,7 @@ import { NativeProps, withNativeProps } from '../utils/native-props'
 import { mergeProps } from '../utils/with-default-props'
 import { GetContainer, renderToContainer } from '../utils/render-to-container'
 import { PropagationEvent, withStopPropagation } from '../utils/with-stop-propagation'
+import { useLockScroll } from '../utils/use-lock-scroll'
 
 const classPrefix = `uabm-mask`
 
@@ -54,6 +55,7 @@ export const Mask: FC<MaskProps> = p => {
 
   // 显示遮罩层后禁止滚动
   const ref = useRef<HTMLDivElement>(null)
+  useLockScroll(ref, props.visible && props.disableBodyScroll)
 
   // 得到遮罩层 rgba 背景色
   const background = useMemo(() => {
