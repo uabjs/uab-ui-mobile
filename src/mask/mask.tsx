@@ -55,6 +55,7 @@ export const Mask: FC<MaskProps> = p => {
 
   // 显示遮罩层后禁止滚动
   const ref = useRef<HTMLDivElement>(null)
+
   useLockScroll(ref, props.visible && props.disableBodyScroll)
 
   // 得到遮罩层 rgba 背景色
