@@ -63,3 +63,6 @@ export type { AvatarProps } from './avatar'
 
 export { default as Mask } from './mask'
 export type { MaskProps } from './mask'
+
+export { default as ImageViewer } from './image-viewer'
+export type { ImageViewerProps, MultiImageViewerProps, MultiImageViewerRef } from './image-viewer'

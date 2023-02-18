@@ -1,7 +1,9 @@
 import './image-viewer.less'
 
 import { ImageViewer, MultiImageViewer } from './image-viewer'
-import { attachPropertiesToComponent } from 'src/utils/attach-properties-to-component'
+import { attachPropertiesToComponent } from '../utils/attach-properties-to-component'
+
+export type { ImageViewerProps, MultiImageViewerProps, MultiImageViewerRef } from './image-viewer'
 
 const Multi = attachPropertiesToComponent(MultiImageViewer, {
   show: () => {},

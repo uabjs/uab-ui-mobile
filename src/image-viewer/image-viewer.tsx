@@ -34,7 +34,7 @@ export const ImageViewer: FC<ImageViewerProps> = p => {
       afterClose={props.afterClose}
       destroyOnClose
     >
-      {/* 图片栏，滑动切换，放大 */}
+      {/* 图片栏，图片缩放 */}
       <div className={`${classPrefix}-content`}>
         {props.image && (
           <Slide
@@ -71,7 +71,7 @@ const MultiDefaultProps = {
   defaultIndex: 0,
 }
 
-const MultiImageViewerRef = ''
+export const MultiImageViewerRef = ''
 
 export const MultiImageViewer = forwardRef<MultiImageViewerRef, MultiImageViewerProps>((p, ref) => {
   return <div>多图片查看器</div>
