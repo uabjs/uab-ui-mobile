@@ -9,6 +9,30 @@
     user-select: none;
   }
 
+  &-indicator {
+    position: absolute;
+    z-index: 2;
+    left: 50%;
+    top: 12px;
+    transform: translateX(-50%);
+    color: #e6e6e6;
+    font-size: var(--uabm-font-size-6);
+  }
+
+  &-slides {
+    position: relative;
+    height: 100%;
+    z-index: 1;
+    cursor: grab;
+    touch-action: none;
+    &-inner {
+      height: 100%;
+      white-space: nowrap;
+      > * {
+        margin-right: 16px;
+      }
+    }
+  }
   &-slide {
     position: relative;
     width: 100%;

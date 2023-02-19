@@ -15,10 +15,11 @@ if (canUseDom) {
   document.body.appendChild(tester)
 }
 
+/** 获取当前运行环境 px 值真实大小 */
 export function convertPx(px: number) {
   // 还没有创建元素
   if (tenPxTester === null || tester === null) {
-    return
+    return px
   }
   //  如果设置 height = 10px 获取的高 === 10 说明px值不变直接返回
   if (tenPxTester.getBoundingClientRect().height === 10) {
