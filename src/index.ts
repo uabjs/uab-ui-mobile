@@ -66,3 +66,10 @@ export type { MaskProps } from './mask'
 
 export { default as ImageViewer } from './image-viewer'
 export type { ImageViewerProps, MultiImageViewerProps, MultiImageViewerRef } from './image-viewer'
+
+export { setDefaultConfig } from './config-provider'
+export { default as ConfigProvider } from './config-provider'
+export type { ConfigProviderProps } from './config-provider'
+
+export { default as ErrorBlock } from './error-block'
+export type { ErrorBlockProps, ErrorBlockStatus } from './error-block'

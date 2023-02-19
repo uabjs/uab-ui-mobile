@@ -52,12 +52,16 @@ export const sidebar = {
       title: '反馈',
       children: [
         { title: 'Loading 加载中', link: '/components/loading' },
-        { title: 'Mask 背景蒙层', link: '/components/mask' }
+        { title: 'Mask 背景蒙层', link: '/components/mask' },
       ],
     },
     {
       title: '引导提示',
       children: [{ title: 'Badge 徽标', link: '/components/badge' }],
+    },
+    {
+      title: '其他',
+      children: [{ title: 'ConfigProvider 配置', link: '/components/config-provider' }],
     },
     {
       title: '试验性',
