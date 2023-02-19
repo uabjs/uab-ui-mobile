@@ -1,3 +1,4 @@
+/** 将参数1限制在 [参数2，参数3] 的区间内 */
 export function bound(position: number, min: number | undefined, max: number | undefined) {
   let ret = position
   if (min !== undefined) {

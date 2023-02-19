@@ -16,6 +16,7 @@ specifiers:
   '@typescript-eslint/eslint-plugin': ^5.48.1
   '@typescript-eslint/parser': ^5.48.1
   '@umijs/types': ^3.5.36
+  '@use-gesture/react': 10.2.24
   ahooks: ^3.7.4
   antd-mobile-icons: ^0.3.0
   classnames: ^2.3.2
@@ -46,6 +47,7 @@ specifiers:
 
 dependencies:
   '@react-spring/web': 9.6.1_biqbaboplfbrettd7655fr4n2y
+  '@use-gesture/react': 10.2.24_react@18.2.0
   ahooks: 3.7.4_react@18.2.0
   antd-mobile-icons: 0.3.0
   classnames: 2.3.2
@@ -3849,6 +3851,19 @@ packages:
       chokidar: 3.5.3
       pino: 7.11.0
     dev: true
+
+  /@use-gesture/core/10.2.24:
+    resolution: {integrity: sha512-ZL7F9mgOn3Qlnp6QLI9jaOfcvqrx6JPE/BkdVSd8imveaFTm/a3udoO6f5Us/1XtqnL4347PsIiK6AtCvMHk2Q==}
+    dev: false
+
+  /@use-gesture/react/10.2.24_react@18.2.0:
+    resolution: {integrity: sha512-rAZ8Nnpu1g4eFzqCPlaq+TppJpMy0dTpYOQx5KpfoBF4P3aWnCqwj7eKxcmdIb1NJKpIJj50DPugUH4mq5cpBg==}
+    peerDependencies:
+      react: '>= 16.8.0'
+    dependencies:
+      '@use-gesture/core': 10.2.24
+      react: 18.2.0
+    dev: false
 
   /@vercel/ncc/0.33.3:
     resolution: {integrity: sha512-JGZ11QV+/ZcfudW2Cz2JVp54/pJNXbsuWRgSh2ZmmZdQBKXqBtIGrwI1Wyx8nlbzAiEFe7FHi4K1zX4//jxTnQ==}
