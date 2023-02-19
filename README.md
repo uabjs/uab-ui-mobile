@@ -54,18 +54,18 @@ import { Button } from 'uab-ui-mobile'
 - [x] JumboTabs 复杂选项卡
 - [x] NavBar 导航栏
 - [x] SideBar 侧边导航
-- [ ] TabBar 标签栏
-- [ ] Tabs 标签页
+- [x] TabBar 标签栏
+- [x] Tabs 标签页
 
 ### 信息展示
 
-- [ ] Avatar 头像
+- [x] Avatar 头像
 - [ ] Card 卡片
 - [ ] Collapse 折叠面板
 - [ ] Ellipsis 文本省略
 - [ ] FloatingPanel 浮动面板
-- [ ] Image 图片
-- [ ] ImageViewer 图片查看器
+- [x] Image 图片
+- [x] ImageViewer 图片查看器
 - [ ] InfiniteScroll 无限滚动
 - [x] List 列表
 - [ ] PageIndicator 分页符
@@ -100,8 +100,8 @@ import { Button } from 'uab-ui-mobile'
 - [ ] Dialog 对话框
 - [ ] Empty 空状态
 - [ ] ErrorBlock 异常
-- [ ] Loading 加载中
-- [ ] Mask 背景蒙层
+- [x] Loading 加载中
+- [x] Mask 背景蒙层
 - [ ] Modal 弹窗
 - [ ] Popover 气泡弹出框
 - [ ] Popup 弹出层
@@ -120,10 +120,11 @@ import { Button } from 'uab-ui-mobile'
 
 ### 其他
 
-- [ ] ConfigProvider 配置
+- [x] ConfigProvider 配置
 
 ### 试验性
 
+- [x] ScrollMask 滚动两侧遮罩
 - [ ] Calendar 日历
 - [ ] Dropdown 下拉菜单
 - [ ] FloatingBubble 浮动气泡
