@@ -5,6 +5,7 @@ import * as mat from '../utils/matrix'
 import type { Matrix } from '../utils/matrix'
 import { useDragAndPinch } from '../utils/use-drag-and-pinch'
 import { bound } from '../utils/bound'
+import { rubberbandIfOutOfBounds } from '../utils/rubberband'
 
 const classPrefix = `uabm-image-viewer`
 
@@ -32,6 +33,7 @@ export const Slide: FC<SlideProps> = props => {
   const controlSize = useSize(controlRef)
   const imgSize = useSize(imgRef)
 
+  // 处理拖动时超出范围的阻尼感和回弹效果 和 捏合缩放后的自动居中处理
   const boundMatrix = (nextMatrix: Matrix, type: 'translate' | 'scale', last = false): Matrix => {
     if (!controlSize || !imgSize) return nextMatrix
 
@@ -45,16 +47,30 @@ export const Slide: FC<SlideProps> = props => {
     const scaledImgHeight = zoom * imgSize.height
     const [x, y] = mat.apply(nextMatrix, [imgLeft, imgTop])
 
-    // if (type === 'translate') {
-    //   let boundedX = x
-    //   let boundedY = y
-    //   if (scaledImgWidth > controlSize.width) {
-    //     const minX = controlLeft - (scaledImgWidth - controlSize.width)
+    // 拖动时超出范围的阻尼感和回弹效果
+    if (type === 'translate') {
+      let boundedX = x
+      let boundedY = y
+      if (scaledImgWidth > controlSize.width) {
+        const minX = controlLeft - (scaledImgWidth - controlSize.width)
+        const maxX = controlLeft
+        boundedX = last ? bound(x, minX, maxX) : rubberbandIfOutOfBounds(x, minX, maxX, zoom * 50)
+      } else {
+        boundedX = -scaledImgWidth / 2
+      }
 
-    //   }
-    // }
+      if (scaledImgHeight > controlSize.height) {
+        const minY = controlTop - (scaledImgHeight - controlSize.height)
+        const maxY = controlTop
+        boundedY = last ? bound(y, minY, maxY) : rubberbandIfOutOfBounds(y, minY, maxY, zoom * 50)
+      } else {
+        boundedY = -scaledImgHeight / 2
+      }
 
-    // 图片缩放结束后移动到居中位置
+      return mat.translate(nextMatrix, boundedX - x, boundedY - y)
+    }
+
+    // 图片捏合缩放后的自动居中处理
     if (type === 'scale' && last) {
       const [boundedX, boundedY] = [
         scaledImgWidth > controlSize.width
@@ -75,40 +91,47 @@ export const Slide: FC<SlideProps> = props => {
     {
       // 处理拖动手势：拖拽时持续触发
       onDrag: state => {
-        console.log('state===')
         // 第一次直接退出
         if (state.first) return
         if (state.pinching) return state.cancel()
 
         if (state.tap && state.elapsedTime > 0 && state.elapsedTime < 1000) {
           // 判断点击时间>0是为了过滤掉非正常操作，例如用户长按选择图片之后的取消操作（也是一次点击）
-          // props.onTap()
+          props.onTap()
           return
         }
 
         const currentZoom = mat.getScaleX(matrix.get())
-        // if (dragLockRef) {
-        //   dragLockRef.current = currentZoom !== 1
-        // }
+        if (dragLockRef) {
+          dragLockRef.current = currentZoom !== 1
+        }
         // 图片缩放比例小于1时就重置矩阵
         if (!pinchLockRef.current && currentZoom <= 1) {
-          console.log('图片缩放比例小于1时就重置矩阵====', matrix.get())
           api.start({
             matrix: mat.create(),
           })
         } else {
           const currentMatrix = matrix.get()
-          console.log('currentMatrix====', currentMatrix)
-          // const offset = [
-          //   state.offset[0] - mat.getTranslateX(currentMatrix),
-          //   state.offset[1] - mat.getTranslateY(currentMatrix),
-          // ] as const
+          const offset = [
+            state.offset[0] - mat.getTranslateX(currentMatrix),
+            state.offset[1] - mat.getTranslateY(currentMatrix),
+          ] as const
 
-          // const nextMatrix = mat.translate(
-          //   currentMatrix,
-          //   // // 第直接退出
-          //   ...(state.last ?)
-          // )
+          const nextMatrix = mat.translate(
+            currentMatrix,
+            ...(state.last
+              ? ([
+                  offset[0] + state.velocity[0] * state.direction[0] * 200,
+                  offset[1] + state.velocity[1] * state.direction[1] * 200,
+                ] as const)
+              : offset)
+          )
+
+          api.start({
+            matrix: boundMatrix(nextMatrix, 'translate', state.last),
+            // 只有最后一次移动不是立即，拖拽时都是立即移动的
+            immediate: !state.last,
+          })
         }
       },
       // 处理捏合手势：捏合时持续触发
@@ -136,9 +159,9 @@ export const Slide: FC<SlideProps> = props => {
           api.start({
             matrix: mat.create(),
           })
-          // if (dragLockRef) {
-          //   dragLockRef.current = false
-          // }
+          if (dragLockRef) {
+            dragLockRef.current = false
+          }
         } else {
           if (!controlSize) return
 
@@ -151,11 +174,15 @@ export const Slide: FC<SlideProps> = props => {
           nextMatrix = mat.scale(nextMatrix, nextZoom / currentZoom)
           nextMatrix = mat.translate(nextMatrix, originOffsetX, originOffsetY)
 
-          console.log('222222222 ==', nextMatrix)
           api.start({
             matrix: boundMatrix(nextMatrix, 'scale', state.last),
+            // 只有最后一次缩放不是立即，拖拽时都是立即缩放的
             immediate: !state.last,
           })
+
+          if (dragLockRef) {
+            dragLockRef.current = true
+          }
         }
       },
     },
@@ -195,7 +222,8 @@ export const Slide: FC<SlideProps> = props => {
             matrix,
           }}
         >
-          <img ref={imgRef} src={props.image} alt={props.image} />
+          {/* draggable = false 禁用图片的默认拖拽，不然将无法触发自定义拖拽事件 */}
+          <img ref={imgRef} src={props.image} alt={props.image} draggable={false} />
         </animated.div>
       </div>
     </div>

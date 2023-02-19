@@ -33,6 +33,20 @@ export default () => {
       <DemoBlock title='单张图片预览'>
         <Single />
       </DemoBlock>
+      <DemoBlock title='手动控制关闭'>
+        <Button
+          onClick={() => {
+            const handler = ImageViewer.show({
+              image: demoImage,
+            })
+            setTimeout(() => {
+              handler.close()
+            }, 3000)
+          }}
+        >
+          显示图片并在3秒后关闭
+        </Button>
+      </DemoBlock>
     </>
   )
 }
