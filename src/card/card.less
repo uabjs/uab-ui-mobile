@@ -1,0 +1,29 @@
+@class-prefix-card: ~'uabm-card';
+
+.@{class-prefix-card} {
+  background: var(--uabm-color-background);
+  border-radius: 8px;
+  padding: 0 12px;
+
+  &-header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 12px 0;
+    &:not(:last-child) {
+      border-bottom: 0.5px solid var(--uabm-color-border);
+    }
+
+    &-title {
+      font-size: var(--uabm-font-size-7);
+      line-height: 1.4;
+      font-weight: bold;
+    }
+  }
+
+  &-body {
+    padding: 12px 0;
+  }
+}
