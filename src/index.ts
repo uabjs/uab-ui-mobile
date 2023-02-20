@@ -71,5 +71,6 @@ export { setDefaultConfig } from './config-provider'
 export { default as ConfigProvider } from './config-provider'
 export type { ConfigProviderProps } from './config-provider'
 
+export { createErrorBlock } from './error-block'
 export { default as ErrorBlock } from './error-block'
 export type { ErrorBlockProps, ErrorBlockStatus } from './error-block'

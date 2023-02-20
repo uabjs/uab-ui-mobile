@@ -30,7 +30,7 @@ export type ConfigProviderProps = Config
 export const ConfigProvider: FC<ConfigProviderProps> = props => {
   const { children, ...config } = props
   const parentConfig = useConfig()
-  console.log('1111====', props.locale)
+
   return (
     <ConfigContext.Provider
       value={{

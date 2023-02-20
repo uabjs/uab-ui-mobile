@@ -26,7 +26,7 @@ export function createErrorBlock(imageRecord: ImageRecord) {
   const ErrorBlock: FC<ErrorBlockProps> = p => {
     const props = mergeProps(defaultProps, p)
     const { locale } = useConfig()
-    console.log('locale====', locale)
+
     const contentPack = locale.ErrorBlock[props.status]
     const des = 'description' in props ? props.description : contentPack.description
     const title = 'title' in props ? props.title : contentPack.title

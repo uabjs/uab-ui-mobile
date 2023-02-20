@@ -99,7 +99,7 @@ import { Button } from 'uab-ui-mobile'
 - [ ] ActionSheet 动作面板
 - [ ] Dialog 对话框
 - [ ] Empty 空状态
-- [ ] ErrorBlock 异常
+- [x] ErrorBlock 异常
 - [x] Loading 加载中
 - [x] Mask 背景蒙层
 - [ ] Modal 弹窗

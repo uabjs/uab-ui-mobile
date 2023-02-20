@@ -1,5 +1,5 @@
 export const sidebar = {
-  '/guide': [
+  '/zh/guide': [
     {
       children: [{ title: '快速上手', link: '/guide/quick-start' }],
     },
@@ -51,6 +51,7 @@ export const sidebar = {
     {
       title: '反馈',
       children: [
+        { title: 'ErrorBlock 异常', link: '/components/error-block' },
         { title: 'Loading 加载中', link: '/components/loading' },
         { title: 'Mask 背景蒙层', link: '/components/mask' },
       ],
