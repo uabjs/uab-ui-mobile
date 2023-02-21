@@ -77,3 +77,6 @@ export type { ErrorBlockProps, ErrorBlockStatus } from './error-block'
 
 export { default as Card } from './card'
 export type { CardProps } from './card'
+
+export { default as Collapse } from './collapse'
+export type { CollapseProps, CollapsePanelProps } from './collapse'

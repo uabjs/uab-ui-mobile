@@ -44,6 +44,7 @@ export const sidebar = {
       children: [
         { title: 'Avatar 头像', link: '/components/avatar' },
         { title: 'Card 卡片', link: '/components/card' },
+        { title: 'Collapse 折叠面板', link: '/components/collapse' },
         { title: 'List 列表', link: '/components/list' },
         { title: 'Image 图片', link: '/components/image' },
         { title: 'ImageViewer 图片查看器', link: '/components/image-viewer' },
