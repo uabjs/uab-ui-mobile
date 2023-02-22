@@ -12,7 +12,7 @@ Users can freely and flexibly slide up and down to browse the content, which is 
 
 <code src="./demos/demo2.tsx"></code>
 
-<!-- <code src="./demos/demo3.tsx"></code> -->
+<code src="./demos/demo3.tsx"></code>
 
 ## FloatingPanel
 

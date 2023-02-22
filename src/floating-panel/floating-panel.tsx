@@ -74,10 +74,12 @@ export const FloatingPanel = forwardRef<FloatingPanelRef, FloatingPanelProps>((p
           const content = contentRef.current
           if (!content) return
           if (reachedTop) {
+            // 浮动面板往下拖拽时需要内容滚动条至顶才能往下拖拽
             if (content.scrollTop <= 0 && state.direction[1] > 0) {
               pullingRef.current = true
             }
           } else {
+            // 浮动面板随时都可以往上拖拽
             pullingRef.current = true
           }
         }
