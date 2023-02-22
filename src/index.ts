@@ -80,3 +80,6 @@ export type { CardProps } from './card'
 
 export { default as Collapse } from './collapse'
 export type { CollapseProps, CollapsePanelProps } from './collapse'
+
+export { default as FloatingPanel } from './floating-panel'
+export type { FloatingPanelProps, FloatingPanelRef } from './floating-panel'

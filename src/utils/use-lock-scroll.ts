@@ -22,6 +22,7 @@ function getScrollableElement(el: HTMLElement | null) {
 }
 
 // 移植自vant：https://github.com/youzan/vant/blob/main/packages/vant/src/composables/use-lock-scroll.ts
+/** 锁定滚动事件  */
 export function useLockScroll(rootRef: RefObject<HTMLElement>, shouldLock: boolean | 'strict') {
   const touch = useTouch()
 
