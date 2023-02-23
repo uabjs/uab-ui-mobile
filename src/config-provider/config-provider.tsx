@@ -43,6 +43,7 @@ export const ConfigProvider: FC<ConfigProviderProps> = props => {
   )
 }
 
+/** 获取 ConfigProvider 配置 */
 export function useConfig() {
   return useContext(ConfigContext) ?? getDefaultConfig()
 }

@@ -1,0 +1,35 @@
+.header {
+  display: flex;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  left: 0;
+  padding: 12px;
+  background: #ffffff;
+  z-index: 999999;
+
+  .left {
+    flex: auto;
+  }
+  .right {
+    flex: none;
+    padding-left: 12px;
+  }
+}
+
+.placeholder {
+  padding-top: 30vh;
+  text-align: center;
+  color: var(--uabm-color-weak);
+  .loadingWrapper {
+    font-size: 24px;
+    margin-bottom: 24px;
+  }
+}
+
+html[data-prefers-color-scheme='dark'] {
+  .header {
+    color: #959da6;
+    background-color: #1a1e25;
+  }
+}

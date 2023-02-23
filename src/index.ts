@@ -83,3 +83,6 @@ export type { CollapseProps, CollapsePanelProps } from './collapse'
 
 export { default as FloatingPanel } from './floating-panel'
 export type { FloatingPanelProps, FloatingPanelRef } from './floating-panel'
+
+export { default as InfiniteScroll } from './infinite-scroll'
+export type { InfiniteScrollProps } from './infinite-scroll'
