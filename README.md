@@ -63,10 +63,10 @@ import { Button } from 'uab-ui-mobile'
 - [x] Card 卡片
 - [x] Collapse 折叠面板
 - [ ] Ellipsis 文本省略
-- [ ] FloatingPanel 浮动面板
+- [x] FloatingPanel 浮动面板
 - [x] Image 图片
 - [x] ImageViewer 图片查看器
-- [ ] InfiniteScroll 无限滚动
+- [x] InfiniteScroll 无限滚动
 - [x] List 列表
 - [ ] PageIndicator 分页符
 - [ ] Steps 步骤条
