@@ -47,6 +47,7 @@ export const sidebar = {
         { title: 'Collapse 折叠面板', link: '/components/collapse' },
         { title: 'FloatingPanel 浮动面板', link: '/components/floating-panel' },
         { title: 'List 列表', link: '/components/list' },
+        { title: 'PageIndicator 分页符', link: '/components/page-indicator' },
         { title: 'Steps 步骤条', link: '/components/steps' },
         { title: 'Image 图片', link: '/components/image' },
         { title: 'ImageViewer 图片查看器', link: '/components/image-viewer' },
