@@ -95,3 +95,6 @@ export type { PageIndicatorProps } from './page-indicator'
 
 export { default as Tag } from './tag'
 export type { TagProps } from './tag'
+
+export { default as WaterMark } from './water-mark'
+export type { WaterMarkProps } from './water-mark'
