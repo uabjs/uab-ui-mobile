@@ -51,4 +51,4 @@ ref.current.setHeight(100)
 | --- | --- | --- | --- |
 | --border-radius | the border radius of the Panel header | `8px` |  |
 | --header-height | the height of the Panel header | `28px` |  |
-| --z-index | z-index of the Panel | `900` | `--adm-floating-panel-z-index` |
+| --z-index | z-index of the Panel | `900` | `--uabm-floating-panel-z-index` |

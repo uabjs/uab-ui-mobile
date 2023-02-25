@@ -26,7 +26,7 @@ Applicable to indicate that the current content block can be scrolled horizontal
 | Name | Description | Default |
 | --- | --- | --- |
 | --active-dot-border-radius | rounded corner size the current page | `var(--dot-border-radius)` |
-| --active-dot-color | dot color of the current page | `var(--adm-color-primary)` |
+| --active-dot-color | dot color of the current page | `var(--uabm-color-primary)` |
 | --active-dot-size | dot size of the current page | `13px` |
 | --dot-border-radius | rounded corner size the non-current pages | `1px` |
 | --dot-color | dot color of the non-current pages | `#dddddd` |

@@ -92,3 +92,6 @@ export type { StepsProps, StepProps } from './steps'
 
 export { default as PageIndicator } from './page-indicator'
 export type { PageIndicatorProps } from './page-indicator'
+
+export { default as Tag } from './tag'
+export type { TagProps } from './tag'

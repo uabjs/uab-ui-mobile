@@ -49,6 +49,7 @@ export const sidebar = {
         { title: 'List 列表', link: '/components/list' },
         { title: 'PageIndicator 分页符', link: '/components/page-indicator' },
         { title: 'Steps 步骤条', link: '/components/steps' },
+        { title: 'Tag 标签', link: '/components/tag' },
         { title: 'Image 图片', link: '/components/image' },
         { title: 'ImageViewer 图片查看器', link: '/components/image-viewer' },
         { title: 'InfiniteScroll 无限滚动', link: '/components/infinite-scroll' },
