@@ -1,0 +1,111 @@
+@class-prefix-steps: ~'uabm-steps';
+@class-prefix-step: ~'uabm-step';
+
+.@{class-prefix-steps} {
+  --title-font-size: var(--uabm-font-size-main);
+  --description-font-size: var(--uabm-font-size-4);
+  --indicator-margin-right: 0;
+  --icon-size: 18px;
+
+  width: 100%;
+  box-sizing: border-box;
+
+  &-horizontal {
+    display: flex;
+    justify-content: space-around;
+    padding: 8px 0;
+
+    .@{class-prefix-step} {
+      flex: 1;
+      .@{class-prefix-step}-indicator {
+        width: 100%;
+        height: 24px;
+        &::after {
+          left: 50%;
+          top: 50%;
+          width: 100%;
+          height: 1px;
+          transform: translateY(-50%);
+        }
+      }
+      .@{class-prefix-step}-icon-container {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+
+    .@{class-prefix-step}-content {
+      text-align: center;
+      padding: 2px 8px 0;
+      font-size: var(--description-font-size);
+      .@{class-prefix-step}-title {
+        font-size: var(--title-font-size);
+      }
+      .@{class-prefix-step}-description {
+        margin-top: 4px;
+        color: var(--uabm-color-weak);
+      }
+    }
+  }
+}
+
+.@{class-prefix-step} {
+  --line-to-next-color: #e5e5e5;
+  --icon-color: #e5e5e5;
+
+  .@{class-prefix-step}-indicator {
+    position: relative;
+    &::after {
+      content: '';
+      position: absolute;
+      z-index: 0;
+      background-color: var(--line-to-next-color);
+    }
+    .@{class-prefix-step}-icon-container {
+      position: absolute;
+      color: var(--icon-color);
+      z-index: 1;
+      > .uabm-mobile-icon {
+        display: block;
+      }
+    }
+  }
+
+  &:last-child {
+    .@{class-prefix-step}-indicator::after {
+      display: none;
+    }
+  }
+
+  &-status-finish {
+    --icon-color: var(--uabm-color-primary);
+    --line-to-next-color: var(--uabm-color-primary);
+  }
+  &-status-wait {
+    --icon-color: #e5e5e5;
+    .@{class-prefix-step}-title {
+      color: var(--uabm-color-weak);
+    }
+  }
+  &-status-process {
+    --icon-color: var(--uabm-color-primary);
+    .@{class-prefix-step}-title {
+      color: var(--uabm-color-primary);
+    }
+  }
+  &-status-error {
+    --icon-color: var(--uabm-color-danger);
+    .@{class-prefix-step}-title {
+      color: var(--uabm-color-danger);
+    }
+  }
+}
+
+.@{class-prefix-step}-icon-dot {
+  display: block;
+  width: 8px;
+  height: 8px;
+  background: currentColor;
+  border-radius: 4px;
+}

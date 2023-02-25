@@ -47,6 +47,7 @@ export const sidebar = {
         { title: 'Collapse 折叠面板', link: '/components/collapse' },
         { title: 'FloatingPanel 浮动面板', link: '/components/floating-panel' },
         { title: 'List 列表', link: '/components/list' },
+        { title: 'Steps 步骤条', link: '/components/steps' },
         { title: 'Image 图片', link: '/components/image' },
         { title: 'ImageViewer 图片查看器', link: '/components/image-viewer' },
         { title: 'InfiniteScroll 无限滚动', link: '/components/infinite-scroll' },
