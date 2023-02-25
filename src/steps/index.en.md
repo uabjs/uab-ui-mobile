@@ -10,7 +10,7 @@ When a task is complex or has precedence, break it down into a series of steps t
 
 <code src="./demos/demo1.tsx"></code>
 
-<!-- <code src="./demos/demo2.tsx"></code> -->
+<code src="./demos/demo2.tsx"></code>
 
 ## Steps
 

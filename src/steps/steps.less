@@ -17,7 +17,7 @@
 
     .@{class-prefix-step} {
       flex: 1;
-      .@{class-prefix-step}-indicator {
+      &-indicator {
         width: 100%;
         height: 24px;
         &::after {
@@ -28,23 +28,71 @@
           transform: translateY(-50%);
         }
       }
-      .@{class-prefix-step}-icon-container {
+      &-icon-container {
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
       }
-    }
 
-    .@{class-prefix-step}-content {
-      text-align: center;
-      padding: 2px 8px 0;
-      font-size: var(--description-font-size);
-      .@{class-prefix-step}-title {
-        font-size: var(--title-font-size);
+      &-content {
+        text-align: center;
+        padding: 2px 8px 0;
+        font-size: var(--description-font-size);
+        .@{class-prefix-step}-title {
+          font-size: var(--title-font-size);
+        }
+        .@{class-prefix-step}-description {
+          margin-top: 4px;
+          color: var(--uabm-color-weak);
+        }
       }
-      .@{class-prefix-step}-description {
-        margin-top: 4px;
-        color: var(--uabm-color-weak);
+    }
+  }
+
+  &-vertical {
+    padding: 8px 16px;
+
+    .@{class-prefix-step} {
+      display: flex;
+      align-items: stretch;
+
+      &-indicator {
+        flex: none;
+        width: 24px;
+        margin-right: var(--indicator-margin-right);
+
+        &::after {
+          left: 50%;
+          top: calc(var(--title-font-size) * 1.5 / 2);
+          width: 1px;
+          height: 100%;
+          transform: translateX(-50%);
+        }
+      }
+      &-icon-container {
+        top: calc(var(--title-font-size) * 1.5 / 2);
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      &-content {
+        flex: auto;
+        padding-bottom: 24px;
+        .@{class-prefix-step}-title {
+          line-height: 1.5;
+          font-size: var(--title-font-size);
+        }
+        .@{class-prefix-step}-description {
+          margin-top: 4px;
+          color: var(--uabm-color-weak);
+          font-size: var(--description-font-size);
+        }
+      }
+
+      &:last-child {
+        .@{class-prefix-step}-content {
+          padding-bottom: 0;
+        }
       }
     }
   }
@@ -65,6 +113,7 @@
     .@{class-prefix-step}-icon-container {
       position: absolute;
       color: var(--icon-color);
+      font-size: var(--icon-size);
       z-index: 1;
       > .uabm-mobile-icon {
         display: block;
