@@ -6,6 +6,7 @@ import React, {
   useMemo,
   useRef,
   useState,
+  useImperativeHandle,
 } from 'react'
 import classNames from 'classnames'
 import { staged } from 'staged-components'
@@ -155,16 +156,6 @@ export const Swiper = forwardRef<SwiperRef, SwiperProps>(
         return (trackPixels * props.slideSize) / 100
       }
 
-      function swipeTo(index: number, immediate = false) {
-        const roundedIndex = Math.round(index)
-        const targetIndex = loop ? modulus(roundedIndex, count) : bound(roundedIndex, 0, count - 1)
-        setCurrent(targetIndex)
-        api.start({
-          position: (loop ? roundedIndex : boundIndex(roundedIndex)) * 100,
-          immediate,
-        })
-      }
-
       const bind = useDrag(
         state => {
           // dragCancelRef.current = state.cancel
@@ -237,6 +228,31 @@ export const Swiper = forwardRef<SwiperRef, SwiperProps>(
           pointer: { touch: true },
         }
       )
+
+      // ref 暴露出去的方法
+      function swipeTo(index: number, immediate = false) {
+        const roundedIndex = Math.round(index)
+        const targetIndex = loop ? modulus(roundedIndex, count) : bound(roundedIndex, 0, count - 1)
+        setCurrent(targetIndex)
+        api.start({
+          position: (loop ? roundedIndex : boundIndex(roundedIndex)) * 100,
+          immediate,
+        })
+      }
+
+      function swipeNext() {
+        swipeTo(Math.round(position.get() / 100) + 1)
+      }
+
+      function swipePrev() {
+        swipeTo(Math.round(position.get() / 100) - 1)
+      }
+
+      useImperativeHandle(ref, () => ({
+        swipeTo,
+        swipeNext,
+        swipePrev,
+      }))
 
       const dragProps = { ...(props.allowTouchMove ? bind() : {}) }
       const stopPropagationProps: Partial<Record<ValuesToUnion<typeof eventToPropRecord>, any>> = {}

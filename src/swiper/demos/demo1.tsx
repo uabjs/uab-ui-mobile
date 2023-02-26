@@ -1,8 +1,8 @@
 import './demo1.less'
 
 import React, { useRef } from 'react'
-import { Swiper, SwiperRef } from 'uab-ui-mobile'
-import { DemoBlock } from 'uab-ui-mobile-demos'
+import { Swiper, SwiperRef, Space, Button } from 'uab-ui-mobile'
+import { DemoBlock, DemoDescription } from 'uab-ui-mobile-demos'
 
 const colors = ['#ace0ff', '#bcffbd', '#e4fabd', '#ffcfac']
 
@@ -31,6 +31,31 @@ export default () => {
 
       <DemoBlock title='循环'>
         <Swiper loop>{items}</Swiper>
+      </DemoBlock>
+
+      <DemoBlock title='手动控制'>
+        <Space direction='vertical' block>
+          <Swiper allowTouchMove={false} ref={ref} loop>
+            {items}
+          </Swiper>
+          <Space>
+            <Button
+              onClick={() => {
+                ref.current?.swipePrev()
+              }}
+            >
+              上一张
+            </Button>
+            <Button
+              onClick={() => {
+                ref.current?.swipeNext()
+              }}
+            >
+              下一张
+            </Button>
+          </Space>
+          <DemoDescription content='在禁用手势拖拽后，可以通过 Ref 进行手动翻页' />
+        </Space>
       </DemoBlock>
     </>
   )
