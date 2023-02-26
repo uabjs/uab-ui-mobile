@@ -52,6 +52,7 @@ export const sidebar = {
         { title: 'List 列表', link: '/components/list' },
         { title: 'PageIndicator 分页符', link: '/components/page-indicator' },
         { title: 'Steps 步骤条', link: '/components/steps' },
+        { title: 'Swiper 走马灯', link: '/components/swiper' },
         { title: 'Tag 标签', link: '/components/tag' },
         { title: 'WaterMark 水印', link: '/components/water-mark' },
       ],

@@ -98,3 +98,6 @@ export type { TagProps } from './tag'
 
 export { default as WaterMark } from './water-mark'
 export type { WaterMarkProps } from './water-mark'
+
+export { default as Swiper } from './swiper'
+export type { SwiperProps, SwiperRef } from './swiper'
