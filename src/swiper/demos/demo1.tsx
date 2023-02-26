@@ -29,6 +29,10 @@ export default () => {
         <Swiper>{items}</Swiper>
       </DemoBlock>
 
+      <DemoBlock title='自动播放'>
+        <Swiper autoplay>{items}</Swiper>
+      </DemoBlock>
+
       <DemoBlock title='循环'>
         <Swiper loop>{items}</Swiper>
       </DemoBlock>

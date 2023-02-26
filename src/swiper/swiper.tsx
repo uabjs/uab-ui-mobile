@@ -7,6 +7,7 @@ import React, {
   useRef,
   useState,
   useImperativeHandle,
+  useEffect,
 } from 'react'
 import classNames from 'classnames'
 import { staged } from 'staged-components'
@@ -109,6 +110,7 @@ export const Swiper = forwardRef<SwiperRef, SwiperProps>(
       }
 
       const [current, setCurrent] = useState(props.defaultIndex)
+      // dragging: 用来判断当前是否在拖动，在拖动就不执行一些事件 比如：自动轮播
       const [dragging, setDragging, draggingRef] = useRefState(false)
 
       function boundIndex(current: number) {
@@ -253,6 +255,22 @@ export const Swiper = forwardRef<SwiperRef, SwiperProps>(
         swipeNext,
         swipePrev,
       }))
+
+      const { autoplay, autoplayInterval } = props
+      useEffect(() => {
+        if (!autoplay || dragging) return
+
+        let interval: number
+        function tick() {
+          interval = window.setTimeout(tick, autoplayInterval)
+          swipeNext()
+        }
+        interval = window.setTimeout(tick, autoplayInterval)
+
+        return () => {
+          if (interval) window.clearTimeout(interval)
+        }
+      }, [autoplay, autoplayInterval, dragging, count])
 
       const dragProps = { ...(props.allowTouchMove ? bind() : {}) }
       const stopPropagationProps: Partial<Record<ValuesToUnion<typeof eventToPropRecord>, any>> = {}
