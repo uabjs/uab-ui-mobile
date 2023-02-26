@@ -61,6 +61,20 @@ export default () => {
           <DemoDescription content='在禁用手势拖拽后，可以通过 Ref 进行手动翻页' />
         </Space>
       </DemoBlock>
+
+      <DemoBlock title='自定义样式'>
+        <Space direction='vertical' block>
+          <Swiper
+            style={{
+              '--border-radius': '8px',
+            }}
+            defaultIndex={3}
+          >
+            {items}
+          </Swiper>
+          <DemoDescription content='通过 CSS 变量可以控制整体的圆角等样式' />
+        </Space>
+      </DemoBlock>
     </>
   )
 }

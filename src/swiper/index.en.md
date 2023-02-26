@@ -14,11 +14,11 @@ A set of rotating areas.
 
 <code src="./demos/demo1.tsx"></code>
 
-<!-- ### Slides which are not full-width
+### Slides which are not full-width
 
-<code src="./demos/demo4.tsx"></code>
+<code src="./demos/demo2.tsx"></code>
 
-### Indicators
+<!-- ### Indicators
 
 <code src="./demos/demo2.tsx"></code>
 

@@ -14,11 +14,11 @@
 
 <code src="./demos/demo1.tsx"></code>
 
-<!-- ### 不是满宽的滑块
+### 不是满宽的滑块
 
-<code src="./demos/demo4.tsx"></code>
+<code src="./demos/demo2.tsx"></code>
 
-### 指示器
+<!-- ### 指示器
 
 <code src="./demos/demo2.tsx"></code>
 
