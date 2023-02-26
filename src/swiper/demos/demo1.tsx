@@ -28,6 +28,10 @@ export default () => {
       <DemoBlock title='基础用法'>
         <Swiper>{items}</Swiper>
       </DemoBlock>
+
+      <DemoBlock title='循环'>
+        <Swiper loop>{items}</Swiper>
+      </DemoBlock>
     </>
   )
 }

@@ -250,7 +250,31 @@ export const Swiper = forwardRef<SwiperRef, SwiperProps>(
 
       function renderTrackInner() {
         if (loop) {
-          return <div>loop</div>
+          return (
+            <div className={`${classPrefix}-track-inner`}>
+              {React.Children.map(validChildren, (child, index) => {
+                return (
+                  <animated.div
+                    className={`${classPrefix}-slide`}
+                    style={{
+                      // 通过 left 和 transform 来单个单个控制每个 item 的位置
+                      [isVertical ? 'y' : 'x']: position.to(position => {
+                        let finalPosition = -position + index * 100
+                        const totalWidth = count * 100
+                        const flagWidth = totalWidth / 2
+                        // 二分取模: 滚动循环核心算法
+                        finalPosition = modulus(finalPosition + flagWidth, totalWidth) - flagWidth
+                        return `${finalPosition}%`
+                      }),
+                      [isVertical ? 'top' : 'left']: `-${index * 100}%`,
+                    }}
+                  >
+                    {child}
+                  </animated.div>
+                )
+              })}
+            </div>
+          )
         } else {
           return (
             <animated.div
@@ -304,6 +328,7 @@ export const Swiper = forwardRef<SwiperRef, SwiperProps>(
   })
 )
 
+/** 模数 */
 function modulus(value: number, division: number) {
   const remainder = value % division
   return remainder < 0 ? remainder + division : remainder
