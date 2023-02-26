@@ -18,11 +18,11 @@ A set of rotating areas.
 
 <code src="./demos/demo2.tsx"></code>
 
-<!-- ### Indicators
+### Indicators
 
 <code src="./demos/demo2.tsx"></code>
 
-### Full Page Guide
+<!-- ### Full Page Guide
 
 <code src="./demos/demo3.tsx"></code> -->
 
@@ -30,11 +30,7 @@ A set of rotating areas.
 
 When you use a vertical Swiper, be sure to set its height through the `--height` CSS variable, otherwise the Swiper will display abnormally.
 
-<!-- <code src="./demos/demo5.tsx"></code>
-
-<code src="./demos/demo6.tsx" debug></code>
-
-<code src="./demos/demo7.tsx" debug></code> -->
+<code src="./demos/demo5.tsx"></code>
 
 ## Swiper
 

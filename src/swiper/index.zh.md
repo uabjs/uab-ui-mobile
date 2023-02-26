@@ -18,11 +18,11 @@
 
 <code src="./demos/demo2.tsx"></code>
 
-<!-- ### 指示器
+### 指示器
 
-<code src="./demos/demo2.tsx"></code>
+<code src="./demos/demo3.tsx"></code>
 
-### 全屏引导
+<!-- ### 全屏引导
 
 <code src="./demos/demo3.tsx"></code> -->
 
@@ -30,9 +30,7 @@
 
 当你使用竖向的 Swiper 时，请务必通过 `--height` CSS 变量设置一下它的高度，否则 Swiper 的会显示异常。
 
-<!-- <code src="./demos/demo5.tsx"></code>
-<code src="./demos/demo6.tsx" debug></code>
-<code src="./demos/demo7.tsx" debug></code>  -->
+<code src="./demos/demo5.tsx"></code>
 
 ## Swiper
 
