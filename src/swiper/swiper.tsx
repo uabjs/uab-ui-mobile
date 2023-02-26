@@ -160,13 +160,16 @@ export const Swiper = forwardRef<SwiperRef, SwiperProps>(
 
       const bind = useDrag(
         state => {
-          // dragCancelRef.current = state.cancel
-          // if (!state.intentional) return
-          // if (state.first && !currentUid) {
-          //   currentUid = uid
-          // }
-          // if (currentUid !== uid) return
-          // currentUid = state.last ? undefined : uid
+          dragCancelRef.current = state.cancel
+          if (!state.intentional) return
+
+          // 拖拽开始时赋值，松手时释放，判断是当前组件才往下走
+          // 目的：为每一次拖拽生成唯一id，解决移动端use-gesture里的event.stopPropagation不会阻止冒泡问题。
+          if (state.first && !currentUid) {
+            currentUid = uid
+          }
+          if (currentUid !== uid) return
+          currentUid = state.last ? undefined : uid
 
           const slidePixels = getSlidePixels()
           if (!slidePixels) return
