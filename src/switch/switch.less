@@ -1,0 +1,110 @@
+@class-prefix-switch: ~'uabm-switch';
+
+@keyframes loading-rotate {
+  100% {
+    transform: rotate(1turn);
+  }
+}
+
+.@{class-prefix-switch} {
+  --checked-color: var(--uabm-color-primary);
+  --height: 31px;
+  --width: 51px;
+  --border-width: 2px;
+
+  display: inline-block;
+  vertical-align: middle;
+  box-sizing: border-box;
+  position: relative;
+  align-self: center;
+  cursor: pointer;
+
+  input {
+    display: none;
+  }
+
+  &-checkbox {
+    min-width: var(--width);
+    height: var(--height);
+    line-height: var(--height);
+    box-sizing: border-box;
+    border-radius: 31px;
+    background: var(--uabm-color-border);
+    z-index: 0;
+    overflow: hidden;
+
+    &::before {
+      content: ' ';
+      position: absolute;
+      left: var(--border-width);
+      top: var(--border-width);
+      width: calc(100% - 2 * var(--border-width));
+      height: calc(var(--height) - 2 * var(--border-width));
+      border-radius: calc(var(--height) - 2 * var(--border-width));
+      background: var(--uabm-color-background);
+      transition: all 200ms;
+      transform: scale(1);
+      z-index: 1;
+    }
+  }
+
+  &-handle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: var(--border-width);
+    left: var(--border-width);
+    width: calc(var(--height) - 2 * var(--border-width));
+    height: calc(var(--height) - 2 * var(--border-width));
+    border-radius: calc(var(--height) - 2 * var(--border-width));
+    background: var(--uabm-color-white);
+    transition: all 200ms;
+    box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.2), 0 2px 11.5px 0 rgba(0, 0, 0, 0.08),
+      -1px 2px 2px 0 rgba(0, 0, 0, 0.1);
+    z-index: 2;
+  }
+
+  &-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    height: 100%;
+    margin: 0 8px 0 calc(var(--height) - var(--border-width) + 4px);
+    color: var(--uabm-color-weak);
+    font-size: var(--uabm-font-size-7);
+    transition: margin 200ms;
+    z-index: 1;
+  }
+
+  /* 选中状态 */
+  &.@{class-prefix-switch}-checked {
+    .@{class-prefix-switch}-checkbox {
+      background: var(--checked-color);
+      &:before {
+        transform: scale(0);
+      }
+    }
+    .@{class-prefix-switch}-handle {
+      left: calc(100% - (var(--height) - var(--border-width)));
+    }
+    .@{class-prefix-switch}-inner {
+      margin: 0 calc(var(--height) - var(--border-width) + 5px) 0 10px;
+      color: var(--uabm-color-white);
+    }
+  }
+
+  /* 禁用状态 */
+  &.@{class-prefix-switch}-disabled {
+    cursor: not-allowed;
+    opacity: 0.4;
+  }
+
+  /* loading图标 */
+  &-spin-icon {
+    width: 14px;
+    height: 14px;
+    animation: loading-rotate 1s linear infinite;
+  }
+}

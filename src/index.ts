@@ -104,3 +104,6 @@ export type { SwiperProps, SwiperRef } from './swiper'
 
 export { default as Input } from './input'
 export type { InputProps, InputRef } from './input'
+
+export { default as Switch } from './switch'
+export type { SwitchProps } from './switch'

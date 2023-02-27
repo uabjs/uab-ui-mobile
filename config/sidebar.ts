@@ -59,7 +59,10 @@ export const sidebar = {
     },
     {
       title: '信息录入',
-      children: [{ title: 'Input 输入框', link: '/components/input' }],
+      children: [
+        { title: 'Input 输入框', link: '/components/input' },
+        { title: 'Switch 开关', link: '/components/switch' },
+      ],
     },
     {
       title: '反馈',
