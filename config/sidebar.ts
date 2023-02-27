@@ -58,6 +58,10 @@ export const sidebar = {
       ],
     },
     {
+      title: '信息录入',
+      children: [{ title: 'Input 输入框', link: '/components/input' }],
+    },
+    {
       title: '反馈',
       children: [
         { title: 'ErrorBlock 异常', link: '/components/error-block' },

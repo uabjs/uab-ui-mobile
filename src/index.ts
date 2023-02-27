@@ -101,3 +101,6 @@ export type { WaterMarkProps } from './water-mark'
 
 export { default as Swiper } from './swiper'
 export type { SwiperProps, SwiperRef } from './swiper'
+
+export { default as Input } from './input'
+export type { InputProps, InputRef } from './input'

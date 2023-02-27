@@ -1,0 +1,107 @@
+@class-prefix-input: ~'uabm-input';
+
+.@{class-prefix-input} {
+  --font-size: var(--uabm-font-size-9);
+  --color: var(--uabm-color-text);
+  --placeholder-color: var(--uabm-color-light);
+  --text-align: left;
+  --background-color: transparent;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  min-height: 24px;
+  background-color: var(--background-color);
+
+  &-disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+}
+
+.@{class-prefix-input}-element {
+  flex: auto;
+  display: inline-block;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  padding: 0;
+  margin: 0;
+  color: var(--color);
+  font-size: var(--font-size);
+  line-height: 1.5;
+  background: transparent;
+  border: 0;
+  outline: none;
+  appearance: none;
+  min-height: 1.5em;
+  text-align: var(--text-align);
+
+  &::placeholder {
+    color: var(--placeholder-color);
+    font-family: inherit;
+  }
+
+  &:-webkit-autofill {
+    background-color: transparent;
+  }
+
+  // IE10 及以上版本 type="text" 或 type="search" 属性时，会自动显示一个清除按钮，需通过 ::-ms-clear 伪元素来修改按钮的样式和行为
+  &::-ms-clear {
+    display: none;
+  }
+  // IE 属性为 type="password" 时会自动显示一个显示密码的按钮, 通过 ::-ms-reveal 伪元素来修改按钮的样式和行为
+  &::-ms-reveal {
+    display: none;
+  }
+
+  // type="search" 属性时，会自动显示一个取消搜索按钮，需通过 ::-webkit-search-cancel-button 伪元素来修改按钮的样式和行为
+  &::-webkit-search-cancel-button {
+    display: none;
+  }
+  //
+  &::-webkit-search-decoration {
+    display: none;
+  }
+
+  &:disabled {
+    opacity: 1;
+  }
+
+  // for ios
+  &[type='date'],
+  &[type='time'],
+  &[type='datetime-local'] {
+    min-height: 1.5em;
+  }
+
+  // for safari
+  &[type='search'] {
+    -webkit-appearance: none;
+  }
+
+  &[readonly] {
+    pointer-events: none;
+  }
+}
+
+.@{class-prefix-input}-clear {
+  flex: none;
+  padding: 4px;
+  margin-left: 8px;
+  color: var(--uabm-color-light);
+  cursor: pointer;
+
+  &:active {
+    color: var(--uabm-color-weak);
+  }
+
+  .uabm-mobile-icon {
+    display: block;
+    font-size: var(--uabm-font-size-7);
+  }
+}

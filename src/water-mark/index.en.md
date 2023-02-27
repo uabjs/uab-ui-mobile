@@ -34,6 +34,6 @@ Suitable for preventing information theft.
 
 ### CSS Variables
 
-| Name      | Description                       | Default | Global                     |
-| --------- | --------------------------------- | ------- | -------------------------- |
-| --z-index | `z-index` of the water mark layer | `2000`  | `--adm-water-mark-z-index` |
+| Name      | Description                       | Default | Global                      |
+| --------- | --------------------------------- | ------- | --------------------------- |
+| --z-index | `z-index` of the water mark layer | `2000`  | `--uabm-water-mark-z-index` |
