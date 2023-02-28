@@ -1,6 +1,6 @@
 {
   "name": "uab-ui-mobile",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "基于 react 的用于构建移动端应用程序的基本 web UI 库。",
   "scripts": {
     "prepare": "husky install",
