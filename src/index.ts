@@ -110,3 +110,6 @@ export type { SwitchProps } from './switch'
 
 export { default as TextArea } from './text-area'
 export type { TextAreaProps, TextAreaRef } from './text-area'
+
+export { default as Selector } from './selector'
+export type { SelectorProps, SelectorOption } from './selector'

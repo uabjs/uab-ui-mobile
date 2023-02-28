@@ -1,0 +1,83 @@
+@class-prefix-selector: ~'uabm-selector';
+
+.@{class-prefix-selector} {
+  --color: var(--uabm-color-box);
+  --checked-color: #e7f1ff;
+  --text-color: var(--uabm-color-text);
+  --checked-text-color: var(--uabm-color-primary);
+  --border: none;
+  --checked-border: none;
+  --border-radius: 2px;
+  --padding: 8px 16px;
+  --gap: 8px;
+  ---gap: var(--gap);
+  ---gap-horizontal: var(--gap-horizontal, var(--gap));
+  ---gap-vertical: var(--gap-vertical, var(--gap));
+
+  overflow: hidden;
+  font-size: var(--uabm-font-size-7);
+  line-height: 1.4;
+
+  .uabm-space.uabm-space {
+    --gap: 12px;
+  }
+  .uabm-grid {
+    --gap: var(---gap);
+    --gap-horizontal: var(---gap-horizontal);
+    --gap-vertical: var(---gap-vertical);
+  }
+
+  &-item {
+    padding: var(--padding);
+    position: relative;
+    background-color: var(--color);
+    border: var(--border);
+    border-radius: var(--border-radius);
+    color: var(--text-color);
+    opacity: 1;
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    // overflow: hidden;
+    // vertical-align: top;
+
+    &-description {
+      font-size: var(--uabm-font-size-main);
+      color: var(--uabm-color-weak);
+    }
+
+    // 选中后的颜色
+    &-active,
+    &-multiple-active {
+      color: var(--checked-text-color);
+      background-color: var(--checked-color);
+      border: var(--checked-border);
+    }
+
+    // ✅样式
+    .@{class-prefix-selector}-check-mark-wrapper {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      width: 0;
+      height: 0;
+      border-top: solid 8px transparent;
+      border-bottom: solid 8px var(--uabm-color-primary);
+      border-left: solid 10px transparent;
+      border-right: solid 10px var(--uabm-color-primary);
+
+      > svg {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 6px;
+        width: 6px;
+      }
+    }
+
+    &-disabled {
+      cursor: not-allowed;
+      opacity: 0.4;
+    }
+  }
+}
