@@ -62,6 +62,7 @@ export const sidebar = {
       children: [
         { title: 'Input 输入框', link: '/components/input' },
         { title: 'Switch 开关', link: '/components/switch' },
+        { title: 'TextArea 文本域', link: '/components/text-area' },
       ],
     },
     {

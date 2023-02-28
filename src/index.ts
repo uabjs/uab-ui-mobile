@@ -107,3 +107,6 @@ export type { InputProps, InputRef } from './input'
 
 export { default as Switch } from './switch'
 export type { SwitchProps } from './switch'
+
+export { default as TextArea } from './text-area'
+export type { TextAreaProps, TextAreaRef } from './text-area'
