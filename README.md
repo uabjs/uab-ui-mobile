@@ -68,11 +68,11 @@ import { Button } from 'uab-ui-mobile'
 - [x] ImageViewer 图片查看器
 - [x] InfiniteScroll 无限滚动
 - [x] List 列表
-- [ ] PageIndicator 分页符
-- [ ] Steps 步骤条
-- [ ] Swiper 走马灯
-- [ ] Tag 标签
-- [ ] WaterMark 水印
+- [x] PageIndicator 分页符
+- [x] Steps 步骤条
+- [x] Swiper 走马灯
+- [x] Tag 标签
+- [x] WaterMark 水印
 - [ ] Footer 页脚
 
 ### 信息录入
@@ -82,17 +82,17 @@ import { Button } from 'uab-ui-mobile'
 - [ ] CheckList 可勾选列表
 - [ ] Checkbox 复选框
 - [ ] Form 表单
-- [ ] Input 输入框
+- [x] Input 输入框
 - [ ] Picker 选择器
 - [ ] PickerView 选择器视图
 - [ ] Radio 单选框
 - [ ] Rate 评分
 - [ ] SearchBar 搜索框
-- [ ] Selector 选择组
+- [x] Selector 选择组
 - [ ] Slider 滑动输入条
 - [ ] Stepper 步进器
-- [ ] Switch 开关
-- [ ] TextArea 文本域
+- [x] Switch 开关
+- [x] TextArea 文本域
 
 ### 反馈
 
