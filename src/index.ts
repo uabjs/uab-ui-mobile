@@ -113,3 +113,6 @@ export type { TextAreaProps, TextAreaRef } from './text-area'
 
 export { default as Selector } from './selector'
 export type { SelectorProps, SelectorOption } from './selector'
+
+export { default as Stepper } from './stepper'
+export type { StepperProps } from './stepper'
