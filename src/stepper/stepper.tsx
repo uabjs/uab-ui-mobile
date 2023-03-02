@@ -83,6 +83,7 @@ export function Stepper<ValueType extends number | string>(p: StepperProps) {
     step,
     max,
     min,
+    inputReadOnly,
     digits,
     stringMode,
     formatter,
@@ -250,6 +251,7 @@ export function Stepper<ValueType extends number | string>(p: StepperProps) {
             disabled || handleInputChange(val)
           }}
           disabled={disabled}
+          readOnly={inputReadOnly}
           // 无障碍：https://developer.mozilla.org/zh-CN/docs/Web/Accessibility/ARIA
           // 用于使残障人士更容易访问
           role='spinbutton' // 告诉残障人士s此处是一个spin按钮

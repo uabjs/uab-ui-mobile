@@ -8,6 +8,10 @@ export default () => {
       <DemoBlock title='禁用状态'>
         <Stepper disabled />
       </DemoBlock>
+
+      <DemoBlock title='输入框只读状态'>
+        <Stepper inputReadOnly />
+      </DemoBlock>
     </>
   )
 }
