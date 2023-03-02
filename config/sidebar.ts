@@ -64,6 +64,7 @@ export const sidebar = {
         { title: 'Selector 选择组', link: '/components/selector' },
         { title: 'Switch 开关', link: '/components/switch' },
         { title: 'TextArea 文本域', link: '/components/text-area' },
+        { title: 'Stepper 步进器', link: '/components/stepper' },
       ],
     },
     {

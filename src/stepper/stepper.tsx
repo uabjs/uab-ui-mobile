@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import classNames from 'classnames'
 import getMiniDecimal, { toFixed, type DecimalClass } from '@rc-component/mini-decimal'
+import useMergedState from 'rc-util/lib/hooks/useMergedState'
 import { MinusOutline, AddOutline } from 'antd-mobile-icons'
 import { NativeProps, withNativeProps } from '../utils/native-props'
 import { mergeProps } from '../utils/with-default-props'
@@ -60,21 +61,103 @@ export type StringStepperProps = BaseStepperProps<string> & {
 }
 export type StepperProps = NumberStepperProps | StringStepperProps
 
+type DEFAULT_PROPS = 'step'
+type MergedStepperProps<ValueType> = Omit<BaseStepperProps<ValueType>, DEFAULT_PROPS> &
+  Required<Pick<BaseStepperProps<ValueType>, DEFAULT_PROPS>> & {
+    stringMode?: boolean
+  }
+
 const defaultProps = {
   step: 1,
   disabled: false,
   allowEmpty: false,
 }
 
-export function Stepper<ValueProps extends number | string>(p: StepperProps) {
+export function Stepper<ValueType extends number | string>(p: StepperProps) {
   const props = mergeProps(defaultProps, p)
-  const { defaultValue = 0 as ValueType, value, onChange, disabled, step, max, min } = props
+  const {
+    defaultValue = 0 as ValueType,
+    value,
+    onChange,
+    disabled,
+    step,
+    max,
+    min,
+    digits,
+    stringMode,
+    formatter,
+  } = props as MergedStepperProps<ValueType>
   const { locale } = useConfig()
 
-  const [inputValue, setInputValue] = useState()
+  // ========================== Parse / Format ==========================
+  /** 格式化到小数点后固定位数 */
+  const fixedValue = (value: ValueType): string => {
+    const fixedValue = digits !== undefined ? toFixed(value.toString(), '.', digits) : value
+    return fixedValue.toString()
+  }
+
+  /** 返回string或number （stringMode: 字符值模式，开启后支持高精度小数） */
+  const getValueAsType = (value: DecimalClass) =>
+    (stringMode ? value.toString() : value.toNumber()) as ValueType
+
+  /** 格式化值  */
+  const formatValue = (value: ValueType | null): string => {
+    if (value === null) return ''
+    // 格式化程序
+    if (formatter) {
+      return formatter(value)
+    } else {
+      return fixedValue(value)
+    }
+  }
+
+  // ======================== Value & InputValue ========================
+  const [mergedValue, setMergedValue] = useMergedState<ValueType | null>(defaultValue, {
+    value,
+    onChange: nextValue => {
+      onChange?.(nextValue as ValueType)
+    },
+  })
+  const [inputValue, setInputValue] = useState(() => formatValue(mergedValue))
+
+  // 检查并设置值
+  function setValueWithCheck(nextValue: DecimalClass) {
+    if (nextValue.isNaN()) return
+    let target = nextValue
+    // 放入范围内
+    if (min !== undefined) {
+      const minDecimal = getMiniDecimal(min)
+      if (target.lessEquals(minDecimal)) {
+        target = minDecimal
+      }
+    }
+
+    if (max !== undefined) {
+      const maxDecimal = getMiniDecimal(max)
+      if (maxDecimal.lessEquals(target)) {
+        target = maxDecimal
+      }
+    }
+
+    // 固定数字
+    if (digits !== undefined) {
+      target = getMiniDecimal(fixedValue(getValueAsType(target)))
+    }
+
+    // 赋值
+    setMergedValue(getValueAsType(target))
+  }
+
   // ============================== Focus ===============================
   const [focused, setFocused] = useState(false)
   const inputRef = React.useRef<InputRef>(null)
+
+  // mergedValue 改变时更新 InputValue
+  useEffect(() => {
+    if (!focused) {
+      setInputValue(formatValue(mergedValue))
+    }
+  }, [focused, mergedValue, digits])
 
   // ============================ Operations ============================
   const handleOffset = (positive: boolean) => {
@@ -82,6 +165,9 @@ export function Stepper<ValueProps extends number | string>(p: StepperProps) {
     if (!positive) {
       stepValue = stepValue.negate()
     }
+
+    // stepValue 区分加减类型，stepValue.toString() = '1' | '-1'
+    setValueWithCheck(getMiniDecimal(mergedValue ?? 0).add(stepValue.toString()))
   }
   const handleMinus = () => {
     handleOffset(false)
@@ -115,6 +201,9 @@ export function Stepper<ValueProps extends number | string>(p: StepperProps) {
           ref={inputRef}
           className={`${classPrefix}-input`}
           value={inputValue}
+          onChange={val => {
+            // disabled || handleInputChange(val)
+          }}
           disabled={disabled}
           // 无障碍：https://developer.mozilla.org/zh-CN/docs/Web/Accessibility/ARIA
           // 用于使残障人士更容易访问
