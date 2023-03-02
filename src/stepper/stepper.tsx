@@ -86,6 +86,7 @@ export function Stepper<ValueType extends number | string>(p: StepperProps) {
     digits,
     stringMode,
     formatter,
+    parser,
   } = props as MergedStepperProps<ValueType>
   const { locale } = useConfig()
 
@@ -111,6 +112,16 @@ export function Stepper<ValueType extends number | string>(p: StepperProps) {
     }
   }
 
+  /** 用户自定义格式化了值需要通过用的编译器编译值 */
+  const parseValue = (text: string): string | null => {
+    if (text === '') return null
+    if (parser) {
+      return String(parser(text))
+    }
+    const decimal = getMiniDecimal(text)
+    return decimal.isInvalidate() ? null : decimal.toString()
+  }
+
   // ======================== Value & InputValue ========================
   const [mergedValue, setMergedValue] = useMergedState<ValueType | null>(defaultValue, {
     value,
@@ -124,7 +135,7 @@ export function Stepper<ValueType extends number | string>(p: StepperProps) {
   function setValueWithCheck(nextValue: DecimalClass) {
     if (nextValue.isNaN()) return
     let target = nextValue
-    // 放入范围内
+    // 最小取值
     if (min !== undefined) {
       const minDecimal = getMiniDecimal(min)
       if (target.lessEquals(minDecimal)) {
@@ -132,6 +143,7 @@ export function Stepper<ValueType extends number | string>(p: StepperProps) {
       }
     }
 
+    // 最大取值
     if (max !== undefined) {
       const maxDecimal = getMiniDecimal(max)
       if (maxDecimal.lessEquals(target)) {
@@ -139,13 +151,28 @@ export function Stepper<ValueType extends number | string>(p: StepperProps) {
       }
     }
 
-    // 固定数字
+    // 固定小数位数
     if (digits !== undefined) {
       target = getMiniDecimal(fixedValue(getValueAsType(target)))
     }
 
     // 赋值
     setMergedValue(getValueAsType(target))
+  }
+
+  /** 输入值改变 */
+  const handleInputChange = (v: string) => {
+    setInputValue(v)
+    const valueStr = parseValue(v)
+    if (valueStr === null) {
+      if (props.allowEmpty) {
+        setMergedValue(null)
+      } else {
+        setMergedValue(defaultValue)
+      }
+    } else {
+      setValueWithCheck(getMiniDecimal(valueStr))
+    }
   }
 
   // ============================== Focus ===============================
@@ -160,7 +187,9 @@ export function Stepper<ValueType extends number | string>(p: StepperProps) {
   }, [focused, mergedValue, digits])
 
   // ============================ Operations ============================
+  // 加减按钮操作
   const handleOffset = (positive: boolean) => {
+    // 加减步长
     let stepValue = getMiniDecimal(step)
     if (!positive) {
       stepValue = stepValue.negate()
@@ -202,7 +231,7 @@ export function Stepper<ValueType extends number | string>(p: StepperProps) {
           className={`${classPrefix}-input`}
           value={inputValue}
           onChange={val => {
-            // disabled || handleInputChange(val)
+            disabled || handleInputChange(val)
           }}
           disabled={disabled}
           // 无障碍：https://developer.mozilla.org/zh-CN/docs/Web/Accessibility/ARIA
