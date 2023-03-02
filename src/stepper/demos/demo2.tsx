@@ -29,6 +29,32 @@ export default () => {
           }}
         />
       </DemoBlock>
+
+      <DemoBlock title='允许清空'>
+        <Stepper
+          allowEmpty={true}
+          min={10}
+          max={20}
+          onChange={value => {
+            console.log(value)
+          }}
+        />
+      </DemoBlock>
+
+      <DemoBlock title='自定义css变量'>
+        <Stepper
+          style={{
+            '--border': '1px solid var(--uabm-color-border)',
+            '--border-inner': 'none',
+            '--height': '36px',
+            '--input-width': '70px',
+            '--input-background-color': 'var(--uabm-color-background)',
+            '--active-border': '1px solid #1677ff',
+          }}
+          defaultValue={10000}
+          step={10000}
+        />
+      </DemoBlock>
     </>
   )
 }
