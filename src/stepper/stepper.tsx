@@ -189,6 +189,13 @@ export function Stepper<ValueType extends number | string>(p: StepperProps) {
     }
   }
 
+  // 聚焦时执行 select 方法
+  useEffect(() => {
+    if (focused) {
+      inputRef.current?.nativeElement?.select?.()
+    }
+  }, [focused])
+
   // mergedValue 改变时更新 InputValue
   useEffect(() => {
     if (!focused) {
