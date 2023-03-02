@@ -204,8 +204,24 @@ export function Stepper<ValueType extends number | string>(p: StepperProps) {
   const handlePlus = () => {
     handleOffset(true)
   }
-  const disabledMinus = () => {}
-  const disabledPlus = () => {}
+  const disabledMinus = () => {
+    if (disabled) return true
+    if (mergedValue === null) return false
+    // 当前值 <= 最小值 时禁用
+    if (min !== undefined) {
+      return mergedValue <= min
+    }
+    return false
+  }
+  const disabledPlus = () => {
+    if (disabled) return true
+    if (mergedValue === null) return false
+    // 当前值 >= 最大值 时禁用
+    if (max !== undefined) {
+      return mergedValue >= max
+    }
+    return false
+  }
 
   return withNativeProps(
     props,

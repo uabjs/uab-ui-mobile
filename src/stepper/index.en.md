@@ -10,9 +10,9 @@ It is suitable for inputting and adjusting the current value within a certain ra
 
 <code src="./demos/demo1.tsx"></code>
 
-<!-- <code src="./demos/demo2.tsx"></code>
+<code src="./demos/demo2.tsx"></code>
 
-<code src="./demos/demo3.tsx"></code> -->
+<!-- <code src="./demos/demo3.tsx"></code> -->
 
 ## Stepper
 
