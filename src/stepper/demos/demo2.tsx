@@ -12,6 +12,23 @@ export default () => {
       <DemoBlock title='输入框只读状态'>
         <Stepper inputReadOnly />
       </DemoBlock>
+
+      <DemoBlock title='自定义宽度'>
+        <Stepper style={{ width: '120px' }} defaultValue={10000} step={10000} />
+      </DemoBlock>
+
+      <DemoBlock title='获得/失去焦点'>
+        <Stepper
+          onFocus={() => {
+            // Toast.show('获得焦点')
+            console.log('获得焦点')
+          }}
+          onBlur={() => {
+            // Toast.show('失去焦点')
+            console.log('失去焦点')
+          }}
+        />
+      </DemoBlock>
     </>
   )
 }

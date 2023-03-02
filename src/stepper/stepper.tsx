@@ -180,6 +180,15 @@ export function Stepper<ValueType extends number | string>(p: StepperProps) {
   const [focused, setFocused] = useState(false)
   const inputRef = React.useRef<InputRef>(null)
 
+  /** true时设置状态正在聚焦，比将值转换为原始文本，否则相反 */
+  function triggerFocus(nextFocus: boolean) {
+    setFocused(nextFocus)
+    // 在聚焦时将值转换为原始文本
+    if (nextFocus) {
+      setInputValue(mergedValue !== null && mergedValue !== undefined ? String(mergedValue) : '')
+    }
+  }
+
   // mergedValue 改变时更新 InputValue
   useEffect(() => {
     if (!focused) {
@@ -252,6 +261,14 @@ export function Stepper<ValueType extends number | string>(p: StepperProps) {
           }}
           disabled={disabled}
           readOnly={inputReadOnly}
+          onFocus={e => {
+            triggerFocus(true)
+            props.onFocus?.(e)
+          }}
+          onBlur={e => {
+            triggerFocus(false)
+            props.onBlur?.(e)
+          }}
           // 无障碍：https://developer.mozilla.org/zh-CN/docs/Web/Accessibility/ARIA
           // 用于使残障人士更容易访问
           role='spinbutton' // 告诉残障人士s此处是一个spin按钮
