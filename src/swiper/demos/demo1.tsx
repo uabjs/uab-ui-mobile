@@ -1,7 +1,7 @@
 import './demo1.less'
 
 import React, { useRef } from 'react'
-import { Swiper, SwiperRef, Space, Button } from 'uab-ui-mobile'
+import { Swiper, SwiperRef, Space, Button, Toast } from 'uab-ui-mobile'
 import { DemoBlock, DemoDescription } from 'uab-ui-mobile-demos'
 
 const colors = ['#ace0ff', '#bcffbd', '#e4fabd', '#ffcfac']
@@ -12,7 +12,7 @@ const items = colors.map((color, index) => (
       className={'swiper-content'}
       style={{ background: color }}
       onClick={() => {
-        // Toast.show(`你点击了卡片 ${index + 1}`)
+        Toast.show(`你点击了卡片 ${index + 1}`)
       }}
     >
       {index + 1}

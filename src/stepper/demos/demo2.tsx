@@ -1,5 +1,5 @@
 import React from 'react'
-import { Stepper } from 'uab-ui-mobile'
+import { Stepper, Toast } from 'uab-ui-mobile'
 import { DemoBlock } from 'uab-ui-mobile-demos'
 
 export default () => {
@@ -20,11 +20,11 @@ export default () => {
       <DemoBlock title='获得/失去焦点'>
         <Stepper
           onFocus={() => {
-            // Toast.show('获得焦点')
+            Toast.show('获得焦点')
             console.log('获得焦点')
           }}
           onBlur={() => {
-            // Toast.show('失去焦点')
+            Toast.show('失去焦点')
             console.log('失去焦点')
           }}
         />

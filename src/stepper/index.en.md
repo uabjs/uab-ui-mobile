@@ -40,18 +40,18 @@ When `allowEmpty` is `true`, the `value` parameter of `onChange` may be `null`, 
 
 ### CSS Variables
 
-| Name                      | Description                           | Default                     |
-| ------------------------- | ------------------------------------- | --------------------------- |
-| --active-border           | In the focus state, the border style. | `var(--border)`             |
-| --border                  | Border style.                         | `none`                      |
-| --border-inner            | Inner border style.                   | `solid 2px transparent`     |
-| --border-radius           | Radius of the stepper.                | `2px`                       |
-| --button-background-color | Background color of the button.       | `#f5f5f5`                   |
-| --button-font-size        | Font size of the button.              | `15px`                      |
-| --button-text-color       | Font color of the button.             | `var(--adm-color-primary)`  |
-| --button-width            | Width of the button.                  | `var(--height)`             |
-| --height                  | Height of the stepper.                | `28px`                      |
-| --input-background-color  | Background color of input.            | `#f5f5f5`                   |
-| --input-font-color        | Font color of the input.              | `var(--adm-color-text)`     |
-| --input-font-size         | Font size of input.                   | `var(--adm-font-size-main)` |
-| --input-width             | Width of the input.                   | `44px`                      |
+| Name                      | Description                           | Default                      |
+| ------------------------- | ------------------------------------- | ---------------------------- |
+| --active-border           | In the focus state, the border style. | `var(--border)`              |
+| --border                  | Border style.                         | `none`                       |
+| --border-inner            | Inner border style.                   | `solid 2px transparent`      |
+| --border-radius           | Radius of the stepper.                | `2px`                        |
+| --button-background-color | Background color of the button.       | `#f5f5f5`                    |
+| --button-font-size        | Font size of the button.              | `15px`                       |
+| --button-text-color       | Font color of the button.             | `var(--uabm-color-primary)`  |
+| --button-width            | Width of the button.                  | `var(--height)`              |
+| --height                  | Height of the stepper.                | `28px`                       |
+| --input-background-color  | Background color of input.            | `#f5f5f5`                    |
+| --input-font-color        | Font color of the input.              | `var(--uabm-color-text)`     |
+| --input-font-size         | Font size of input.                   | `var(--uabm-font-size-main)` |
+| --input-width             | Width of the input.                   | `44px`                       |

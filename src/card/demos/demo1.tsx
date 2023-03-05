@@ -2,20 +2,20 @@ import './demo1.less'
 
 import React from 'react'
 import { AntOutline, RightOutline } from 'antd-mobile-icons'
-import { Card, Button } from 'uab-ui-mobile'
+import { Card, Button, Toast } from 'uab-ui-mobile'
 import { DemoBlock } from 'uab-ui-mobile-demos'
 
 export default () => {
   const onClick = () => {
-    // Toast.show('点击了卡片')
+    Toast.show('点击了卡片')
   }
 
   const onHeaderClick = () => {
-    // Toast.show('点击了卡片Header区域')
+    Toast.show('点击了卡片Header区域')
   }
 
   const onBodyClick = () => {
-    // Toast.show('点击了卡片Body区域')
+    Toast.show('点击了卡片Body区域')
   }
   return (
     <>
@@ -51,7 +51,7 @@ export default () => {
             <Button
               color='primary'
               onClick={() => {
-                // Toast.show('点击了底部按钮')
+                Toast.show('点击了底部按钮')
               }}
             >
               底部按钮

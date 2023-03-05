@@ -40,18 +40,18 @@
 
 ### CSS 变量
 
-| 属性                      | 说明                              | 默认值                      |
-| ------------------------- | --------------------------------- | --------------------------- |
-| --active-border           | 输入框 Focus 状态下，四周边框样式 | `var(--border)`             |
-| --border                  | 组件四周边框的样式                | `none`                      |
-| --border-inner            | 组件内部边框的样式                | `solid 2px transparent`     |
-| --border-radius           | 组件整体的圆角                    | `2px`                       |
-| --button-background-color | 左右两侧按钮背景颜色              | `#f5f5f5`                   |
-| --button-font-size        | 左右两侧按钮文字大小              | `15px`                      |
-| --button-text-color       | 左右两侧按钮文字颜色              | `var(--adm-color-primary)`  |
-| --button-width            | 左右两侧按钮的宽度                | `var(--height)`             |
-| --height                  | 组件整体高度                      | `28px`                      |
-| --input-background-color  | 输入框的背景颜色                  | `#f5f5f5`                   |
-| --input-font-color        | 输入框文字颜色                    | `var(--adm-color-text)`     |
-| --input-font-size         | 输入框文字大小                    | `var(--adm-font-size-main)` |
-| --input-width             | 仅输入框的宽度                    | `44px`                      |
+| 属性                      | 说明                              | 默认值                       |
+| ------------------------- | --------------------------------- | ---------------------------- |
+| --active-border           | 输入框 Focus 状态下，四周边框样式 | `var(--border)`              |
+| --border                  | 组件四周边框的样式                | `none`                       |
+| --border-inner            | 组件内部边框的样式                | `solid 2px transparent`      |
+| --border-radius           | 组件整体的圆角                    | `2px`                        |
+| --button-background-color | 左右两侧按钮背景颜色              | `#f5f5f5`                    |
+| --button-font-size        | 左右两侧按钮文字大小              | `15px`                       |
+| --button-text-color       | 左右两侧按钮文字颜色              | `var(--uabm-color-primary)`  |
+| --button-width            | 左右两侧按钮的宽度                | `var(--height)`              |
+| --height                  | 组件整体高度                      | `28px`                       |
+| --input-background-color  | 输入框的背景颜色                  | `#f5f5f5`                    |
+| --input-font-color        | 输入框文字颜色                    | `var(--uabm-color-text)`     |
+| --input-font-size         | 输入框文字大小                    | `var(--uabm-font-size-main)` |
+| --input-width             | 仅输入框的宽度                    | `44px`                       |
