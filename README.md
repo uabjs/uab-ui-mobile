@@ -90,7 +90,7 @@ import { Button } from 'uab-ui-mobile'
 - [ ] SearchBar 搜索框
 - [x] Selector 选择组
 - [ ] Slider 滑动输入条
-- [ ] Stepper 步进器
+- [x] Stepper 步进器
 - [x] Switch 开关
 - [x] TextArea 文本域
 
@@ -111,7 +111,7 @@ import { Button } from 'uab-ui-mobile'
 - [ ] Result 结果
 - [ ] Skeleton 骨架屏
 - [ ] SwipeAction 滑动操作
-- [ ] Toast 轻提示
+- [x] Toast 轻提示
 
 ### 引导提示
 
