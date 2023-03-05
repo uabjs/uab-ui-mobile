@@ -1,12 +1,11 @@
 export const sidebar = {
-  '/zh/guide': [
+  '/guide': [
     {
-      children: [{ title: '快速上手', link: '/guide/quick-start' }],
-    },
-  ],
-  '/en/guide': [
-    {
-      children: [{ title: 'Quick Start', link: '/en/guide/quick-start' }],
+      children: [
+        { title: '快速上手', link: '/guide/quick-start' },
+        { title: '主题', link: '/guide/theming' },
+        { title: '国际化', link: '/guide/i18n' },
+      ],
     },
   ],
   '/components': [

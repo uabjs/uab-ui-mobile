@@ -57,14 +57,14 @@ For example:
 If in your application, the ErrorBlock only needs to support the `default` state, then you can create a lightweight ErrorBlock that only packs the `default` image material like this:
 
 ```jsx
-import { defaultImage } from 'antd-mobile/es/components/error-block/images'
+import { defaultImage } from 'uab-ui-mobile/es/components/error-block/images'
 
 const ErrorBlock = createErrorBlock({
   default: defaultImage,
 })
 ```
 
-We have exported images corresponding to four states in `antd-mobile/es/components/error-block/images`, you can use them directly: `defaultImage` `disconnectedImage` `emptyImage` `busyImage`.
+We have exported images corresponding to four states in `uab-ui-mobile/es/components/error-block/images`, you can use them directly: `defaultImage` `disconnectedImage` `emptyImage` `busyImage`.
 
 Even, you can directly configure the image resources in the online CDN, which can greatly reduce the packaging size:
 

@@ -3,7 +3,7 @@
   <h1>Uab Ui Mobile</h1>
   <p>基于 react 的用于构建移动端应用程序的基本 web UI 库。</p>
 
-[![npm (tag)](https://img.shields.io/npm/v/uab-ui-mobile)](https://www.npmjs.com/package/uab-ui-mobile) [![GitHub Release Date](https://img.shields.io/github/release-date/uabjs/uab-ui-mobile)](https://github.com/uabjs/uab-ui-mobilee/releases) [![npm](https://img.shields.io/npm/dw/uab-ui-mobile)](https://www.npmjs.com/package/uab-ui-mobile) [![gzip size](https://img.badgesize.io/https:/unpkg.com/antd-mobile/umd/antd-mobile.js?label=gzip%20size&compression=gzip)](https://unpkg.com/browse/antd-mobile@5/umd/antd-mobile.js) [![GitHub](https://img.shields.io/github/license/uabjs/uab-ui-mobile)](https://github.com/uabjs/uab-ui-mobile)
+[![npm (tag)](https://img.shields.io/npm/v/uab-ui-mobile)](https://www.npmjs.com/package/uab-ui-mobile) [![GitHub Release Date](https://img.shields.io/github/release-date/uabjs/uab-ui-mobile)](https://github.com/uabjs/uab-ui-mobilee/releases) [![npm](https://img.shields.io/npm/dw/uab-ui-mobile)](https://www.npmjs.com/package/uab-ui-mobile)[![GitHub](https://img.shields.io/github/license/uabjs/uab-ui-mobile)](https://github.com/uabjs/uab-ui-mobile)
 
   <h4>
     <a href="https://uab-ui-mobile.netlify.app/">中文文档</a>

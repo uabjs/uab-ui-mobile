@@ -42,7 +42,7 @@ export default () => {
             title='第三项'
             arrow={active => (active ? <CheckCircleOutline /> : <CloseCircleOutline />)}
           >
-            如果你给 arrow 属性传入的是是一个渲染函数，那么 antd-mobile 不会为你增加动画，arrow
+            如果你给 arrow 属性传入的是是一个渲染函数，那么 uab-ui-mobile 不会为你增加动画，arrow
             属性的效果就完全交由你自己来控制了
           </Collapse.Panel>
         </Collapse>

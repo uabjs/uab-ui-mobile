@@ -21,7 +21,7 @@ A content area that can be collapsed/expanded.
 | --- | --- | --- | --- |
 | accordion | Whether to enable accordion mode | `boolean` | `false` |
 | activeKey | The `key` of the currently expanded panel | accordion mode: `string \| null` <br/>non-accordion mode: `string[]` | - |
-| arrow | Custom arrow. if you pass a ReactNode, antd-mobile will add a rotate animation for you. | `React.ReactNode \| ((active: boolean) => React.ReactNode)` | - |
+| arrow | Custom arrow. if you pass a ReactNode, uab-ui-mobile will add a rotate animation for you. | `React.ReactNode \| ((active: boolean) => React.ReactNode)` | - |
 | defaultActiveKey | The `key` of the expanded panel by default | accordion mode: `string \| null` <br/>non-accordion mode: `string[]` | - |
 | onChange | Triggered when the panel is switched | accordion mode: `(activeKey: string \| null) => void` <br /> non-accordion mode: `(activeKey: string[]) => void` | - |
 

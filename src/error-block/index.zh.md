@@ -57,14 +57,14 @@ type ErrorBlockStatus = 'default' | 'disconnected' | 'empty' | 'busy'
 如果在你的应用中，ErrorBlock 只需要支持 `default` 这种状态，那么你可以这样创建一个只打包了 `default` 图片素材的轻量化的 ErrorBlock：
 
 ```jsx
-import { defaultImage } from 'antd-mobile/es/components/error-block/images'
+import { defaultImage } from 'uab-ui-mobile/es/components/error-block/images'
 
 const ErrorBlock = createErrorBlock({
   default: defaultImage,
 })
 ```
 
-我们在 `antd-mobile/es/components/error-block/images` 中 export 了四种状态对应的图片，你可以直接使用它们：`defaultImage` `disconnectedImage` `emptyImage` `busyImage`。
+我们在 `uab-ui-mobile/es/components/error-block/images` 中 export 了四种状态对应的图片，你可以直接使用它们：`defaultImage` `disconnectedImage` `emptyImage` `busyImage`。
 
 甚至，你可以直接配置成在线 CDN 中的图片资源，这样就可以很大程度上降低打包体积：
 
