@@ -14,7 +14,7 @@ export type ImperativeHandler = {
   replace: (element: TargetElement) => void
 }
 
-/** 强制渲染，渲染到 body 上 */
+/** 强制渲染，渲染到 body 上，返回 { close, replace } */
 export function renderImperatively(element: TargetElement) {
   const Wrapper = React.forwardRef<ImperativeHandler>((_, ref) => {
     const [visible, setVisible] = useState(false)

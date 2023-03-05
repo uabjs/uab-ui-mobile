@@ -73,6 +73,7 @@ export const sidebar = {
         { title: 'ErrorBlock 异常', link: '/components/error-block' },
         { title: 'Loading 加载中', link: '/components/loading' },
         { title: 'Mask 背景蒙层', link: '/components/mask' },
+        { title: 'Toast 轻提示', link: '/components/toast' },
       ],
     },
     {
