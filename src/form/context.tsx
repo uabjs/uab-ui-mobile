@@ -1,3 +1,4 @@
+import React from 'react'
 import { FormLayout } from './index'
 
 export type FormContextType = {
@@ -15,3 +16,5 @@ export const defaultFormContext: FormContextType = {
   requiredMarkStyle: 'asterisk',
   disabled: false,
 }
+
+export const FormContext = React.createContext<FormContextType>(defaultFormContext)
