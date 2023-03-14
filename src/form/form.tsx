@@ -10,6 +10,7 @@ import List, { ListProps } from '../list'
 import { useConfig } from '../config-provider'
 import { traverseReactNode } from '../utils/traverse-react-node'
 import { Header } from './header'
+import { FormArray } from './form-array'
 
 const classPrefix = `uabm-form`
 
@@ -65,8 +66,13 @@ export const Form = forwardRef<FormInstance, FormProps>((p, ref) => {
         collect()
         currentHeader = child.props.children
         return
+      } else if (child.type === FormArray) {
+        collect()
+        lists.push(child)
+        return
       }
     }
+    // type 其他类型走这里 如：type === Item
     items.push(child)
   })
   collect()
