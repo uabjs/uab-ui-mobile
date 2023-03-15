@@ -72,7 +72,7 @@ export const Form = forwardRef<FormInstance, FormProps>((p, ref) => {
         return
       }
     }
-    // type 其他类型走这里 如：type === Item
+    // type 其他类型走这里 如：Form.Item
     items.push(child)
   })
   collect()
