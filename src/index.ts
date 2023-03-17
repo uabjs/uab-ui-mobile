@@ -122,3 +122,6 @@ export type { ToastShowProps } from './toast'
 
 export { default as Footer } from './footer'
 export type { FooterProps } from './footer'
+
+export { default as Form } from './form'
+export type { FormProps, FormItemProps } from './form'
