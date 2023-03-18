@@ -73,7 +73,7 @@ import { Button } from 'uab-ui-mobile'
 - [x] Swiper 走马灯
 - [x] Tag 标签
 - [x] WaterMark 水印
-- [ ] Footer 页脚
+- [x] Footer 页脚
 
 ### 信息录入
 
