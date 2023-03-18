@@ -1,0 +1,15 @@
+.uabm-collapse-panel-header .uabm-list-item-content-main {
+  padding: 12px 0;
+}
+.uabm-collapse-arrow {
+  transform: rotate(0deg);
+  transition: all ease 0.3s;
+}
+.uabm-collapse-arrow-active {
+  transform: rotate(-180deg);
+}
+.uabm-collapse-panel-content {
+  font-size: var(--uabm-font-size-main);
+  color: var(--ubam-color-weak);
+  overflow: hidden;
+}

@@ -54,6 +54,7 @@ export const sidebar = {
         { title: 'Swiper 走马灯', link: '/components/swiper' },
         { title: 'Tag 标签', link: '/components/tag' },
         { title: 'WaterMark 水印', link: '/components/water-mark' },
+        { title: 'Footer 页脚', link: '/components/footer' },
       ],
     },
     {
