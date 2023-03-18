@@ -119,3 +119,6 @@ export type { StepperProps } from './stepper'
 
 export { default as Toast } from './toast'
 export type { ToastShowProps } from './toast'
+
+export { default as Footer } from './footer'
+export type { FooterProps } from './footer'
