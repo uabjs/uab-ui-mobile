@@ -60,6 +60,7 @@ export const sidebar = {
     {
       title: '信息录入',
       children: [
+        { title: 'Form 表单', link: '/components/form' },
         { title: 'Input 输入框', link: '/components/input' },
         { title: 'Selector 选择组', link: '/components/selector' },
         { title: 'Switch 开关', link: '/components/switch' },

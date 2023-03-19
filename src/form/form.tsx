@@ -77,6 +77,8 @@ export const Form = forwardRef<FormInstance, FormProps>((p, ref) => {
   })
   collect()
 
+  console.log('lists=========', lists)
+
   return (
     <RcForm
       className={classNames(classPrefix, className)}

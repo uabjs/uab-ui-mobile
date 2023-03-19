@@ -2,7 +2,7 @@ import './index.less'
 
 import { Form } from './form'
 import { FormItem } from './form-item'
-import { attachPropertiesToComponent } from 'src/utils/attach-properties-to-component'
+import { attachPropertiesToComponent } from '../utils/attach-properties-to-component'
 import { FormArray } from './form-array'
 import { Header } from './header'
 

@@ -1,4 +1,5 @@
 import React from 'react'
+import type { Meta, InternalNamePath } from 'rc-field-form/lib/interface'
 import { FormLayout } from './index'
 
 export type FormContextType = {
@@ -18,3 +19,9 @@ export const defaultFormContext: FormContextType = {
 }
 
 export const FormContext = React.createContext<FormContextType>(defaultFormContext)
+
+export type OnSubMetaChange = (
+  meta: Meta & { destroy?: boolean },
+  namePath: InternalNamePath
+) => void
+export const NoStyleItemContext = React.createContext<OnSubMetaChange | null>(null)
