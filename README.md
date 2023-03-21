@@ -103,7 +103,7 @@ import { Button } from 'uab-ui-mobile'
 - [x] Loading 加载中
 - [x] Mask 背景蒙层
 - [ ] Modal 弹窗
-- [ ] Popover 气泡弹出框
+- [x] Popover 气泡弹出框
 - [ ] Popup 弹出层
 - [ ] ProgressBar 进度条
 - [ ] ProgressCircle 进度圈
