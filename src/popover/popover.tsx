@@ -42,19 +42,23 @@ export type PopoverProps = {
   destroyOnHide?: boolean
   children: ReactElement
   mode?: 'light' | 'dark'
-  trigger?: 'chick'
+  trigger?: 'click'
   placement?: Placement | DeprecatedPlacement
   stopPropagation?: PropagationEvent[]
   content: ReactNode
 } & NativeProps<'--z-index'>
 
-export type PopoverRef = {}
+export type PopoverRef = {
+  show: () => void
+  hide: () => void
+  visible: boolean
+}
 
 const defaultProps = {
   defaultVisible: false,
-  trigger: 'chick',
+  trigger: 'click',
   placement: 'top' as Placement,
-  stopPropagation: ['chick'],
+  stopPropagation: ['click'],
   getContainer: () => document.body,
 }
 

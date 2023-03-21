@@ -21,6 +21,7 @@
       "uab-ui-mobile-utils": ["src/utils/index.ts"],
       "uab-ui-mobile-demos": ["src/demos/index.ts"],
       "uab-ui-mobile": ["src/index.ts"],
+      "uab-ui-mobile/es/*": ["src/*"],
       "@@/*": [".dumi/tmp/*"]
     }
   },

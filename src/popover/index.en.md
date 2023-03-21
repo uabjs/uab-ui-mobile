@@ -12,9 +12,7 @@ Navigation applicable to functions can only be evoked by the icons on the naviga
 
 <code src="./demos/demo2.tsx"></code>
 
-<!-- <code src="./demos/demo4.tsx"></code>
-
-<code src="./demos/demo3.tsx" debug></code> -->
+<code src="./demos/demo3.tsx"></code>
 
 ## Popover
 
