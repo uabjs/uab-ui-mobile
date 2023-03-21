@@ -125,3 +125,6 @@ export type { FooterProps } from './footer'
 
 export { default as Form } from './form'
 export type { FormProps, FormItemProps } from './form'
+
+export { default as Popover } from './popover'
+export type { PopoverProps, PopoverRef } from './popover'
