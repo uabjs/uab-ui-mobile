@@ -19,7 +19,9 @@ module.exports = {
   plugins: ['@typescript-eslint'],
   rules: {
     'no-empty': ['error', { allowEmptyCatch: true }],
+    '@typescript-eslint/no-empty-function': 'off',
     '@typescript-eslint/no-explicit-any': 'off',
+    'no-inner-declarations': 'off',
     '@typescript-eslint/ban-types': [
       'error',
       {

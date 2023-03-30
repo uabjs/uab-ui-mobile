@@ -128,3 +128,6 @@ export type { FormProps, FormItemProps } from './form'
 
 export { default as Popover } from './popover'
 export type { PopoverProps, PopoverRef } from './popover'
+
+export { default as Ellipsis } from './ellipsis'
+export type { EllipsisProps } from './ellipsis'
