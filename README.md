@@ -62,7 +62,7 @@ import { Button } from 'uab-ui-mobile'
 - [x] Avatar 头像
 - [x] Card 卡片
 - [x] Collapse 折叠面板
-- [ ] Ellipsis 文本省略
+- [x] Ellipsis 文本省略
 - [x] FloatingPanel 浮动面板
 - [x] Image 图片
 - [x] ImageViewer 图片查看器
