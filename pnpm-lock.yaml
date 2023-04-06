@@ -28,6 +28,7 @@ specifiers:
   ahooks: ^3.7.4
   antd-mobile-icons: ^0.3.0
   classnames: ^2.3.2
+  dayjs: ^1.11.7
   del: ^6.1.1
   dumi: ^2.1.14
   dumi-theme-mobile: ^2.0.2
@@ -65,6 +66,7 @@ dependencies:
   ahooks: 3.7.4_react@18.2.0
   antd-mobile-icons: 0.3.0
   classnames: 2.3.2
+  dayjs: 1.11.7
   lodash: 4.17.21
   rc-field-form: 1.27.4_biqbaboplfbrettd7655fr4n2y
   rc-util: 5.28.0_biqbaboplfbrettd7655fr4n2y

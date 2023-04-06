@@ -1,0 +1,30 @@
+@class-prefix-calendar: ~'uabm-calendar';
+
+.@{class-prefix-calendar} {
+  &-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 4px;
+
+    a.@{class-prefix-calendar}-arrow-button {
+      padding: 4px 8px;
+      display: block;
+      flex: none;
+      svg {
+        height: 22px;
+      }
+      &.@{class-prefix-calendar}-arrow-button-right {
+        svg {
+          transform: rotate(180deg);
+        }
+      }
+    }
+    .@{class-prefix-calendar}-title {
+      font-size: var(--uabm-font-size-10);
+      flex: auto;
+      text-align: center;
+    }
+  }
+}

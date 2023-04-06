@@ -89,7 +89,10 @@ export const sidebar = {
     },
     {
       title: '试验性',
-      children: [{ title: 'ScrollMask 滚动两侧遮罩', link: '/components/scroll-mask' }],
+      children: [
+        { title: 'Calendar 日历', link: '/components/calendar' },
+        { title: 'ScrollMask 滚动两侧遮罩', link: '/components/scroll-mask' },
+      ],
     },
   ],
 }

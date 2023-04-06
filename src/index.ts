@@ -131,3 +131,6 @@ export type { PopoverProps, PopoverRef } from './popover'
 
 export { default as Ellipsis } from './ellipsis'
 export type { EllipsisProps } from './ellipsis'
+
+export { default as Calendar } from './calendar'
+export type { CalendarProps, CalendarRef } from './calendar'
