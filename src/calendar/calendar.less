@@ -27,4 +27,65 @@
       text-align: center;
     }
   }
+
+  &-mark {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 45px;
+    padding: 0 8px;
+    box-sizing: border-box;
+    border-bottom: 1px solid var(--uabm-color-border);
+    font-size: var(--uabm-font-size-7);
+
+    &-cell {
+      flex: 1;
+      text-align: center;
+    }
+  }
+
+  &-cells {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    padding: 8px;
+  }
+  &-cell {
+    flex: none;
+    width: calc(100% / 7);
+    height: 48px;
+    padding: 2px;
+    box-sizing: border-box;
+    margin-bottom: 4px;
+    color: var(--uabm-color-text);
+    cursor: pointer;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    &-top {
+      flex: none;
+      font-size: var(--uabm-font-size-10);
+    }
+    &-bottom {
+      flex: none;
+      height: 12px;
+      line-height: 12px;
+      font-size: var(--uabm-font-size-4);
+      color: var(--uabm-color-weak);
+    }
+
+    &&-today {
+      color: var(--uabm-color-primary);
+    }
+    &&-disabled {
+      color: var(--uabm-color-light);
+      .@{class-prefix-calendar}-cell-bottom {
+        color: var(--uabm-color-light);
+      }
+    }
+  }
 }

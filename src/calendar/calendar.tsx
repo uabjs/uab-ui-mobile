@@ -1,4 +1,4 @@
-import React, { forwardRef, useState } from 'react'
+import React, { ReactNode, forwardRef, useState } from 'react'
 import dayjs from 'dayjs'
 import isoWeek from 'dayjs/plugin/isoWeek'
 import { convertValueToRange, DateRange, Page } from './convert'
@@ -92,7 +92,7 @@ export const Calendar = forwardRef<CalendarRef, CalendarProps>((p, ref) => {
     },
   })
 
-  // dayjs().date(1) 将当前时间设置为该月的第一天，返回新的 Day.js 对象
+  // dayjs().date(1) 返回当前时间所在月份的第一天，返回新的 Day.js 对象
   const [current, setCurrent] = useState(() => dayjs(dateRange ? dateRange[0] : today).date(1))
 
   const header = (
@@ -140,7 +140,66 @@ export const Calendar = forwardRef<CalendarRef, CalendarProps>((p, ref) => {
     </div>
   )
 
-  const mark = <div className={`${classPrefix}-mark`}>{markItems}</div>
+  const mark = (
+    <div className={`${classPrefix}-mark`}>
+      {markItems.map((item, index) => (
+        <div key={index} className={`${classPrefix}-mark-cell`}>
+          {item}
+        </div>
+      ))}
+    </div>
+  )
 
-  return withNativeProps(props, <div className={classPrefix}>{header}</div>)
+  function renderCells() {
+    const cells: ReactNode[] = []
+    // .isoWeekday() 方法可以获取当前日期所在周的星期几，其中星期一为 1，星期二为 2，以此类推，星期日为 7。
+    // .subtract(1, 'day') 的作用是将当前日期往前推移 1 天。作用：返回日历组件中第一天的 Day.js 对象。
+    let iterator = current.subtract(current.isoWeekday(), 'day')
+
+    // 日历组件第一天是星期一的情况
+    if (props.weekStartsOn === 'Monday') {
+      iterator = iterator.add(1, 'day')
+    }
+
+    while (cells.length < 6 * 7) {
+      const d = iterator
+
+      const isThisMonth = d.month() === current.month()
+
+      cells.push(
+        <div
+          key={d.valueOf()}
+          className={classNames(
+            `${classPrefix}-cell`,
+            !isThisMonth && `${classPrefix}-cell-disabled`,
+            isThisMonth && {
+              // isSame: 判断参数1日期，是否与参数2时间相同 （参数2： 传入 month 将会比较 month、year 是否相同。传入 day 将会比较 day、month、year 是否相同。 ）
+              [`${classPrefix}-cell-today`]: d.isSame(today, 'day'),
+            }
+          )}
+        >
+          <div className={`${classPrefix}-cell-top`}>
+            {props.renderDate ? props.renderDate(d.toDate()) : d.date()}
+          </div>
+          <div className={`${classPrefix}-cell-bottom`}>{props.renderLabel?.(d.toDate())}</div>
+        </div>
+      )
+
+      // 下一天
+      iterator = iterator.add(1, 'day')
+    }
+
+    return cells
+  }
+
+  const body = <div className={`${classPrefix}-cells`}>{renderCells()}</div>
+
+  return withNativeProps(
+    props,
+    <div className={classPrefix}>
+      {header}
+      {mark}
+      {body}
+    </div>
+  )
 })
