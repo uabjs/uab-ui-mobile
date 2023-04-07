@@ -1,4 +1,4 @@
-import React, { ReactNode, forwardRef, useState } from 'react'
+import React, { ReactNode, forwardRef, useImperativeHandle, useMemo, useState } from 'react'
 import dayjs from 'dayjs'
 import isoWeek from 'dayjs/plugin/isoWeek'
 import { convertValueToRange, DateRange, Page, convertPageToDayjs } from './convert'
@@ -37,6 +37,8 @@ export type CalendarProps = {
   // 可切换的年月范围
   minPage?: Page
   maxPage?: Page
+  // 判断日期是否可选
+  shouldDisableDate?: (date: Date) => boolean
 } & (
   | {
       selectionMode?: undefined
@@ -60,6 +62,7 @@ export type CalendarProps = {
   NativeProps
 
 export type CalendarRef = {
+  jumpTo: (page: Page | ((page: Page) => Page)) => void
   jumpToToday: () => void
 }
 
@@ -78,6 +81,12 @@ export const Calendar = forwardRef<CalendarRef, CalendarProps>((p, ref) => {
   const props = mergeProps(defaultProps, p)
   const { locale } = useConfig()
   const markItems = [...locale.Calendar.markItems]
+  if (props.weekStartsOn === 'Sunday') {
+    const item = markItems.pop()
+    if (item) {
+      markItems.unshift(item)
+    }
+  }
 
   const [dateRange, setDateRange] = usePropsValue<DateRange>({
     value:
@@ -96,6 +105,24 @@ export const Calendar = forwardRef<CalendarRef, CalendarProps>((p, ref) => {
   const [current, setCurrent] = useState(() => dayjs(dateRange ? dateRange[0] : today).date(1))
   // 选中第一个时间后 intermediate = true
   const [intermediate, setIntermediate] = useState(false)
+
+  useImperativeHandle(ref, () => ({
+    jumpTo: pageOrPageGenerator => {
+      let page: Page
+      if (typeof pageOrPageGenerator === 'function') {
+        page = pageOrPageGenerator({
+          year: current.year(),
+          month: current.month() + 1,
+        })
+      } else {
+        page = pageOrPageGenerator
+      }
+      setCurrent(convertPageToDayjs(page))
+    },
+    jumpToToday: () => {
+      setCurrent(dayjs().date(1))
+    },
+  }))
 
   const handlePageChange = (action: 'subtract' | 'add', num: number, type: 'month' | 'year') => {
     // dayjs().subtract(1, 'month') 日期时间第一天减去一个月
@@ -177,6 +204,9 @@ export const Calendar = forwardRef<CalendarRef, CalendarProps>((p, ref) => {
     </div>
   )
 
+  const maxDay = useMemo(() => props.max && dayjs(props.max), [props.max])
+  const minDay = useMemo(() => props.min && dayjs(props.min), [props.min])
+
   function renderCells() {
     const cells: ReactNode[] = []
     // .isoWeekday() 方法可以获取当前日期所在周的星期几，其中星期一为 1，星期二为 2，以此类推，星期日为 7。
@@ -185,6 +215,7 @@ export const Calendar = forwardRef<CalendarRef, CalendarProps>((p, ref) => {
 
     // 日历组件第一天是星期一的情况
     if (props.weekStartsOn === 'Monday') {
+      console.log('111111111')
       iterator = iterator.add(1, 'day')
     }
 
@@ -203,13 +234,16 @@ export const Calendar = forwardRef<CalendarRef, CalendarProps>((p, ref) => {
       }
 
       const isThisMonth = d.month() === current.month()
+      const disabled = props.shouldDisableDate
+        ? props.shouldDisableDate(d.toDate())
+        : (maxDay && d.isAfter(maxDay, 'day')) || (minDay && d.isBefore(minDay, 'day'))
 
       cells.push(
         <div
           key={d.valueOf()}
           className={classNames(
             `${classPrefix}-cell`,
-            !isThisMonth && `${classPrefix}-cell-disabled`,
+            (disabled || !isThisMonth) && `${classPrefix}-cell-disabled`,
             isThisMonth && {
               // isSame: 判断参数1日期，是否与参数2时间相同 （参数2： 传入 month 将会比较 month、year 是否相同。传入 day 将会比较 day、month、year 是否相同。 ）
               [`${classPrefix}-cell-today`]: d.isSame(today, 'day'),

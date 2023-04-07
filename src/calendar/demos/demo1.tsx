@@ -3,7 +3,7 @@ import { Calendar } from 'uab-ui-mobile'
 import { DemoBlock, DemoDescription } from 'uab-ui-mobile-demos'
 
 const defaultSingle = new Date('2023-04-08')
-const defaultRange: [Date, Date] = [new Date('2023-04-08'), new Date('2023-04-29')]
+const defaultRange: [Date, Date] = [new Date('2023-04-08'), new Date('2023-04-12')]
 
 export default () => {
   return (
