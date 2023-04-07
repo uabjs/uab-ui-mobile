@@ -94,6 +94,8 @@ export const Calendar = forwardRef<CalendarRef, CalendarProps>((p, ref) => {
 
   // dayjs().date(1) 返回当前时间所在月份的第一天，返回新的 Day.js 对象
   const [current, setCurrent] = useState(() => dayjs(dateRange ? dateRange[0] : today).date(1))
+  // 选中第一个时间后 intermediate = true
+  const [intermediate, setIntermediate] = useState(false)
 
   const handlePageChange = (action: 'subtract' | 'add', num: number, type: 'month' | 'year') => {
     // dayjs().subtract(1, 'month') 日期时间第一天减去一个月
@@ -241,6 +243,32 @@ export const Calendar = forwardRef<CalendarRef, CalendarProps>((p, ref) => {
                 return
               }
               setDateRange([date, date])
+            } else if (props.selectionMode === 'range') {
+              // 当前没有选中时间时走这里
+              if (!dateRange) {
+                setDateRange([date, date])
+                setIntermediate(true)
+                return
+              }
+
+              // 当前点击的时间是选中时间就清空时间
+              if (shouldClear()) {
+                setDateRange(null)
+                setIntermediate(false)
+                return
+              }
+
+              // 选择第二个时间时走这里
+              if (intermediate) {
+                const another = dateRange[0]
+                setDateRange(another > date ? [date, another] : [another, date])
+                setIntermediate(false)
+              }
+              // 选择第一个时间时走这里
+              else {
+                setDateRange([date, date])
+                setIntermediate(true)
+              }
             }
           }}
         >

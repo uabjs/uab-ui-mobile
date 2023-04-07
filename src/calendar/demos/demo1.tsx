@@ -3,6 +3,7 @@ import { Calendar } from 'uab-ui-mobile'
 import { DemoBlock, DemoDescription } from 'uab-ui-mobile-demos'
 
 const defaultSingle = new Date('2023-04-08')
+const defaultRange: [Date, Date] = [new Date('2023-04-08'), new Date('2023-04-29')]
 
 export default () => {
   return (
@@ -27,6 +28,16 @@ export default () => {
         <Calendar
           selectionMode='single'
           defaultValue={defaultSingle}
+          onChange={val => {
+            console.log(val)
+          }}
+        />
+      </DemoBlock>
+
+      <DemoBlock title='选择日期范围'>
+        <Calendar
+          defaultValue={defaultRange}
+          selectionMode='range'
           onChange={val => {
             console.log(val)
           }}
