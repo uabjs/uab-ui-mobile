@@ -1,12 +1,14 @@
-import React, { forwardRef } from 'react'
+import React, { forwardRef, useState } from 'react'
 import dayjs from 'dayjs'
 import isoWeek from 'dayjs/plugin/isoWeek'
-import { Page } from './convert'
+import { convertValueToRange, DateRange, Page } from './convert'
 import { NativeProps, withNativeProps } from '../utils/native-props'
 import { ArrowLeft } from './arrow-left'
 import { ArrowLeftDouble } from './arrow-left-double'
 import { mergeProps } from '../utils/with-default-props'
 import classNames from 'classnames'
+import { usePropsValue } from '../utils/use-props-value'
+import { useConfig } from '../config-provider'
 
 const classPrefix = 'uabm-calendar'
 
@@ -74,6 +76,24 @@ const defaultProps = {
 export const Calendar = forwardRef<CalendarRef, CalendarProps>((p, ref) => {
   const today = dayjs()
   const props = mergeProps(defaultProps, p)
+  const { locale } = useConfig()
+  const markItems = [...locale.Calendar.markItems]
+
+  const [dateRange, setDateRange] = usePropsValue<DateRange>({
+    value:
+      props.value === undefined ? undefined : convertValueToRange(props.selectionMode, props.value),
+    defaultValue: convertValueToRange(props.selectionMode, props.defaultValue),
+    onChange: v => {
+      if (props.selectionMode === 'single') {
+        props.onChange?.(v ? v[0] : null)
+      } else if (props.selectionMode === 'range') {
+        props.onChange?.(v)
+      }
+    },
+  })
+
+  // dayjs().date(1) 将当前时间设置为该月的第一天，返回新的 Day.js 对象
+  const [current, setCurrent] = useState(() => dayjs(dateRange ? dateRange[0] : today).date(1))
 
   const header = (
     <div className={`${classPrefix}-header`}>
@@ -94,10 +114,7 @@ export const Calendar = forwardRef<CalendarRef, CalendarProps>((p, ref) => {
         {props.prevMonthButton}
       </a>
       <div className={`${classPrefix}-title`}>
-        2023年04月
-        {/* {
-          locale.Calendar.render
-        } */}
+        {locale.Calendar.renderYearAndMonth(current.year(), current.month() + 1)}
       </div>
       <a
         className={classNames(
@@ -122,6 +139,8 @@ export const Calendar = forwardRef<CalendarRef, CalendarProps>((p, ref) => {
       </a>
     </div>
   )
+
+  const mark = <div className={`${classPrefix}-mark`}>{markItems}</div>
 
   return withNativeProps(props, <div className={classPrefix}>{header}</div>)
 })

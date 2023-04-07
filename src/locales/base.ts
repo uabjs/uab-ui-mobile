@@ -8,7 +8,7 @@ export const base = {
     loading: 'Loading',
     close: 'Close',
   },
-  Calender: {
+  Calendar: {
     markItems: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
     renderYearAndMonth: (year: number, month: number) => `${year}/${month}`,
   },
