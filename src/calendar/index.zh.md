@@ -16,6 +16,8 @@
 
 <code src="./demos/demo4.tsx"></code>
 
+<code src="./demos/demo5.tsx"></code>
+
 ## Calendar
 
 ### 属性
@@ -63,7 +65,7 @@ type Page = { month: number; year: number }
 ref.current.jumpToToday()
 
 // 跳转至指定年月
-ref.current.jumpTo({ year: 2021, month: 1 })
+ref.current.jumpTo({ year: 2023, month: 6 })
 
 // 跳转到三年之后
 ref.current.jumpTo(page => ({

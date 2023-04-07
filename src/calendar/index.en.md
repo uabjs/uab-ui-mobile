@@ -16,6 +16,8 @@ When the user needs to enter a date, he can select it in the pop-up date panel.
 
 <code src="./demos/demo4.tsx"></code>
 
+<code src="./demos/demo5.tsx"></code>
+
 ## Calendar
 
 ### Props
@@ -63,7 +65,7 @@ You can manually control the page turning of the calendar through Ref, for examp
 ref.current.jumpToToday()
 
 // Jump to the specified year and month
-ref.current.jumpTo({ year: 2021, month: 1 })
+ref.current.jumpTo({ year: 2023, month: 6 })
 
 // Jump to three years later
 ref.current.jumpTo(page => ({
