@@ -125,7 +125,7 @@ import { Button } from 'uab-ui-mobile'
 ### 试验性
 
 - [x] ScrollMask 滚动两侧遮罩
-- [ ] Calendar 日历
+- [x] Calendar 日历
 - [ ] Dropdown 下拉菜单
 - [ ] FloatingBubble 浮动气泡
 - [ ] ImageUploader 图片上传
