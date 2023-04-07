@@ -2,7 +2,7 @@ import React from 'react'
 import { Calendar } from 'uab-ui-mobile'
 import { DemoBlock, DemoDescription } from 'uab-ui-mobile-demos'
 
-const defaultSingle = new Date('2022-03-09')
+const defaultSingle = new Date('2023-04-08')
 
 export default () => {
   return (
@@ -22,6 +22,15 @@ export default () => {
           nextYearButton={<span>下一年</span>}
         />
       </DemoBlock>
+
+      <DemoBlock title='选择某一天'>
+        <Calendar
+          selectionMode='single'
+          defaultValue={defaultSingle}
+          onChange={val => {
+            console.log(val)
+          }}
+        />
       </DemoBlock>
     </>
   )

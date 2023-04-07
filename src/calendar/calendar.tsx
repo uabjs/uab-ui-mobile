@@ -164,6 +164,17 @@ export const Calendar = forwardRef<CalendarRef, CalendarProps>((p, ref) => {
     while (cells.length < 6 * 7) {
       const d = iterator
 
+      let isSelect = false
+      let isBegin = false
+      let isEnd = false
+
+      if (dateRange) {
+        const [begin, end] = dateRange
+        isBegin = d.isSame(begin, 'day')
+        isEnd = d.isSame(end, 'day')
+        isSelect = isBegin || isEnd || (d.isAfter(begin, 'day') && d.isBefore(end, 'day'))
+      }
+
       const isThisMonth = d.month() === current.month()
 
       cells.push(
@@ -175,8 +186,38 @@ export const Calendar = forwardRef<CalendarRef, CalendarProps>((p, ref) => {
             isThisMonth && {
               // isSame: 判断参数1日期，是否与参数2时间相同 （参数2： 传入 month 将会比较 month、year 是否相同。传入 day 将会比较 day、month、year 是否相同。 ）
               [`${classPrefix}-cell-today`]: d.isSame(today, 'day'),
+              [`${classPrefix}-cell-selected`]: isSelect,
+              [`${classPrefix}-cell-selected-begin`]: isBegin,
+              [`${classPrefix}-cell-selected-end`]: isEnd,
             }
           )}
+          onClick={() => {
+            if (!props.selectionMode) return
+
+            const date = d.toDate()
+
+            // 点击其他月份区域将当前日期跳转至该月份
+            if (!isThisMonth) {
+              // clone() 创建一个表示当前时间的 Day.js 对象的副本，date(1) 将当前日期 current 设置为该月的第一天。
+              setCurrent(d.clone().date(1))
+            }
+
+            /** 判断点击的是当前选中的时间 */
+            function shouldClear() {
+              if (!props.selectionMode) return false
+              if (!dateRange) return false
+              const [begin, end] = dateRange
+              return d.isSame(begin, 'date') && d.isSame(end, 'day')
+            }
+            if (props.selectionMode === 'single') {
+              // 点击当前选中的时间，则清除时间
+              if (props.allowClear && shouldClear()) {
+                setDateRange(null)
+                return
+              }
+              setDateRange([date, date])
+            }
+          }}
         >
           <div className={`${classPrefix}-cell-top`}>
             {props.renderDate ? props.renderDate(d.toDate()) : d.date()}
