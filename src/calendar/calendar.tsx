@@ -1,7 +1,7 @@
 import React, { ReactNode, forwardRef, useState } from 'react'
 import dayjs from 'dayjs'
 import isoWeek from 'dayjs/plugin/isoWeek'
-import { convertValueToRange, DateRange, Page } from './convert'
+import { convertValueToRange, DateRange, Page, convertPageToDayjs } from './convert'
 import { NativeProps, withNativeProps } from '../utils/native-props'
 import { ArrowLeft } from './arrow-left'
 import { ArrowLeftDouble } from './arrow-left-double'
@@ -95,12 +95,34 @@ export const Calendar = forwardRef<CalendarRef, CalendarProps>((p, ref) => {
   // dayjs().date(1) 返回当前时间所在月份的第一天，返回新的 Day.js 对象
   const [current, setCurrent] = useState(() => dayjs(dateRange ? dateRange[0] : today).date(1))
 
+  const handlePageChange = (action: 'subtract' | 'add', num: number, type: 'month' | 'year') => {
+    // dayjs().subtract(1, 'month') 日期时间第一天减去一个月
+    const nxtCurrent = current[action](num, type)
+
+    // 判断减去后时间是否小于最小时间，小于则 return
+    if (action === 'subtract' && props.minPage) {
+      const minPape = convertPageToDayjs(props.minPage)
+      if (nxtCurrent.isBefore(minPape, type)) {
+        return
+      }
+    }
+    // 判断减去后时间是否大于最大时间，大于则 return
+    if (action === 'add' && props.maxPage) {
+      const maxPage = convertPageToDayjs(props.maxPage)
+      if (nxtCurrent.isAfter(maxPage, type)) {
+        return
+      }
+    }
+
+    setCurrent(nxtCurrent)
+  }
+
   const header = (
     <div className={`${classPrefix}-header`}>
       <a
         className={`${classPrefix}-arrow-button ${classPrefix}-arrow-button-year`}
         onClick={() => {
-          console.log('111111111')
+          handlePageChange('subtract', 1, 'year')
         }}
       >
         {props.prevYearButton}
@@ -108,7 +130,7 @@ export const Calendar = forwardRef<CalendarRef, CalendarProps>((p, ref) => {
       <a
         className={`${classPrefix}-arrow-button ${classPrefix}-arrow-button-month`}
         onClick={() => {
-          console.log('22222222222')
+          handlePageChange('subtract', 1, 'month')
         }}
       >
         {props.prevMonthButton}
@@ -123,7 +145,7 @@ export const Calendar = forwardRef<CalendarRef, CalendarProps>((p, ref) => {
           `${classPrefix}-arrow-button-right-month`
         )}
         onClick={() => {
-          console.log('3333333333333')
+          handlePageChange('add', 1, 'month')
         }}
       >
         {props.nextMonthButton}
@@ -134,6 +156,9 @@ export const Calendar = forwardRef<CalendarRef, CalendarProps>((p, ref) => {
           `${classPrefix}-arrow-button-right`,
           `${classPrefix}-arrow-button-right-year`
         )}
+        onClick={() => {
+          handlePageChange('add', 1, 'year')
+        }}
       >
         {props.nextYearButton}
       </a>

@@ -25,3 +25,11 @@ export function convertValueToRange(
 
   return [value, value]
 }
+
+/** 传入年月转当月第一天，返回 dayjs 对象 */
+export function convertPageToDayjs(page: Page) {
+  return dayjs()
+    .year(page.year)
+    .month(page.month - 1)
+    .date(1)
+}
