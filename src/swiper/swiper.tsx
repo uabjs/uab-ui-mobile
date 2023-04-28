@@ -21,6 +21,7 @@ import { useRefState } from '../utils/use-ref-state'
 import { mergeFuncProps } from '../utils/with-func-props'
 import PageIndicator, { PageIndicatorProps } from '../page-indicator'
 import { SwiperItem } from './swiper-item'
+import { useIsomorphicLayoutEffect } from 'ahooks'
 
 const classPrefix = `uabm-swiper`
 
@@ -100,6 +101,11 @@ export const Swiper = forwardRef<SwiperRef, SwiperProps>(
         count,
       }
     }, [props.children])
+
+    if (count === 0 || !validChildren) {
+      devWarning('Swiper', '`Swiper` 至少需要一个孩子。')
+      return null
+    }
 
     return () => {
       const loop = props.loop
@@ -258,6 +264,14 @@ export const Swiper = forwardRef<SwiperRef, SwiperProps>(
         swipeNext,
         swipePrev,
       }))
+
+      // 当前大于最大页数默认立即跳转到最大页数 (兼容 ssr 渲染)
+      useIsomorphicLayoutEffect(() => {
+        const maxIndex = validChildren.length - 1
+        if (current > maxIndex) {
+          swipeTo(maxIndex, true)
+        }
+      })
 
       const { autoplay, autoplayInterval } = props
       useEffect(() => {
