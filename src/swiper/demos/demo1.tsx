@@ -35,6 +35,15 @@ export default () => {
 
       <DemoBlock title='循环'>
         <Swiper loop>{items}</Swiper>
+        <Swiper
+          loop
+          autoplay
+          onIndexChange={i => {
+            console.log(i, 'onIndexChange')
+          }}
+        >
+          {items}
+        </Swiper>
       </DemoBlock>
 
       <DemoBlock title='手动控制'>

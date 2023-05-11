@@ -21,7 +21,7 @@ import { useRefState } from '../utils/use-ref-state'
 import { mergeFuncProps } from '../utils/with-func-props'
 import PageIndicator, { PageIndicatorProps } from '../page-indicator'
 import { SwiperItem } from './swiper-item'
-import { useIsomorphicLayoutEffect } from 'ahooks'
+import { useIsomorphicLayoutEffect, useGetState } from 'ahooks'
 
 const classPrefix = `uabm-swiper`
 
@@ -115,7 +115,7 @@ export const Swiper = forwardRef<SwiperRef, SwiperProps>(
         '--track-offset': `${props.trackOffset}%`,
       }
 
-      const [current, setCurrent] = useState(props.defaultIndex)
+      const [current, setCurrent, getCurrent] = useGetState(props.defaultIndex)
       // dragging: 用来判断当前是否在拖动，在拖动就不执行一些事件 比如：自动轮播
       const [dragging, setDragging, draggingRef] = useRefState(false)
 
@@ -245,6 +245,11 @@ export const Swiper = forwardRef<SwiperRef, SwiperProps>(
         const roundedIndex = Math.round(index)
         const targetIndex = loop ? modulus(roundedIndex, count) : bound(roundedIndex, 0, count - 1)
         setCurrent(targetIndex)
+
+        if (targetIndex !== getCurrent()) {
+          props.onIndexChange?.(targetIndex)
+        }
+
         api.start({
           position: (loop ? roundedIndex : boundIndex(roundedIndex)) * 100,
           immediate,
