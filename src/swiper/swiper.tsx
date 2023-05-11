@@ -311,7 +311,9 @@ export const Swiper = forwardRef<SwiperRef, SwiperProps>(
               {React.Children.map(validChildren, (child, index) => {
                 return (
                   <animated.div
-                    className={`${classPrefix}-slide`}
+                    className={classNames(`${classPrefix}-slide`, {
+                      [`${classPrefix}-slide-active`]: current === index,
+                    })}
                     style={{
                       // 通过 left 和 transform 来单个单个控制每个 item 的位置
                       [isVertical ? 'y' : 'x']: position.to(position => {
@@ -339,8 +341,16 @@ export const Swiper = forwardRef<SwiperRef, SwiperProps>(
                 [isVertical ? 'y' : 'x']: position.to(position => `${-position}%`),
               }}
             >
-              {React.Children.map(validChildren, child => {
-                return <div className={`${classPrefix}-slide`}>{child}</div>
+              {React.Children.map(validChildren, (child, index) => {
+                return (
+                  <div
+                    className={classNames(`${classPrefix}-slide`, {
+                      [`${classPrefix}-slide-active`]: current === index,
+                    })}
+                  >
+                    {child}
+                  </div>
+                )
               })}
             </animated.div>
           )
